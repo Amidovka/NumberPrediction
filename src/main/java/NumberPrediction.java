@@ -1,6 +1,6 @@
 import au.com.bytecode.opencsv.CSVReader;
 import org.apache.commons.math3.stat.regression.OLSMultipleLinearRegression;
-//import org.apache.commons.math3.stat.regression.SimpleRegression;
+import org.apache.commons.math3.stat.regression.SimpleRegression;
 
 import java.io.*;
 import java.util.List;
@@ -11,43 +11,106 @@ import java.util.List;
 
 public class NumberPrediction {
 
-    public static double[] predictCompTimeStat(double[][] data) throws IOException{
+    /**
+     * Returns a value with the certain index.
+     * The value is predicted using changeable auxiliary matrix (window).
+     * Parameters of variable x are chosen to define relations.
+     *
+     * @param window    size of a helping "window" matrix
+     * @param xParam    x parameters to analyse
+     * @param index     index of a predicted value to test
+     * @return          predicted value
+     * @throws IOException
+     */
+
+    public static double predictWithOptions(int window, int[] xParam, int index) throws IOException{
 
         FileReader reader = new FileReader(new File("compTimeStat.csv").getAbsolutePath());
         CSVReader csvReader = new CSVReader(reader);
-        FileReader reader2 = new FileReader(new File("compTimeStat.csv").getAbsolutePath());
-        CSVReader csvReader2 = new CSVReader(reader2);
 
         List<String[]> arrayData = csvReader.readAll();
-        String[] stringData = csvReader2.readNext();
+        int numOfRows = arrayData.size();
+        int numOfCol = arrayData.get(0).length;
 
-        double[][] xData = new double[arrayData.size()][stringData.length-1];
-        double[] yData = new double[arrayData.size()];
+        //making matrix from data read
+        double[][] xData = new double[numOfRows][numOfCol-1];
+        double[] yData = new double[numOfRows];
 
-        for (int i = 0; i < arrayData.size(); i++){
-            for (int j = 0; j < stringData.length-1; j++){
-                xData[i][j] = Double.parseDouble(stringData[j]);
+        for (int i = 0; i < numOfRows; i++) {
+            for (int j = 0; j < numOfCol - 1; j++) {
+                xData[i][j] = Double.parseDouble(arrayData.get(i)[j]);
             }
-            yData[i] = Double.parseDouble(stringData[stringData.length-1]);
-            stringData = csvReader2.readNext();
+            yData[i] = Double.parseDouble(arrayData.get(i)[numOfCol - 1]);
         }
 
+        //making xSample matrix with certain x parameters
+        double[][] xSample = new double[xData.length][xParam.length];
+        double[] ySample = new double[yData.length];
+
+        for (int i = 0; i < xData.length; i++) {
+            for (int j = 0; j < xParam.length; j++) {
+                xSample[i][j] = xData[i][xParam[j]];
+            }
+            ySample[i] = yData[i];
+        }
+
+        int dataSize = xSample.length;
+        int N = dataSize - window;
+
+        //creating window matrix
+        double[][] xWindow = new double[window][xParam.length];
+        double[] yWindow = new double[window];
 
         OLSMultipleLinearRegression regression = new OLSMultipleLinearRegression();
-        regression.newSampleData(yData, xData);
 
-        double[] u = regression.estimateResiduals();
-        double[] b = regression.estimateRegressionParameters();
-
-        System.out.println("Regression parameters:");
-        for (int i = 0; i < b.length; i++){
-            System.out.println("beta"+(i)+ " = " + b[i]);
+        //cycle for predicting using window
+        double[] yPredicted = new double[N];
+        for (int n = 1; n < N+1; n++){
+            //filling window matrix
+            for (int i = 0; i < window; i++){
+                xWindow[i] = xSample[i+n-1];
+                yWindow[i] = ySample[i+n-1];
+            }
+            //using previous predicted value
+            if (n != 1){
+                yWindow[window - 1] = yPredicted[n-2];
+            }
+            regression.newSampleData(yWindow, xWindow);
+            double[] b = regression.estimateRegressionParameters();
+            double[] u = regression.estimateResiduals();
+            yPredicted[n-1] = regressionFunctionSingle(xSample[window+n-1], b, u[window-1]);
+            System.out.println("Predicted value Y #" + (window+n) + ": " + yPredicted[n-1]);
         }
-
-        return regressionFunction(data, b, u);
+        return yPredicted[index-1];
     }
 
-    // regression function Y = X*b + u
+    /**
+     * Function returns single predicted value of Y for certain row index i.
+     * Y(i) = X(i)*b + u(i)
+     *
+     * @param regressors              X parameters of a row with index i
+     * @param regressionParameters    regression parameters we got from regression
+     * @param residual                residuals we got from regression
+     * @return                        regression function
+     */
+    public static double regressionFunctionSingle(double[] regressors, double[] regressionParameters, double residual){
+
+        double y = 0;
+        for (int j = 1; j < regressionParameters.length; j++){
+            y += regressors[j-1]*regressionParameters[j];
+        }   y += regressionParameters[0] + residual;
+        return y;
+    }
+
+    /**
+     * Function returns predicted values of Y vector in type of array of double.
+     * Y = X*b + u
+     *
+     * @param regressors               X parameters of data matrix
+     * @param regressionParameters     regression parameters we got from regression
+     * @param residuals                residuals we got from regression
+     * @return                         regression function
+     */
     public static double[] regressionFunction(double[][] regressors, double[] regressionParameters, double[] residuals){
 
         double[] y = new double[regressors.length];
@@ -55,36 +118,50 @@ public class NumberPrediction {
             for (int j = 1; j < regressionParameters.length; j++){
                 y[i] += regressors[i][j-1]* regressionParameters[j];
             }   y[i] += regressionParameters[0] + residuals[i];
+
         }
         return y;
     }
-}
 
-    /*
     public static double predictNextDouble(double[] timeSerie){
 
-        SimpleRegression regrese = new SimpleRegression();
+        SimpleRegression regression = new SimpleRegression();
         double[] x = new double[timeSerie.length];
-        for (int i = 0; i<timeSerie.length; i++) {
+        double[] yData = new double[timeSerie.length];
+        int period = definePeriod(timeSerie);
+
+        //reading data
+        for (int i = 0; i < period; i++){
             x[i] = i+1;
-            regrese.addData(x[i], timeSerie[i]);
+            yData[i] = timeSerie[i];
+            regression.addData(x[i], yData[i]);
         }
 
-        double output = regrese.predict(timeSerie.length + 1);
-        return output;
-    }
+       //If timeSerie has one period, next value is predicted using regression.
+        if (period == timeSerie.length){
+            return regression.predict(period+1);
+        }  else{
 
-
-    public static void main(String[] args){
-
-        SimpleRegression regrese = new SimpleRegression();
-        double[] x = {1,2,3,4,5,6};
-        double[] y = {1, 2, 3, 1, 2, 3};
-
-        for (int i = 0; i<x.length; i++) {
-            regrese.addData(x[i], y[i]);
+            //If timeSerie has more than one period, next value is derived from the data read.
+            if (((timeSerie.length) % period) == 0) {
+                return yData[0];
+            }  else
+                return yData[timeSerie.length % period];
+                }
         }
 
-        System.out.println("Predicted value is " + regrese.predict(6) + " +- " + regrese.getMeanSquareError());
+    //defining period of timeSerie
+    public static int definePeriod(double[] timeSerie){
+
+        double max = timeSerie[0];
+        int maxInd = 0;
+
+        //cycle for finding maximum value and it's index in timeSerie
+        for (int i = 0; (i < timeSerie.length) && (timeSerie[i] >= max); i++){
+                max = timeSerie[i];
+                maxInd = i;
+            }
+        //period is a max value index + 1
+        return maxInd+1;
     }
-    */
+}
