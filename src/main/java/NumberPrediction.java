@@ -12,35 +12,45 @@ import java.util.List;
 public class NumberPrediction {
 
     /**
+     * Parsing data from the file.
+     *
+     * @return List of Strings
+     * @throws IOException
+     */
+    public static List<String[]> parsedData() throws IOException {
+        FileReader reader = new FileReader(new File("compTimeStat.csv").getAbsolutePath());
+        CSVReader csvReader = new CSVReader(reader);
+
+        return csvReader.readAll();
+    }
+
+    /**
      * Returns a value with the certain index.
      * The value is predicted using changeable auxiliary matrix (window).
      * Parameters of variable x are chosen to define relations.
      *
      * @param window    size of a helping "window" matrix
      * @param xParam    x parameters to analyse
-     * @param index     index of a predicted value to test
      * @return          predicted value
      * @throws IOException
      */
 
-    public static double predictWithOptions(int window, int[] xParam, int index) throws IOException{
+    public static double[] predictWithOptions(int window, int[] xParam) throws IOException{
 
-        FileReader reader = new FileReader(new File("compTimeStat.csv").getAbsolutePath());
-        CSVReader csvReader = new CSVReader(reader);
+        List<String[]> Data = NumberPrediction.parsedData();
 
-        List<String[]> arrayData = csvReader.readAll();
-        int numOfRows = arrayData.size();
-        int numOfCol = arrayData.get(0).length;
+        int numOfRows = Data.size();
+        int numOfCol = Data.get(0).length;
 
-        //making matrix from data read
         double[][] xData = new double[numOfRows][numOfCol-1];
         double[] yData = new double[numOfRows];
 
-        for (int i = 0; i < numOfRows; i++) {
+        //making matrix from data read
+        for(int i = 0; i < numOfRows; i++){
             for (int j = 0; j < numOfCol - 1; j++) {
-                xData[i][j] = Double.parseDouble(arrayData.get(i)[j]);
+                xData[i][j] = Double.parseDouble(Data.get(i)[j]);
             }
-            yData[i] = Double.parseDouble(arrayData.get(i)[numOfCol - 1]);
+            yData[i] = Double.parseDouble(Data.get(i)[numOfCol - 1]);
         }
 
         //making xSample matrix with certain x parameters
@@ -73,15 +83,15 @@ public class NumberPrediction {
             }
             //using previous predicted value
             if (n != 1){
-                yWindow[window - 1] = yPredicted[n-2];
+                yWindow[window-1] = yPredicted[n-2];
             }
             regression.newSampleData(yWindow, xWindow);
             double[] b = regression.estimateRegressionParameters();
             double[] u = regression.estimateResiduals();
             yPredicted[n-1] = regressionFunctionSingle(xSample[window+n-1], b, u[window-1]);
-            System.out.println("Predicted value Y #" + (window+n) + ": " + yPredicted[n-1]);
+            //System.out.println("Predicted value Y #" + (window+n) + ": " + yPredicted[n-1]);
         }
-        return yPredicted[index-1];
+        return yPredicted;
     }
 
     /**

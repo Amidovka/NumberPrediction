@@ -32,6 +32,6 @@ public class NumberPredictionTest {
      */
     @Test
     public void testOptions() throws  IOException{
-        assertEquals(2842.0, NumberPrediction.predictWithOptions(25, new int[]{0, 1, 5}, 100), 2000.0);
+        assertEquals(2842.0, NumberPrediction.predictWithOptions(25, new int[]{0, 1, 5})[100], 2000.0);
     }
 }
