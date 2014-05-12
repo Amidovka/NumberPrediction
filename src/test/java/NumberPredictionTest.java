@@ -22,6 +22,16 @@ public class NumberPredictionTest {
         assertThat(NumberPrediction.predictNextDouble(new double[]{1, 2, 3, 1, 2, 3}), is(equalTo(1.0)));
     }
 
+    @Test
+    public void testJumpsInverse(){
+        assertThat(NumberPrediction.predictNextDouble(new double[]{3, 2, 1, 3, 2, 1, 3}), is(equalTo(2.0)));
+    }
+
+    @Test
+    public void testJumpsRising(){
+        assertThat(NumberPrediction.predictNextDouble(new double[]{1, 2, 3, 2, 3, 4}), is(equalTo(3.0)));
+    }
+
     /**
      * Tests if the difference in actual and predicted value is greater than 2000.
      * Value index to test is 100.
