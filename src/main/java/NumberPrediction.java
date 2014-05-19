@@ -5,6 +5,8 @@ import org.apache.commons.math3.stat.regression.SimpleRegression;
 import java.io.*;
 import java.util.List;
 
+import static java.lang.Math.pow;
+
 /**
  * Created by amid on 10.03.14.
  */
@@ -133,7 +135,7 @@ public class NumberPrediction {
         return y;
     }
 
-    public static double predictNextDouble(double[] timeSerie){
+    public static double predictNextDouble(double[] timeSerie) {
 
         SimpleRegression regression = new SimpleRegression();
         double[] x = new double[timeSerie.length];
@@ -141,26 +143,56 @@ public class NumberPrediction {
         int period = definePeriod(timeSerie);
 
         //reading data
-        for (int i = 0; i < period; i++){
-            x[i] = i+1;
+        for (int i = 0; i < period; i++) {
+            x[i] = i + 1;
             yData[i] = timeSerie[i];
             regression.addData(x[i], yData[i]);
         }
 
-       //If timeSerie has one period, next value is predicted using regression.
-        if (period == timeSerie.length){
-            return regression.predict(period+1);
-        }  else{
+        double output;
 
-            //If timeSerie has more than one period, next value is derived from the data read.
-            if (((timeSerie.length) % period) == 0) {
-                return yData[0];
-            }  else
-                return yData[timeSerie.length % period];
-                }
+        //If timeSerie has one period, next value is predicted using regression.
+        //If timeSerie has more than one period, next value is derived from the data read.
+        if (period == timeSerie.length) {
+            output = regression.predict(period + 1);
+            return output;
+        } else {
+           return NumberPrediction.predictComplicatedSerie(timeSerie);
+        }
+    }
+
+    public static double predictComplicatedSerie(double[] timeSerie) {
+
+        int period = definePeriod(timeSerie);
+        double sum = 0;
+        double product = 0;
+        double output = 0;
+
+        int numSteps = timeSerie.length - period;       //number of steps while defining typ of change
+        int numPeriods = ((timeSerie.length) / period);   //number of periods
+
+        for (int i = 0; i < numSteps; i++) {
+            product += ((timeSerie[i + period])/timeSerie[i]);   //sum of all multiplicators
+            sum += (timeSerie[i + period] - timeSerie[i]);     //sum of all differences
+        }
+        if (sum == 0) {  //constant timeSeries
+            output = timeSerie[timeSerie.length % period];
+        }   else {       //not constant timeSeries
+        for (int i = 0; i < numSteps; i++) {
+            if ((timeSerie[i + period] - timeSerie[i]) == sum/numSteps) {
+                output = timeSerie[timeSerie.length % period] + (sum/numSteps)*numPeriods;
+            }   else{
+                output = timeSerie[timeSerie.length % period]*pow((product/numSteps), numPeriods);
+                break;
+            }
+        }
+        }
+
+        return output;
         }
 
     //defining period of timeSerie
+    //period is a max value index + 1
     public static int definePeriod(double[] timeSerie){
 
         double max = timeSerie[0];
@@ -168,10 +200,19 @@ public class NumberPrediction {
 
         //cycle for finding maximum value and it's index in timeSerie
         for (int i = 0; (i < timeSerie.length) && (timeSerie[i] >= max); i++){
-                max = timeSerie[i];
+            max = timeSerie[i];
+            maxInd = i;
+        }
+        //if the first number is maximum and timeSerie is descending
+        if (maxInd == 0){
+            for (int i = 1; (i < timeSerie.length) && (timeSerie[i] < max); i++){
                 maxInd = i;
+                max = timeSerie[i];
             }
-        //period is a max value index + 1
-        return maxInd+1;
+            return maxInd +1;
+        }
+        else{
+            return maxInd+1;
+        }
     }
 }
