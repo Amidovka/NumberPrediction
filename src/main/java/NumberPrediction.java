@@ -1,4 +1,4 @@
-import au.com.bytecode.opencsv.CSVReader;
+import com.amidovka.numberprediction.ReadData;
 import org.apache.commons.math3.stat.regression.OLSMultipleLinearRegression;
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 
@@ -14,19 +14,6 @@ import static java.lang.Math.pow;
 public class NumberPrediction {
 
     /**
-     * Parsing data from the file.
-     *
-     * @return List of Strings
-     * @throws IOException
-     */
-    public static List<String[]> parsedData() throws IOException {
-        FileReader reader = new FileReader(new File("compTimeStat.csv").getAbsolutePath());
-        CSVReader csvReader = new CSVReader(reader);
-
-        return csvReader.readAll();
-    }
-
-    /**
      * Returns a value with the certain index.
      * The value is predicted using changeable auxiliary matrix (window).
      * Parameters of variable x are chosen to define relations.
@@ -39,7 +26,7 @@ public class NumberPrediction {
 
     public static double[] predictWithOptions(int window, int[] xParam) throws IOException{
 
-        List<String[]> Data = NumberPrediction.parsedData();
+        List<String[]> Data = ReadData.parsedData();
 
         int numOfRows = Data.size();
         int numOfCol = Data.get(0).length;

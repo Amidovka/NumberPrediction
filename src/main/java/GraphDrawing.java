@@ -1,10 +1,11 @@
-import java.awt.Color;
+    import java.awt.Color;
     import java.io.IOException;
     import java.text.SimpleDateFormat;
     import java.util.List;
 
     import javax.swing.JPanel;
 
+    import com.amidovka.numberprediction.ReadData;
     import org.jfree.chart.ChartFactory;
     import org.jfree.chart.ChartPanel;
     import org.jfree.chart.JFreeChart;
@@ -126,7 +127,7 @@ public class GraphDrawing extends ApplicationFrame {
 
     public static double[] getRealData() throws IOException {
 
-        List<String[]> data = NumberPrediction.parsedData();
+        List<String[]> data = ReadData.parsedData();
         int numOfRows = data.size();
         int numOfCol = data.get(0).length;
         double[] yData = new double[numOfRows];
