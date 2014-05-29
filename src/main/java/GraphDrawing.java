@@ -81,7 +81,7 @@ public class GraphDrawing extends ApplicationFrame {
 
         TimeSeries predictedSeries = new TimeSeries("Predicted data");
         int win = 25;
-        double [] predictedData = NumberPrediction.predictWithOptions(win, new int[]{0, 1, 5});
+        double [] predictedData = NumberPrediction.predictWithOptions(win, new int[]{1, 3, 5});
         int size = predictedData.length;
 
         for (int i = 0; i < size; i++){

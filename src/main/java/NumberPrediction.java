@@ -77,8 +77,9 @@ public class NumberPrediction {
             regression.newSampleData(yWindow, xWindow);
             double[] b = regression.estimateRegressionParameters();
             double[] u = regression.estimateResiduals();
-            yPredicted[n-1] = regressionFunctionSingle(xSample[window+n-1], b, u[window-1]);
-            //System.out.println("Predicted value Y #" + (window+n) + ": " + yPredicted[n-1]);
+            //yPredicted[n-1] = regressionFunctionSingle(xSample[window+n-1], b, u[window-1]);
+            yPredicted[n-1] = regressionFunctionSingle(xSample[window+n-1], b);
+            System.out.println("Predicted value Y #" + (window+n) + ": " + yPredicted[n-1]);
         }
         return yPredicted;
     }
@@ -88,16 +89,24 @@ public class NumberPrediction {
      * Y(i) = X(i)*b + u(i)
      *
      * @param regressors              X parameters of a row with index i
-     * @param regressionParameters    regression parameters we got from regression
-     * @param residual                residuals we got from regression
+     * @param regressionParameters    regression parameters we got from regression\
      * @return                        regression function
      */
-    public static double regressionFunctionSingle(double[] regressors, double[] regressionParameters, double residual){
+//    public static double regressionFunctionSingle(double[] regressors, double[] regressionParameters, double residual){
+//
+//        double y = 0;
+//        for (int j = 1; j < regressionParameters.length; j++){
+//            y += regressors[j-1]*regressionParameters[j];
+//        }   y += regressionParameters[0] + residual;
+//        return y;
+//    }
+
+    public static double regressionFunctionSingle(double[] regressors, double[] regressionParameters){
 
         double y = 0;
         for (int j = 1; j < regressionParameters.length; j++){
             y += regressors[j-1]*regressionParameters[j];
-        }   y += regressionParameters[0] + residual;
+        }   y += regressionParameters[0];
         return y;
     }
 
