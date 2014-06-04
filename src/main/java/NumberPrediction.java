@@ -48,7 +48,7 @@ public class NumberPrediction {
 
         for (int i = 0; i < xData.length; i++) {
             for (int j = 0; j < xParam.length; j++) {
-                xSample[i][j] = xData[i][xParam[j]];
+                xSample[i][j] = xData[i][xParam[j] - 1];
             }
             ySample[i] = yData[i];
         }
@@ -79,7 +79,7 @@ public class NumberPrediction {
             double[] u = regression.estimateResiduals();
             //yPredicted[n-1] = regressionFunctionSingle(xSample[window+n-1], b, u[window-1]);
             yPredicted[n-1] = regressionFunctionSingle(xSample[window+n-1], b);
-            System.out.println("Predicted value Y #" + (window+n) + ": " + yPredicted[n-1]);
+            //System.out.println("Predicted value Y #" + (window+n) + ": " + yPredicted[n-1]);
         }
         return yPredicted;
     }

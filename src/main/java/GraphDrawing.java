@@ -25,6 +25,8 @@
 public class GraphDrawing extends ApplicationFrame {
 
     private static final long serialVersionUID = 1L;
+    static int win = 25;
+    static int[] params;
 
     {
     // set a theme using the new shadow generator feature
@@ -67,7 +69,8 @@ public class GraphDrawing extends ApplicationFrame {
         plot.setRangeCrosshairVisible(true);
 
         DateAxis axis = (DateAxis) plot.getDomainAxis();
-        axis.setDateFormatOverride(new SimpleDateFormat("HH:mm:ss.S"));
+        //axis.setDateFormatOverride(new SimpleDateFormat("HH:mm:ss.S"));
+        axis.setDateFormatOverride(new SimpleDateFormat());
 
         return chart;
     }
@@ -77,19 +80,20 @@ public class GraphDrawing extends ApplicationFrame {
      *
      * @return The dataset.
      */
-    private static XYDataset createDataset() throws IOException {
+    private static XYDataset createDataset(int[] params) throws IOException {
 
+        int[] i;
+        i = params;
         TimeSeries predictedSeries = new TimeSeries("Predicted data");
-        int win = 25;
-        double [] predictedData = NumberPrediction.predictWithOptions(win, new int[]{1, 3, 5});
+        double [] predictedData = NumberPrediction.predictWithOptions(win, i);
         int size = predictedData.length;
 
-        for (int i = 0; i < size; i++){
-            predictedSeries.add(new Millisecond(i*50, 57, 46, 8, 30, 3, 2014), predictedData[i]);
+        for (int k = 0; k < size; k++){
+            predictedSeries.add(new Millisecond(k*50, 57, 46, 8, 30, 3, 2014), predictedData[k]);
         }
         TimeSeries realSeries = new TimeSeries("Real data");
-        for (int i = win; i < getRealData().length; i++){
-            realSeries.add(new Millisecond((i-win)*50, 57, 46, 8, 30, 3, 2014), getRealData()[i]);
+        for (int k = 0; k < getRealData().length; k++){
+            realSeries.add(new Millisecond(k*50, 57, 46, 8, 30, 3, 2014), getRealData()[k]);
         }
 
         TimeSeriesCollection dataset = new TimeSeriesCollection();
@@ -99,43 +103,40 @@ public class GraphDrawing extends ApplicationFrame {
         return dataset;
     }
 
+    public static double[] getRealData() throws IOException {
+
+        List<String[]> data = ReadData.parsedData();
+        int numOfRows = data.size();
+        int numOfCol = data.get(0).length;
+        double[] yData = new double[numOfRows - win];
+
+        //making matrix from data read
+        for (int i = 0; i < yData.length; i++) {
+            yData[i] = Double.parseDouble(data.get(i + win)[numOfCol - 1]);
+        }
+        return yData;
+    }
+
     /**
      * Creates a panel for the graph.
      *
      * @return A panel.
      */
     public static JPanel createPanel() throws IOException {
-        JFreeChart chart = createChart(createDataset());
+        JFreeChart chart = createChart(createDataset(params));
         ChartPanel panel = new ChartPanel(chart);
         panel.setFillZoomRectangle(true);
         panel.setMouseWheelEnabled(true);
         return panel;
     }
 
-    /**
-     * Starting point for the demonstration application.
-     *
-     * @param args  ignored.
-     */
-    public static void main(String[] args) throws IOException {
+    public static double draw() throws IOException {
 
-        GraphDrawing graph = new GraphDrawing("Time Series Prediction");
-        graph.pack();
-        RefineryUtilities.centerFrameOnScreen(graph);
-        graph.setVisible(true);
-    }
+    GraphDrawing graph = new GraphDrawing("Time Series Prediction");
+    graph.pack();
+    RefineryUtilities.centerFrameOnScreen(graph);
+    graph.setVisible(true);
 
-    public static double[] getRealData() throws IOException {
-
-        List<String[]> data = ReadData.parsedData();
-        int numOfRows = data.size();
-        int numOfCol = data.get(0).length;
-        double[] yData = new double[numOfRows];
-
-        //making matrix from data read
-        for (int i = 0; i < numOfRows; i++) {
-            yData[i] = Double.parseDouble(data.get(i)[numOfCol - 1]);
-        }
-        return yData;
+    return 0;
     }
 }

@@ -6,6 +6,7 @@
 \usepackage[a4paper, hmarginratio=3:2]{geometry} % využití celé A4 stránky a nastavení okrajů
 \usepackage{graphicx} % balíček pro vkládání obrázků
 \usepackage{tabularx} % rozšířené možnosti tabulek
+\usepackage{indentfirst}
 
 % balíčky, které se mohou hodit
 %\usepackage{amsmath} % balíček pro pokročilou matem. sazbu
@@ -201,10 +202,13 @@ Děkuji Ing. Janu Doubkovi za vedení mé bakalářské práce a za podnětné n
 \newpage % SEM NESAHEJTE!
 
 \chapter*{Úvod}
-\addcontentsline{toc}{chapter}{Úvod} % SEM NESAHEJTE!
-%
-%  Sem napiště úvod
-%
+\addcontentsline{toc}{chapter}{Úvod} % SEM NESAHEJTE! 
+
+Cílem této bakalářské práce bylo navrhnout a vytvořit softwarovou aplikaci pro analytické zpracování dat, se kterými pracjuí výpočetní servery. Podstatou aplikace je predikce budoucího chování určitých hodnont na základě analýzy minulých výsledků.
+
+Předpokladá se používání dat ve formě časových řad. Proto se v teoretické části práce hlavně věnuje způsobům zpracování, analýzy a predikce časových řad. Poté následjue popis algoritmu používání vybraných postupů pro vhodnou analýzu. 
+
+V praktické části je popsána implementace softwarové aplikace, po čemž je demonstrováno využítí aplikace na příkladových datech.
 
 \chapter{Teoretická část}
 
