@@ -7,6 +7,7 @@
 \usepackage{graphicx} % balíček pro vkládání obrázků
 \usepackage{tabularx} % rozšířené možnosti tabulek
 \usepackage{indentfirst}
+\usepackage{titlesec} 
 
 % balíčky, které se mohou hodit
 %\usepackage{amsmath} % balíček pro pokročilou matem. sazbu
@@ -20,6 +21,23 @@
 %\usepackage[hidelinks]{hyperref} % pro klikací odkazy v pdf
 %\usepackage{encxvlna} % postará se o spojky a předložky, které dle českých pravidel nesmí být na konci řádku. Dokumentace: http://texdoc.net/texmf-dist/doc/generic/encxvlna/encxvlna.pdf
 
+
+% spacing: how to read {12pt plus 4pt minus 2pt}
+%           12pt is what we would like the spacing to be
+%           plus 4pt means that TeX can stretch it by at most 4pt
+%           minus 2pt means that TeX can shrink it by at most 2pt
+%       This is one example of the concept of, 'glue', in TeX
+%		\titlespacing{command}{left spacing}{before spacing}{after spacing}[right]
+
+\titlespacing{\section}{0pt}{\parskip}{-\parskip}
+\titlespacing{\subsection}{0pt}{\parskip}{\parskip}
+%\titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
+
+%\titlespacing\chapter{0pt}{0pt plus 2pt minus 2pt}{0pt plus 0pt minus 0pt}
+%\titlespacing\section{0pt}{0pt plus 0pt minus 0pt}{0pt plus 0pt minus 0pt}
+%\titlespacing\subsection{0pt}{2pt plus 4pt minus 2pt}{0pt plus 0pt minus 0pt}
+%\titlespacing\subsubsection{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+
 \topmargin=-15mm      % horní okraj trochu menší
 \textwidth=150mm      % šířka textu na stránce
 \textheight=240mm     % "výška" textu na stránce
@@ -27,7 +45,7 @@
 \pagenumbering{arabic} % číslování stránek arabskými číslicemi
 \pagestyle{plain}      % stránky číslované dole uprostřed
 
-\parindent=0pt % odsazení 1. řádku odstavce
+\parindent=22pt % odsazení 1. řádku odstavce
 \parskip=7pt   % mezera mezi odstavci
 \frenchspacing % aktivuje použití některých českých typografických pravidel
 
@@ -56,7 +74,7 @@
 \newcommand{\pracovisteKonz}{-} % POKUD MÁTE konzultanta, NAPIŠTE jeho pracoviště
 
 
-\newcommand{\klicova}{Časová řada, ekonometrie, předpovídání, analýza, server}   % zde NAPIŠTE česky max. 5 klíčových slov
+\newcommand{\klicova}{Časová řada, ekonometrie, predikce, analýza, server}   % zde NAPIŠTE česky max. 5 klíčových slov
 \newcommand{\keyword}{Times series, econometrics, forecasting, analysis, server}       % zde NAPIŠTE anglicky max. 5 klíčových slov (přeložte z češtiny)
 \newcommand{\abstrCZ}{Cílem této práce je efektivně modelovat časovou, výpočetní a paměťovou náročnost distribuovaných úloh. Implementace modelů na základě časových řad výsledků minulých úloh. Výsledkem práce bude studie použitelnosti ekonometrických metod v prostředí velkých data center. Dále návrh algoritmů pro implementaci studovaných metod. Výstupní modely budou použity pro lepší plánování rozvržení výpočetních zdrojů.} % zde NAPIŠTE abstrakt v češtině
 \newcommand{\abstrEN}{The goal of this thesis is to effectively make a model of temporal, computational and memory requirements of distributed tasks. Model implementation based on time series results of past tasks. The result of the thesis will be a study of applicability of econometric methods in large scale data centres. In addition, design of algorithms for implementation of the studied methods. Output models will be used for better planning of computational sources arrangement.}                  % zde NAPIŠTE abstrakt v angličtině
@@ -204,16 +222,41 @@ Děkuji Ing. Janu Doubkovi za vedení mé bakalářské práce a za podnětné n
 \chapter*{Úvod}
 \addcontentsline{toc}{chapter}{Úvod} % SEM NESAHEJTE! 
 
-Cílem této bakalářské práce bylo navrhnout a vytvořit softwarovou aplikaci pro analytické zpracování dat, se kterými pracjuí výpočetní servery. Podstatou aplikace je predikce budoucího chování určitých hodnont na základě analýzy minulých výsledků.
+Obrovské a rostoucí množství informací zaplavují dnešní podniky. To se stavá hlavně kvůli rostoucímu počtu lidí, firem a zařízení připojených k internetu. Kolem třetiny světové populace má dnes přístup k internetu. Velké množství informace, jinak řečeno - velká data, představuje rychle rostoucí sféru, ve které se pro maximální efektivitu vyžaduje vhodná kombinace softwaru, hardwaru a navíc speciální úpravy s ohledem na oblast působnosti. Tyto fakty vedou k výraznému zaměření na velká data a na nové metody správy a analýzování tohoto proudu informací. 
 
-Předpokladá se používání dat ve formě časových řad. Proto se v teoretické části práce hlavně věnuje způsobům zpracování, analýzy a predikce časových řad. Poté následjue popis algoritmu používání vybraných postupů pro vhodnou analýzu. 
+Důležitým prvkem řešení této problematiky je datacentrum. Jsou to specializované prostory pro umístění a zajištění stabilního provozu výpočetní a serverové techniky. Většinou se tato technika skládá z počítačových clusterů, což je několik spolupracujícich počítačů propojených počítačovou sítí. Clustery se využívají pro výpočet komplikovaných početních úloh. Jeden z hlavních parametrů kvalitních datacenter je správné planování distribuovaných úloh pro rychlé zpracování dat. Se stále zvětšujícím množstvím dat se tento problém komplikuje. Proto je potřeba vědět v jakém pořadí zpracovávat určité úlohy a jak dlouho to bude trvat. 
 
-V praktické části je popsána implementace softwarové aplikace, po čemž je demonstrováno využítí aplikace na příkladových datech.
+Cílem této bakalářské práce bylo navrhnout a vytvořit softwarovou aplikaci pro analytické zpracování dat, se kterými pracjuí výpočetní servery. Podstatou aplikace je predikce budoucího chování určitých hodnont na základě analýzy minulých výsledků. Protože velká data obvykle obsahují dynamické systémy dat, které se mění s časem, zkoumaná data se předpokládají být ve formě časových řad. Proto se v této práci nejdřív věnuje způsobům zpracování, analýzy a predikce časových řad. Poté následjue popis algoritmu používání vybraných postupů pro vhodnou analýzu a implementace příslušného algoritmu. Na závěr je demonstrováno využítí aplikace na příkladových datech. 
+
 
 \chapter{Teoretická část}
 
 \section{Časové řady}
-\subsection{Úvod}
+\subsection{Úvod a charakteristika}
+Jak již bylo zmíněno, časové řady jsou základním zkoumaným prvkem při analýze různých dynamických systémů obsahující chronologicky uspořádaná data. Časové řady jsou vlastně soubory jednoznačně uspořádáných podle času pozorování v příslušném systému. Data ve formě časových řad vznikají v úplně různých odvětvích bud' to fyzikální věda, biologie, společenská věda, medicína atd. 
+
+Například ve společenských vědách, časové řady jsou užitečné při popsání počtu obyvatel, porodnosti, nemocnosti. V ekonomii teorie časových řad je jednou z nejdůležitějších metod při analýze ekonomických procesů. Mohou popisovat vývoj určitého ukazatele, jako objem výroby, produktivita práce, nezaměstnanost nebo spotřeba surovin. V technice časové řady mohou představovat průběh signálu, spolehlivost nebo intenzitu zatížení elektrického zařízení. 
+
+Pro lepší porozumění určitého mechanismu nebo procesu, popsaného časovou řadou, existuje analýza časových řad skládající se z různých metod. Tyto metody pomáhají vytvořit vhodný model popisující chování pozorovaných hodnot. Znalost takového modelu umožňuje kontrolovat činnost a sledovat vývoj určitého systému. Jako důsledek spravné provedené analýzy stavá se možným predikovat budoucí chování systému.
+
+Časové řady se skládají ze dvou prvků:
+\begin{itemize}
+\item časový úsek, během kterého byly udělány pozorování
+\item hodnoty příslušných ukazatelů časové řady
+\end{itemize}
+
+Podle časového úseku časové řady se člení do dvou typů. Jedním je okamžiková časová řada, jejíž pozorování jsou naměřena v jisté časové okamžiky a sčítání hodnot příslušných pozorování nedává smysl. Příkladem může být řada udávající počet zaměstnanců ve firmě na začátku roku. Druhým typem je intervalová časová řada. Pozorování v intervalových časových řadách jsou závislé na délce časového intervalu sledování a v tomto případě už sčítání hodnot ukazatele časové řady dává smysl, nebot' hodnotu ukazatele za větší interval lze získat sčítáním hodnot za jednotlivé části příslušného intervalu. Například porodnost ve státě za rok. 
+
+Časové úseky jsou obvykle stejnoměrně rozděleny, což znamená, že mezi jednotlivými pozorování stejné časové intervaly. V opačném případě pozorování jsou rozděleny různorodě a tím se analýza časových řad komplikuje. 
+
+Obvykle rozlišujeme dva základní modely časových řad:
+\begin{itemize}
+\item Determenistický - model, v kterém časová řada nemá náhodné prvky a je generována známou matematickou funkcí. Důsledkem je srovnatelně jednoduchá analýza časové řady. 
+\item Stochastický - model popisuje náhodný proces a časová řada obsahuje náhodný prvek. Většina běžně se vyskytujících časových řad v praxi mají stochastické modely.
+\end{itemize}
+
+Jedna z dalších důležitých charakteristik časových řad, vyplývající ze stochastického modelu, je jejich stacionarita, případně nestacionarita. Při stacionaritě střední hodnota a rozptyl časové řady se v čase nemění, což nelze říct o nestacionárních časových řadách, ve kterých se objevují změny ve střední hodnotě či rozptylu. Říká se proto, že nestacionární časové řady mají určitý trend vývoje. I když stacionarita je běžným předpokladem většiny metod analýzy časových řad, některé modely se omezují na modely stacionárních procesů.  
+
 \subsection{Analýza časových řad}
 \subsection{Predikce}
 

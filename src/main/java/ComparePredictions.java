@@ -16,17 +16,23 @@ public class ComparePredictions {
     static int k, n;
     static ArrayList<int[]> A = new ArrayList<int[]>();
 
+
+
     //Parsing data
-    public static List<String[]> Data() throws IOException {
+    static List<String[]> Data() throws IOException {
 
         return ReadData.parsedData();
     }
 
-
     public static void main(String[] args) throws IOException {
 
-        GraphDrawing.params = combinations().get(bestXIndex());
+        GraphDrawing.params = combinations().get(bestIndex());
         GraphDrawing.draw();
+
+       /* System.out.println("The best adjusted R-squared statistic: " + bestAdjR2 + " with the x parameters: ");
+        for (int j = 0; j < combinations.get(index).length; j++) {
+            System.out.print("X" + combinations.get(index)[j] + " ");
+        }*/
     }
 
     //Returns all possible combinations(permutations) of x parameters without repeats
@@ -48,19 +54,40 @@ public class ComparePredictions {
         return listOfComb;
     }
 
+    //Causes permutations for x parameters. Number of permutations (2^x)-1.
+    static ArrayList<int[]> permutate(int pos, int maxUsed){
+
+        if (pos == k) {
+            int[] b = new int[a.length];
+            for (int i = 0; i < a.length; i++) {
+                b[i] = a[i];
+            }
+            A.add(b);
+        } else {
+            for (int i = maxUsed + 1; i <= n; i++) {
+                a[pos] = i;
+                permutate(pos + 1, i);
+            }
+        }
+        return A;
+    }
+
+
+
     //Finds best X parameters combination based on the adjusted R-squared statistic
-    public static int bestXIndex() throws IOException {
+    public static double[] adjR2() throws IOException {
 
         int numOfRows = Data().size();
         int numOfCol = Data().get(0).length;
         int numOfComb = combinations().size();
         double[] yData = new double[numOfRows];
+        //numOfCombinations = combinations().size();
 
         ArrayList<int[]> combinations = combinations();
         ArrayList<double[]> yPredicted = new ArrayList<double[]>();
 
         //all possible predictions
-        for (int i = 0; i < numOfComb; i++){
+        for (int i = 0; i <  numOfComb; i++){
             yPredicted.add(NumberPrediction.predictWithOptions(win, combinations.get(i)));
         }
 
@@ -102,38 +129,31 @@ public class ComparePredictions {
             adjR2[i] = 1 - (SSR[i]*((numOfRows - win) - 1))/(SSTO*((numOfRows - win) - numOfCol - 1));
         }
 
-        double bestAdjR2 = adjR2[0];
+        return adjR2;
+    }
+
+    public static double bestR2() throws IOException {
+
+
+        double bestAdjR2 = adjR2()[0];
+        for (int i = 1; i < adjR2().length; i++){
+            if (adjR2()[i] > bestAdjR2) {
+                bestAdjR2 = adjR2()[i];
+            }
+        }
+        System.out.println(bestAdjR2);
+        return bestAdjR2;
+    }
+
+    static int bestIndex() throws IOException {
+
         int index = 0;
-        for (int i = 1; i < adjR2.length; i++){
-            if (adjR2[i] > bestAdjR2) {
-                bestAdjR2 = adjR2[i];
+        for (int i = 1; i < adjR2().length; i++){
+            if (adjR2()[i] == bestR2()) {
                 index = i;
             }
         }
-
-         System.out.println("The best adjusted R-squared statistic: " + bestAdjR2 + " with the x parameters: ");
-        for (int j = 0; j < combinations.get(index).length; j++) {
-            System.out.print("X"+combinations.get(index)[j] + " ");
-        }
-
+        System.out.println(index);
         return index;
-    }
-
-    //Causes permutations for x parameters. Number of permutations (2^x)-1.
-    public static ArrayList<int[]> permutate(int pos, int maxUsed){
-
-        if (pos == k) {
-            int[] b = new int[a.length];
-            for (int i = 0; i < a.length; i++) {
-                b[i] = a[i];
-            }
-            A.add(b);
-        } else {
-            for (int i = maxUsed + 1; i <= n; i++) {
-                a[pos] = i;
-                permutate(pos + 1, i);
-            }
-        }
-        return A;
     }
 }
