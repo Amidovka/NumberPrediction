@@ -26,7 +26,10 @@ public class ComparePredictions {
 
     public static void main(String[] args) throws IOException {
 
-        GraphDrawing.params = combinations().get(bestIndex());
+
+        double r = bestR2();
+        System.out.println(r);
+        GraphDrawing.params = permutate(0,0).get(bestIndex());
         GraphDrawing.draw();
 
        /* System.out.println("The best adjusted R-squared statistic: " + bestAdjR2 + " with the x parameters: ");
@@ -41,41 +44,44 @@ public class ComparePredictions {
         int numOfCol = Data().get(0).length;
         n = numOfCol - 1;
 
+        ArrayList<int[]> listOfComb = new ArrayList<int[]>();
         for (k = 1; k <= n; k++) {
             a = new int[k];
             permutate(0, 0);
+            //listOfComb.add(permutate(0,0));
         }
 
-        ArrayList<int[]> listOfComb = new ArrayList<int[]>();
+
         for (int i = 0; i < A.size(); i++) {
             listOfComb.add(A.get(i));
         }
-
+        System.out.println("one");
         return listOfComb;
     }
 
     //Causes permutations for x parameters. Number of permutations (2^x)-1.
     static ArrayList<int[]> permutate(int pos, int maxUsed){
 
-        if (pos == k) {
-            int[] b = new int[a.length];
-            for (int i = 0; i < a.length; i++) {
-                b[i] = a[i];
+            if (pos == k) {
+                int[] b = new int[a.length];
+                for (int i = 0; i < a.length; i++) {
+                    b[i] = a[i];
+                }
+                A.add(b);
+            } else {
+                for (int i = maxUsed + 1; i <= n; i++) {
+                    a[pos] = i;
+                    permutate(pos + 1, i);
+                }
             }
-            A.add(b);
-        } else {
-            for (int i = maxUsed + 1; i <= n; i++) {
-                a[pos] = i;
-                permutate(pos + 1, i);
-            }
-        }
+
         return A;
     }
 
 
 
     //Finds best X parameters combination based on the adjusted R-squared statistic
-    public static double[] adjR2() throws IOException {
+    static double[] adjR2() throws IOException {
 
         int numOfRows = Data().size();
         int numOfCol = Data().get(0).length;
@@ -134,11 +140,11 @@ public class ComparePredictions {
 
     public static double bestR2() throws IOException {
 
-
-        double bestAdjR2 = adjR2()[0];
-        for (int i = 1; i < adjR2().length; i++){
-            if (adjR2()[i] > bestAdjR2) {
-                bestAdjR2 = adjR2()[i];
+        double[] allR2 = adjR2();
+        double bestAdjR2 = allR2[0];
+        for (int i = 1; i < allR2.length; i++){
+            if (allR2[i] > bestAdjR2) {
+                bestAdjR2 = allR2[i];
             }
         }
         System.out.println(bestAdjR2);
@@ -147,9 +153,11 @@ public class ComparePredictions {
 
     static int bestIndex() throws IOException {
 
+        double[] allR2 = adjR2();
+        double bestR2 = bestR2();
         int index = 0;
-        for (int i = 1; i < adjR2().length; i++){
-            if (adjR2()[i] == bestR2()) {
+        for (int i = 1; i < allR2.length; i++){
+            if (allR2[i] == bestR2) {
                 index = i;
             }
         }

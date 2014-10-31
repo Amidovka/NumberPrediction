@@ -3,8 +3,6 @@ import sun.misc.Compare;
 
 import java.io.IOException;
 
-import static java.util.EnumSet.allOf;
-import static javafx.beans.binding.Bindings.greaterThan;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.Assert.assertEquals;
