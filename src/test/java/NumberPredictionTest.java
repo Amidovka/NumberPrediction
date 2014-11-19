@@ -32,14 +32,14 @@ public class NumberPredictionTest {
     //time series has period of 3 numbers
     //every period each number is increased by 1
     @Test
-    public void testJumpsRising(){
+    public void testJumpsIncrease(){
         assertThat(NumberPrediction.predictNextDouble(new double[]{1, 2, 3, 2, 3, 4}), is(equalTo(3.0)));
     }
 
     //time series has period of 3 numbers
     //every period each number is multiplied by 1.5
     @Test
-    public void testJumpsRising1(){
+    public void testJumpsIncrease1(){
         assertThat(NumberPrediction.predictNextDouble(new double[]{2, 3, 4, 3, 4.5, 6, 4.5}), is(equalTo(6.75)));
     }
 
@@ -47,7 +47,7 @@ public class NumberPredictionTest {
      * Tests if the difference in actual and predicted value is greater than 2000.
      * Value index to test is 100.
      * "Window" matrix size is 25.
-     * X parameters to analyse have indexes 0, 1, 5.
+     * X parameters to analyse have indexes 1, 3, 5.
      *
      * @throws IOException
      */
