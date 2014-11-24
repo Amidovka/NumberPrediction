@@ -1,13 +1,10 @@
 import org.junit.Test;
-import sun.misc.Compare;
 
 import java.io.IOException;
 
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsEqual.equalTo;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 /**
  * Created by amid on 23.03.14.
@@ -54,10 +51,5 @@ public class NumberPredictionTest {
     @Test
     public void testOptions() throws  IOException{
         assertEquals(3500.0, NumberPrediction.predictWithOptions(25, new int[]{1, 3, 5})[100], 2000.0);
-    }
-
-    @Test
-    public void testRSquared() throws IOException {
-        assertTrue(ComparePredictions.bestR2() <= 1 & ComparePredictions.bestR2() >= 0);
     }
 }

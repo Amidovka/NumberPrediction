@@ -6,4 +6,6 @@ public interface Predictor {
 
     void update(double y, double[] xVector);
 
+    void predictWithOptions(int window, int[] xParam);
+
 }
