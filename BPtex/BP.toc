@@ -1,0 +1,29 @@
+\select@language {czech}
+\contentsline {chapter}{\IeC {\'U}vod}{7}
+\contentsline {chapter}{\numberline {1}Teoretick\IeC {\'a} \IeC {\v c}\IeC {\'a}st}{8}
+\contentsline {section}{\numberline {1.1}\IeC {\v C}asov\IeC {\'e} \IeC {\v r}ady}{8}
+\contentsline {subsection}{\numberline {1.1.1}\IeC {\'U}vod a charakteristika}{8}
+\contentsline {subsection}{\numberline {1.1.2}Anal\IeC {\'y}za \IeC {\v c}asov\IeC {\'y}ch \IeC {\v r}ad}{9}
+\contentsline {subsection}{\numberline {1.1.3}Predikce}{12}
+\contentsline {section}{\numberline {1.2}Regresn\IeC {\'\i } anal\IeC {\'y}za}{12}
+\contentsline {subsection}{\numberline {1.2.1}\IeC {\'U}vod}{12}
+\contentsline {subsection}{\numberline {1.2.2}Line\IeC {\'a}rn\IeC {\'\i } regresn\IeC {\'\i } model}{12}
+\contentsline {subsection}{\numberline {1.2.3}Neline\IeC {\'a}rn\IeC {\'\i } regresn\IeC {\'\i } model}{12}
+\contentsline {section}{\numberline {1.3}Softwarov\IeC {\'a} aplikace}{13}
+\contentsline {subsection}{\numberline {1.3.1}Z\IeC {\'a}kladn\IeC {\'\i } p\IeC {\v r}edpoklady a n\IeC {\'a}stroje}{13}
+\contentsline {subsection}{\numberline {1.3.2}Zp\IeC {\r u}sob realizace}{14}
+\contentsline {chapter}{\numberline {2}Praktick\IeC {\'a} \IeC {\v c}\IeC {\'a}st}{15}
+\contentsline {section}{\numberline {2.1}Chybn\IeC {\'e} pokusy}{15}
+\contentsline {section}{\numberline {2.2}Implementace}{17}
+\contentsline {subsection}{\numberline {2.2.1}Datov\IeC {\'a} vrstva}{17}
+\contentsline {subsection}{\numberline {2.2.2}Aplika\IeC {\v c}n\IeC {\'\i } vrstva}{17}
+\contentsline {subsection}{\numberline {2.2.3}Prezenta\IeC {\v c}n\IeC {\'\i } vrstva}{17}
+\contentsline {section}{\numberline {2.3}Testov\IeC {\'a}n\IeC {\'\i } aplikace}{17}
+\contentsline {subsection}{\numberline {2.3.1}Testovac\IeC {\'\i } data}{17}
+\contentsline {subsection}{\numberline {2.3.2}Zpracov\IeC {\'a}n\IeC {\'\i } a anal\IeC {\'y}za dat}{17}
+\contentsline {subsection}{\numberline {2.3.3}Predikce}{17}
+\contentsline {subsection}{\numberline {2.3.4}Vizualizace}{17}
+\contentsline {chapter}{Z\IeC {\'a}v\IeC {\v e}r}{18}
+\contentsline {chapter}{Literatura}{19}
+\contentsline {chapter}{P\IeC {\v r}\IeC {\'\i }lohy}{20}
+\contentsline {chapter}{\numberline {A}N\IeC {\'a}zev p\IeC {\v r}\IeC {\'\i }lohy}{20}
