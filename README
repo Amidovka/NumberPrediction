@@ -3,3 +3,13 @@ Simple Number Prediction
 For converting log file to csv, bash shell script and log file 
 must be in the same directory. 
 The csv file is already created.  
+
+Pro spouštění BP.tex jde použit přikazový řádek s komandou 
+
+$ latex BP.tex 
+
+pak komandou 
+$ E
+jde ho upravovat.  
+
+Neboli je možno použit textový editor Texmaker. 
