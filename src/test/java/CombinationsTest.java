@@ -17,9 +17,9 @@ public class CombinationsTest {
      */
     @Test
     public void testPermutation() throws IOException {
-        int numOfCol = ComparePredictions.Data().get(0).length; // number of x parameters and y parameter together
+        int numOfCol = RSquaredStatistics.Data().get(0).length; // number of x parameters and y parameter together
         int n = numOfCol - 1; // number of x parameters
 
-        assertTrue((pow(2, n) - 1) == Combinations.combinations().size());
+        assertTrue((pow(2, n) - 1) == Combinations.getCombinations().size());
     }
 }

@@ -63,7 +63,7 @@ public class NumberPrediction {
         OLSMultipleLinearRegression regression = new OLSMultipleLinearRegression();
 
         //cycle for predicting using window
-        double[] yPredicted = new double[N];
+        double[] yPredicted = new double[N];   //part of data to predict
         for (int n = 1; n < N+1; n++){
             //filling window matrix
             for (int i = 0; i < window; i++){
@@ -76,8 +76,6 @@ public class NumberPrediction {
             }
             regression.newSampleData(yWindow, xWindow);
             double[] b = regression.estimateRegressionParameters();
-            double[] u = regression.estimateResiduals();
-            //yPredicted[n-1] = regressionFunctionSingle(xSample[window+n-1], b, u[window-1]);
             yPredicted[n-1] = regressionFunctionSingle(xSample[window+n-1], b);
             //System.out.println("Predicted value Y #" + (window+n) + ": " + yPredicted[n-1]);
         }
@@ -92,42 +90,12 @@ public class NumberPrediction {
      * @param regressionParameters    regression parameters we got from regression\
      * @return                        regression function
      */
-//    public static double regressionFunctionSingle(double[] regressors, double[] regressionParameters, double residual){
-//
-//        double y = 0;
-//        for (int j = 1; j < regressionParameters.length; j++){
-//            y += regressors[j-1]*regressionParameters[j];
-//        }   y += regressionParameters[0] + residual;
-//        return y;
-//    }
-
     public static double regressionFunctionSingle(double[] regressors, double[] regressionParameters){
 
         double y = 0;
         for (int j = 1; j < regressionParameters.length; j++){
             y += regressors[j-1]*regressionParameters[j];
         }   y += regressionParameters[0];
-        return y;
-    }
-
-    /**
-     * Function returns predicted values of Y vector in type of array of double.
-     * Y = X*b + u
-     *
-     * @param regressors               X parameters of data matrix
-     * @param regressionParameters     regression parameters we got from regression
-     * @param residuals                residuals we got from regression
-     * @return                         regression function
-     */
-    public static double[] regressionFunction(double[][] regressors, double[] regressionParameters, double[] residuals){
-
-        double[] y = new double[regressors.length];
-        for (int i = 0; i < regressors.length; i++){
-            for (int j = 1; j < regressionParameters.length; j++){
-                y[i] += regressors[i][j-1]* regressionParameters[j];
-            }   y[i] += regressionParameters[0] + residuals[i];
-
-        }
         return y;
     }
 

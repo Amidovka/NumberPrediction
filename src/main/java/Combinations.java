@@ -17,9 +17,9 @@ public class Combinations {
      *
      * @throws IOException
      */
-    public static ArrayList<int[]> combinations() throws IOException {
+    public static ArrayList<int[]> getCombinations() throws IOException {
 
-        int numOfCol = ComparePredictions.Data().get(0).length; // number of x parameters and y parameter together
+        int numOfCol = RSquaredStatistics.Data().get(0).length; // number of x parameters and y parameter together
         n = numOfCol - 1; // number of x parameters
 
         //cycle for all possible permutations

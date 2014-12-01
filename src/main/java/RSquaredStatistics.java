@@ -8,29 +8,13 @@ import java.util.List;
   * Created by amid on 26.05.14.
   */
 
-public class ComparePredictions {
+public class RSquaredStatistics {
 
-    static int win = 25; //window matrix size
     static int bestIndex; //best index in list of combinations of x params
-    static ArrayList<int[]> combinations;
 
     //Parsing data
     static List<String[]> Data() throws IOException {
         return ReadData.parsedData();
-    }
-
-    public static void main(String[] args) throws IOException {
-
-        double R2 = bestR2();
-        GraphDrawing.params = combinations.get(bestIndex);
-
-        System.out.println( "By using the x parameters: ");
-        for (int j = 0; j < GraphDrawing.params.length; j++) {
-            System.out.println("X" + GraphDrawing.params[j] + " ");
-        }
-        System.out.println("We got the best adjusted R-squared statistic: " + R2);
-
-        GraphDrawing.draw();
     }
 
     /**
@@ -40,20 +24,22 @@ public class ComparePredictions {
      * @return double[] of adjusted R-squared statistics
      * @throws IOException
      */
-    static double[] adjR2() throws IOException {
+     static double[] calculateR2Statistics() throws IOException {
+
+        int win = 25;    //window matrix size
 
         int numOfRows = Data().size();
         int numOfCol = Data().get(0).length;
         double[] yData = new double[numOfRows];
         ArrayList<double[]> yPredicted = new ArrayList<double[]>();
 
-        combinations = Combinations.combinations();
+        ArrayList<int[]> combinations = Combinations.getCombinations();
         int numOfComb = combinations.size();
 
         //all possible predictions
-        for (int i = 0; i <  numOfComb; i++){
-            yPredicted.add(NumberPrediction.predictWithOptions(win, combinations.get(i)));
-        }
+         for (int[] combination : combinations) {
+             yPredicted.add(NumberPrediction.predictWithOptions(win, combination));
+         }
 
         //real Y values
         for(int i = 0; i < numOfRows; i++){
@@ -97,22 +83,23 @@ public class ComparePredictions {
     }
 
     /**
-     * Finds the best R-squared statistic by comparing statistics.
+     * Finds the best adjusted R-squared statistic by comparing statistics.
      * Defines the best index of combination in combination list.
      *
      * @return the best R-squared statistic
      * @throws IOException
      */
-    public static double bestR2() throws IOException {
+     static double bestR2() throws IOException {
 
-        double[] allR2 = adjR2();
-        double bestAdjR2 = allR2[0];
+        double[] allR2 = calculateR2Statistics();
+        double bestR2 = allR2[0];
         for (int i = 1; i < allR2.length; i++){
-            if (allR2[i] > bestAdjR2) {
-                bestAdjR2 = allR2[i];
+            if (allR2[i] > bestR2) {
+                bestR2 = allR2[i];
                 bestIndex = i;
             }
         }
-        return bestAdjR2;
+         return bestR2;
     }
+
 }
