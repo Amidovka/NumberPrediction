@@ -63,7 +63,7 @@
 \newcommand{\nazevcz}{Modely zátěže výpočetních serverů}        % zde VYPLŇTE český název práce (přesně podle zadání!)
 \newcommand{\nazeven}{Computational requirements modelling}     % zde VYPLŇTE anglický název práce (přesně podle zadání!)
 \newcommand{\autor}{Dmitriy Burdin}           % zde VYPLŇTE své jméno a příjmení
-\newcommand{\rok}{2014}          % zde VYPLŇTE měsíc a rok odevzdání, např. May 2011
+\newcommand{\rok}{Červenec 2015}          % zde VYPLŇTE měsíc a rok odevzdání, např. May 2011
 \newcommand{\vedouci}{Ing. Jan Doubek}         % zde VYPLŇTE jméno a příjmení vedoucího práce, včetně titulů, např. Doc. Ing. Ivo Malý, Ph.D.
 
 \newcommand{\druh}{BAKALÁŘSKÁ PRÁCE}
@@ -286,7 +286,7 @@ přesahující tyto hranice označovány jako odlehlé a jsou zakresleny jako sa
 
 \begin{figure}
   \centering
-  \includegraphics[width=15cm]{/home/amid/BP/psani/moje/users.png}
+  \includegraphics[width=15cm]{pictures/users.png}
   \caption{Počet uživatelů Internetu na 100 obyvatel ve světě. \newline(Příklad spojnicového grafu se třemi časovými řadami)}
   \label{fig:řada}
 \end{figure}
@@ -363,40 +363,28 @@ použili.
 
 \newpage
 \section{Softwarová aplikace}
-\subsection{Základní předpoklady a nástroje}
-Softwarová aplikace, která by měla být užitečnou pomůckou pro dosažení cíle práce, může být také považována za výsledek této práce. Její podstatou je možnost nejdřív načíst datový soubor, poté ho zanalyzovat regresní metodou, určit potřebnou informaci ze souboru, použít dosažené výsledky pro predikci budoucich hodnot a vykreslit vývoj nejlépe predikovaných hodnot ve tvaru grafu časových řad. 
-
-Jako prvek dat, se kterými pracují výpočetní servery, dostal jsem od svého vedoucího \textit{log file} (nebo taky \textit{žurnál}). Log je to většinou textový soubor s příponou \textit{.log}, který obsahuje záznam činností nějakého programu nebo procesu. Tento záznam je ve tvaru posloupnosti jednotlivých kroků přislušného běhu programu, tj. skládá se z informace o tom jak, kdy, čím nebo kým byla využívána konkretní aplikace, jaké zatížení bylo vyvoláno nebo kolik času trvalo aby se příslušná aplikace proběhla. Používájí se logy pro kontrolu procesů a zjištění přesné příčiny nějaké chyby, pokud k takové došlo. Z jejich záznamů je možno určit co přivedlo k chybě, jaký měla vliv tato chyba a jaké pak měl běžící proces důsledky. 
-
-Daný soubor skládá se z dostatečně velkého množství řádků, v každém ze kterých zaznamenávano několik parametrů. Tyto parametry obsahují svou hodnotu a/nebo svůj název. 
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=15cm]{/home/amid/BP/obrazky/log.png}
-  \caption{Log soubor (malá část)}
-  \label{fig:log}
-\end{figure}
-
-Pro pohodlnější práci se souborem a odstranění nepotřebných parametrů (např. čas, datum) rozhodl jsem se překonvertovat log soubor do souborového formatu \textit{CSV} 	(z angl. \textit{comma-separated values}, nebo hodnoty oddělené čárkami). Je to jeden z nejednoduších formatů pro práci s tabulkovými daty. Považuji vybraný format za vhodný, protože má podobnou strukturu jako u log souboru a je velice používán pro výměnu informací mezi různými systémy. Také dost důležité je, že se sloupce CSV souboru můžou tvářit jako časové řady, které se hodně využívají v regresní analýze.   
-
-\begin{figure}
-  \centering
-  \includegraphics[width=15cm]{/home/amid/BP/obrazky/csv.png}
-  \caption{CSV soubor (malá část)}
-  \label{fig:csv}
-\end{figure}
-
-
-pokračování nasleduje..... popis nástrojů: Java, IntellijIdea, Github, test-driven development.  
-
-
 \subsection{Způsob realizace}
 
 Po důkladném seznamením s problematikou práce a se související s ní teorií byl stanoven způsob dosažení cílů práce, tj. způsob její praktické realizace. Bylo navrhnuto použít již existující nebo vytvořit svou knihovnu v jazyce Java pro implementaci metod regresní analýzy. Pomocí této analýzy zjistit určité parametry v datech, které nejméně nebo nejvíc ovlivňují ostatní parametry, a jestli mezi sebou vůbec mají nějakou souvislost. Potom na základě těchto údajů, s úvahou o výsledcích regresní analýzy udělat nejlepší predikci budoucích hodnot určitého parametru. V daném případě jde o parametr \textit{Computation time} (z angl. doba trvání výpočtu), jelikož tento parametr vyvolává zatížení, snížení kterého je vlastně úkolem této práce. 
 
-
 mozna jeste obrazek, ukazujici tento proces realizace. 1 - 2 - 3 -...
 
+\subsection{Základní předpoklady a nástroje}
+Softwarová aplikace, která by měla být užitečnou pomůckou pro dosažení cíle práce, může být také považována za výsledek této práce. Její podstatou je možnost nejdřív načíst datový soubor, poté ho zanalyzovat regresní metodou, určit potřebnou informaci ze souboru, použít dosažené výsledky pro predikci budoucich hodnot a vykreslit vývoj nejlépe predikovaných hodnot ve tvaru grafu časových řad. 
+
+Jako programovací nástroj jsem vybral objektově orientovaný programovací jazyk \textit{Java}. Jedná se o populární a docela starý programovací jazyk jehož historie sahá do roku 1990, kdy ve firmě Sun Microsystems začali pracovat na jeho vytvoření. Na začátku to byl efektivní a jednoduchý jazyk určený pro spotřební elektroniku. S postupem času a s rostoucím užitím internetu Java se stal jedním z nejpoužívanějších programovacích jazyků ve světě. Hlavními důvody proč jsem zvolil pravě tento jazyk jsou: 
+
+\begin{itemize}
+\item výkonnost a jednoduchost syntaxe
+\item široká použitelnost
+\item přenositelnost a nezávislost na architektuře nebo na operačním systému
+\end{itemize} 
+
+Pro snadnější programatorskou práci se hojně využívá \textit{vývojové prostředí} neboli \textit{IDE} (IDE - \textit{Integrated Development Environment}). Je to vlastně soubor nástrojů pro přehlednější přístup k zdrojovému kódu, ladění programů, hledání a opravu chyb a další užitečné věci pro programování. Skládá se vývojové prostředí většinou z textového editoru, kompilátoru a debuggeru. 
+
+Pro programovací jazyk Java se používá několik různých IDE. Liší se podle nabídnutých vlastností a možností. Pro svou práci jsem zvolil vývojové prostředí \textit{IntelliJ IDEA}. 
+
+Pro lepší koordinaci se svým vedoucím během práce použil jsem webový nástroj \textit{GitHub}. Je to služba neboli prostředek pro spolupraci vývojářů, kteři používají verzovací nástroj Git. Využívá se pro sdílení a společnou práci na softwarových projektech. Tato služba poskytuje možnost sdílet, upravovat projekty jiných programatorů, což vede k lepším výsledkům a rychlejšímu ladění kódu. 
 
 \chapter{Praktická část}
 \section{Chybné pokusy}
@@ -416,7 +404,7 @@ Tato sbírka nástrojů pro analýzu dat je napsaná v jazyce Java a proto jsem 
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=15cm]{/home/amid/BP/obrazky/weka.png}
+  \includegraphics[width=15cm]{pictures/weka.png}
   \caption{Datový soubor otevřený v uživatelském rozhraní Weka}
   \label{fig:weka}
 \end{figure}
@@ -428,9 +416,29 @@ Encog je framework pro strojové učení (\textit{Machine Learning}), což je ob
 Tento framework má hodně technik zahrňujících regresní modely, které jsem pravě potřeboval. Komplikace jeho využití byla v tom, že zaklád tohoto frameworku je vytvořen za použití neuronových sítí. Jak jsem zjistil později naučení těchto technologií je časově náročné. Kvůli tomu jsem se rozhodl nechat tento nápad realizace programu a hledat jiné řešení. 
 
 
-
+\newpage
 \section{Implementace}
 \subsection{Datová vrstva}
+Jako prvek dat, se kterými pracují výpočetní servery, dostal jsem od svého vedoucího \textit{log file} (nebo taky \textit{žurnál}). Log je to většinou textový soubor s příponou \textit{.log}, který obsahuje záznam činností nějakého programu nebo procesu. Tento záznam je ve tvaru posloupnosti jednotlivých kroků přislušného běhu programu, tj. skládá se z informace o tom jak, kdy, čím nebo kým byla využívána konkretní aplikace, jaké zatížení bylo vyvoláno nebo kolik času trvalo aby se příslušná aplikace proběhla. Používájí se logy pro kontrolu procesů a zjištění přesné příčiny nějaké chyby, pokud k takové došlo. Z jejich záznamů je možno určit co přivedlo k chybě, jaký měla vliv tato chyba a jaké pak měl běžící proces důsledky. 
+
+Daný soubor skládá se z dostatečně velkého množství řádků, v každém ze kterých zaznamenávano několik parametrů. Tyto parametry obsahují svou hodnotu a/nebo svůj název. 
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=15cm]{pictures/log.png}
+  \caption{Log soubor (fragment)}
+  \label{fig:log}
+\end{figure}
+
+Pro pohodlnější práci se souborem a odstranění nepotřebných parametrů (např. čas, datum) rozhodl jsem se překonvertovat log soubor do souborového formatu \textit{CSV} 	(z angl. \textit{comma-separated values}, nebo hodnoty oddělené čárkami). Je to jeden z nejednoduších formatů pro práci s tabulkovými daty. Považuji vybraný format za vhodný, protože má podobnou strukturu jako u log souboru a je velice používán pro výměnu informací mezi různými systémy. Také dost důležité je, že se sloupce CSV souboru můžou tvářit jako časové řady, které se hodně využívají v regresní analýze.   
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=15cm]{pictures/csv.png}
+  \caption{CSV soubor (fragment)}
+  \label{fig:csv}
+\end{figure}
+
 \subsection{Aplikační vrstva}
 \subsection{Prezentační vrstva}
 
