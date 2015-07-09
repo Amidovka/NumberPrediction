@@ -1,182 +1,214 @@
-import com.amidovka.numberprediction.ReadData;
+import org.apache.commons.math3.stat.correlation.PearsonsCorrelation;
 import org.apache.commons.math3.stat.regression.OLSMultipleLinearRegression;
-import org.apache.commons.math3.stat.regression.SimpleRegression;
 
-import java.io.*;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
-
-import static java.lang.Math.pow;
-
-/**
- * Created by amid on 10.03.14.
- */
 
 public class NumberPrediction {
 
+    double[][] xData;
+    double[] yData;
+    int numOfRows;
+    int numOfCol;
+    static double[] regressionFunc;
+
+    double bestR2;
+    int bestCombinationIndex;
+
+    static int n, k;
+    static int[] a;
+    static ArrayList<int[]> combinations = new ArrayList<int[]>();
+
+    public static void main(String[] args) throws IOException {
+
+        int[] xParams = {1, 2, 3, 4, 5, 6, 7, 8};
+
+        NumberPrediction prediction = new NumberPrediction();
+        prediction.fillMatrix(xParams);
+
+        double[][] correlationMatrix;
+        PearsonsCorrelation correlation = new PearsonsCorrelation();
+        correlation.computeCorrelationMatrix(prediction.xData);
+        correlationMatrix = correlation.computeCorrelationMatrix(prediction.xData).getData();
+
+        for (int i = 0; i < 8; i++){
+            System.out.print("x"+(i+1));
+            for (int j = 0; j <= i; j++){
+                System.out.printf(" " + "%.4f", correlationMatrix[i][j]);
+            }
+            System.out.println();
+        }
+        for (int i = 1; i < 10; i++){
+            System.out.print("    " + "x"+i);
+        }
+        System.out.println();
+
+        ArrayList<int[]> list;
+        list = prediction.getCombinations();
+        double[] R2;
+        R2 = prediction.getRSquaredStatistics(list);
+        System.out.println();
+
+        System.out.println("Metoda výběru nejlepší podmnožiny: ");
+        System.out.print("Nejlepší koeficient determinace = ");
+        System.out.printf("%.4f", prediction.bestR2);
+        System.out.println();
+        //System.out.println("Nejlepší index kombinace vysvětlujících proměnných = " + prediction.bestCombinationIndex);
+
+        System.out.println("Vysvětlující proměnné: ");
+        for (int i = 0; i < list.get(prediction.bestCombinationIndex).length; i++){
+            System.out.print("x"+list.get(prediction.bestCombinationIndex)[i] + " ");
+        }
+        System.out.println();
+        System.out.println();
+
+        System.out.println("Určení koeficientů podle korelační matice: ");
+        int[] bestXParams = {3, 4};
+        System.out.println("Nejlepší vysvětlující proměnné podle korelační matice: " + "x_3, " + "x_4");
+
+        double[] regParams = new double[3];
+
+        System.out.println("Regresní koeficienty nejlepších vysvětlujících proměnných: ");
+        for (int i = 0; i < bestXParams.length+1; i++){
+            regParams[i] = prediction.regressionParameters(bestXParams)[i];
+            System.out.print("b_"+i+" = " + prediction.regressionParameters(bestXParams)[i] + " ");
+        }
+
+        regressionFunc = new double[prediction.numOfRows];
+        for (int i = 0; i < prediction.numOfRows; i++) {
+            regressionFunc[i] = regParams[0] + (i+1)*(regParams[1]+regParams[2]);
+        }
+
+        GraphDrawing.draw();
+    }
+
     /**
-     * Returns a value with the certain index.
-     * The value is predicted using changeable auxiliary matrix (window).
-     * Parameters of variable x are chosen to define relations.
      *
-     * @param window    size of a helping "window" matrix
-     * @param xParam    x parameters to analyse
-     * @return          predicted value
-     * @throws IOException
+     * @return  List of String from data read
      */
+    public List<String[]> createMatrix() {
 
-    public static double[] predictWithOptions(int window, int[] xParam) throws IOException{
+        List<String[]> Data = null;
 
-        List<String[]> Data = ReadData.parsedData();
-
-        int numOfRows = Data.size();
-        int numOfCol = Data.get(0).length;
-
-        double[][] xData = new double[numOfRows][numOfCol-1];
-        double[] yData = new double[numOfRows];
-
-        //making matrix from data read
-        for(int i = 0; i < numOfRows; i++){
-            for (int j = 0; j < numOfCol - 1; j++) {
-                xData[i][j] = Double.parseDouble(Data.get(i)[j]);
-            }
-            yData[i] = Double.parseDouble(Data.get(i)[numOfCol - 1]);
+        try {
+            Data = ReadData.parsedData();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
 
-        //making xSample matrix with certain x parameters
-        double[][] xSample = new double[xData.length][xParam.length];
-        double[] ySample = new double[yData.length];
 
-        for (int i = 0; i < xData.length; i++) {
-            for (int j = 0; j < xParam.length; j++) {
-                xSample[i][j] = xData[i][xParam[j] - 1];
+        return Data;
+    }
+
+    /**
+     * creates separate matrix of X params
+     * and vector of y values
+     *
+     * @param xParameters
+     */
+    void fillMatrix(int[] xParameters) {
+
+        List<String[]> matrix;
+        NumberPrediction prediction = new NumberPrediction();
+        matrix = prediction.createMatrix();
+
+        numOfRows = matrix.size();
+        numOfCol = matrix.get(0).length;
+
+        xData = new double[numOfRows][xParameters.length];
+        yData = new double[numOfRows];
+
+        for (int i = 0; i < numOfRows; i++) {
+            for (int j = 0; j < xParameters.length; j++) {
+                xData[i][j] = Double.parseDouble(matrix.get(i)[xParameters[j]-1]);
             }
-            ySample[i] = yData[i];
+            yData[i] = Double.parseDouble(matrix.get(i)[numOfCol - 1]);
         }
+    }
 
-        int dataSize = xSample.length;
-        int N = dataSize - window;
-
-        //creating window matrix
-        double[][] xWindow = new double[window][xParam.length];
-        double[] yWindow = new double[window];
+    /**
+     * defines the best R2 statistics
+     * and index of X params combination with
+     * this R2 statistics
+     *
+     * @param list
+     * @return  double[] of all R2 statistics
+     */
+    double[] getRSquaredStatistics(ArrayList<int[]> list){
 
         OLSMultipleLinearRegression regression = new OLSMultipleLinearRegression();
+        NumberPrediction prediction = new NumberPrediction();
+        double[] allRSquaredStatistics = new double[list.size()];
 
-        //cycle for predicting using window
-        double[] yPredicted = new double[N];   //part of data to predict
-        for (int n = 1; n < N+1; n++){
-            //filling window matrix
-            for (int i = 0; i < window; i++){
-                xWindow[i] = xSample[i+n-1];
-                yWindow[i] = ySample[i+n-1];
-            }
-            //using previous predicted value
-            if (n != 1){
-                yWindow[window-1] = yPredicted[n-2];
-            }
-            regression.newSampleData(yWindow, xWindow);
-            double[] b = regression.estimateRegressionParameters();
-            yPredicted[n-1] = regressionFunctionSingle(xSample[window+n-1], b);
-            //System.out.println("Predicted value Y #" + (window+n) + ": " + yPredicted[n-1]);
+        for (int i = 0; i < list.size(); i++){
+            prediction.fillMatrix(list.get(i));
+            regression.newSampleData(prediction.yData, prediction.xData);
+            allRSquaredStatistics[i] = regression.calculateRSquared();
         }
-        return yPredicted;
+
+        bestR2 = allRSquaredStatistics[0];
+        for (int i = 1; i < allRSquaredStatistics.length; i++){
+            if (allRSquaredStatistics[i] > bestR2) {
+                bestR2 = allRSquaredStatistics[i];
+                bestCombinationIndex = i;
+            }
+        }
+
+        return allRSquaredStatistics;
     }
 
     /**
-     * Function returns single predicted value of Y for certain row index i.
-     * Y(i) = X(i)*b + u(i)
      *
-     * @param regressors              X parameters of a row with index i
-     * @param regressionParameters    regression parameters we got from regression\
-     * @return                        regression function
+     * @param bestParameters
+     * @return  regression parameters
      */
-    public static double regressionFunctionSingle(double[] regressors, double[] regressionParameters){
+    double[] regressionParameters(int[] bestParameters){
 
-        double y = 0;
-        for (int j = 1; j < regressionParameters.length; j++){
-            y += regressors[j-1]*regressionParameters[j];
-        }   y += regressionParameters[0];
-        return y;
+        NumberPrediction prediction = new NumberPrediction();
+        prediction.fillMatrix(bestParameters);
+        OLSMultipleLinearRegression regression = new OLSMultipleLinearRegression();
+        regression.newSampleData(prediction.yData, prediction.xData);
+        double[] params = regression.estimateRegressionParameters();
+
+        return params;
     }
 
-    public static double predictNextDouble(double[] timeSerie) {
+    /**
+     *
+     * @return all the x parameters combinations
+     */
+    ArrayList<int[]> getCombinations() {
 
-        SimpleRegression regression = new SimpleRegression();
-        double[] x = new double[timeSerie.length];
-        double[] yData = new double[timeSerie.length];
-        int period = definePeriod(timeSerie);
-
-        //reading data
-        for (int i = 0; i < period; i++) {
-            x[i] = i + 1;
-            yData[i] = timeSerie[i];
-            regression.addData(x[i], yData[i]);
+        NumberPrediction prediction = new NumberPrediction();
+        n = prediction.createMatrix().get(0).length - 1; //number of all x params
+        for (k = 1; k < n+1; k++){
+            a = new int[k];
+            permutation(0,0);
         }
+        return combinations;
+    }
 
-        double output;
+    /**
+     * Algorithm for permutations
+     * without repeats
+     *
+     * @param pos
+     * @param maxUsed
+     */
+    static void permutation(int pos, int maxUsed) {
 
-        //If timeSerie has one period, next value is predicted using regression.
-        //If timeSerie has more than one period, next value is derived from the data read.
-        if (period == timeSerie.length) {
-            output = regression.predict(period + 1);
-            return output;
+        if (pos == k) {
+            int[] b = new int[a.length];
+            for (int i = 0; i < a.length; i++) {
+                b[i] = a[i];
+            }
+            combinations.add(b);
         } else {
-           return NumberPrediction.predictComplicatedSerie(timeSerie);
-        }
-    }
-
-    public static double predictComplicatedSerie(double[] timeSerie) {
-
-        int period = definePeriod(timeSerie);
-        double sum = 0;
-        double product = 0;
-        double output = 0;
-
-        int numSteps = timeSerie.length - period;       //number of steps while defining typ of change
-        int numPeriods = ((timeSerie.length) / period);   //number of periods
-
-        for (int i = 0; i < numSteps; i++) {
-            product += ((timeSerie[i + period])/timeSerie[i]);   //sum of all multiplicators
-            sum += (timeSerie[i + period] - timeSerie[i]);     //sum of all differences
-        }
-        if (sum == 0) {  //constant timeSeries
-            output = timeSerie[timeSerie.length % period];
-        }   else {       //not constant timeSeries
-        for (int i = 0; i < numSteps; i++) {
-            if ((timeSerie[i + period] - timeSerie[i]) == sum/numSteps) {
-                output = timeSerie[timeSerie.length % period] + (sum/numSteps)*numPeriods;
-            }   else{
-                output = timeSerie[timeSerie.length % period]*pow((product/numSteps), numPeriods);
-                break;
+            for(int i = maxUsed+1; i <= n; i++) {
+                a[pos] = i;
+                permutation(pos+1,i);
             }
-        }
-        }
-
-        return output;
-        }
-
-    //defining period of timeSerie
-    //period is a max value index + 1
-    public static int definePeriod(double[] timeSerie){
-
-        double max = timeSerie[0];
-        int maxInd = 0;
-
-        //cycle for finding maximum value and it's index in timeSerie
-        for (int i = 0; (i < timeSerie.length) && (timeSerie[i] >= max); i++){
-            max = timeSerie[i];
-            maxInd = i;
-        }
-        //if the first number is maximum and timeSerie is descending
-        if (maxInd == 0){
-            for (int i = 1; (i < timeSerie.length) && (timeSerie[i] < max); i++){
-                maxInd = i;
-                max = timeSerie[i];
-            }
-            return maxInd +1;
-        }
-        else{
-            return maxInd+1;
         }
     }
 }

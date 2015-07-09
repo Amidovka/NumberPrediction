@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.10.12)  13 DEC 2014 06:20
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.10.12)  8 JUL 2015 07:21
 entering extended mode
  %&-line parsing enabled.
 **BP.tex
@@ -417,21 +417,104 @@ Package: titlesec 2007/08/12 v2.8 Sectioning titles
 \titlewidth=\dimen119
 \titlewidthlast=\dimen120
 \titlewidthfirst=\dimen121
-) (./BP.aux)
+)
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip51
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texmf-texlive/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks21
+\ex@=\dimen122
+))
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen123
+)
+(/usr/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count96
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count97
+\leftroot@=\count98
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count99
+\DOTSCASE@=\count100
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box28
+\strutbox@=\box29
+\big@size=\dimen124
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count101
+\c@MaxMatrixCols=\count102
+\dotsspace@=\muskip10
+\c@parentequation=\count103
+\dspbrk@lvl=\count104
+\tag@help=\toks22
+\row@=\count105
+\column@=\count106
+\maxfields@=\count107
+\andhelp@=\toks23
+\eqnshift@=\dimen125
+\alignsep@=\dimen126
+\tagshift@=\dimen127
+\tagwidth@=\dimen128
+\totwidth@=\dimen129
+\lineht@=\dimen130
+\@envbody=\toks24
+\multlinegap=\skip52
+\multlinetaggap=\skip53
+\mathdisplay@stack=\toks25
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(/usr/share/texmf-texlive/tex/latex/listings/listings.sty
+\lst@mode=\count108
+\lst@gtempboxa=\box30
+\lst@token=\toks26
+\lst@length=\count109
+\lst@currlwidth=\dimen131
+\lst@column=\count110
+\lst@pos=\count111
+\lst@lostspace=\dimen132
+\lst@width=\dimen133
+\lst@newlines=\count112
+\lst@lineno=\count113
+\lst@maxwidth=\dimen134
+
+(/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+\c@lstnumber=\count114
+\lst@skipnumbers=\count115
+\lst@framebox=\box31
+)
+(/usr/share/texmf-texlive/tex/latex/listings/listings.cfg
+File: listings.cfg 2007/02/22 1.4 listings configuration
+))
+Package: listings 2007/02/22 1.4 (Carsten Heinz)
+ (./BP.aux)
 \openout1 = `BP.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
 
 *geometry auto-detecting driver*
 *geometry detected driver: pdftex*
@@ -476,47 +559,37 @@ driver: pdftex
 -----------------------
 (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count96
-\scratchdimen=\dimen122
-\scratchbox=\box28
-\nofMPsegments=\count97
-\nofMParguments=\count98
-\everyMPshowfont=\toks21
-\MPscratchCnt=\count99
-\MPscratchDim=\dimen123
-\MPnumerator=\count100
-\everyMPtoPDFconversion=\toks22
+\scratchcounter=\count116
+\scratchdimen=\dimen135
+\scratchbox=\box32
+\nofMPsegments=\count117
+\nofMParguments=\count118
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count119
+\MPscratchDim=\dimen136
+\MPnumerator=\count120
+\everyMPtoPDFconversion=\toks28
 )
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 91.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 91.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 91.
+\c@lstlisting=\count121
  <lev.pdf, id=1, 91.34125pt x 69.25874pt>
 File: lev.pdf Graphic file (type pdf)
- <use lev.pdf>
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 110.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 110.
- [1
+ <use lev.pdf> [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./lev.pdf>] [2]
-Overfull \hbox (22.0pt too wide) in paragraph at lines 157--158
+Overfull \hbox (22.0pt too wide) in paragraph at lines 159--160
 [][] 
  []
 
 [3] [4]
-\odstavecbox=\box29
-\vyskaodstavce=\skip51
+\odstavecbox=\box33
+\vyskaodstavce=\skip54
 
-Overfull \hbox (34.89583pt too wide) in paragraph at lines 191--211
+Overfull \hbox (34.89583pt too wide) in paragraph at lines 193--213
 [][] 
  []
 
 [5]
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 216.
+LaTeX Font Info:    Try loading font information for T1+cmss on input line 218.
 
  (/usr/share/texmf-texlive/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
@@ -529,19 +602,22 @@ Class scrreprt Info: You've told me to use the font selection of the element
 (scrreprt)            on input line 3.
 Class scrreprt Info: You've told me to use the font selection of the element
 (scrreprt)           `sectioning' that is an alias of element `disposition'
-(scrreprt)            on input line 15.
+(scrreprt)            on input line 14.
+Class scrreprt Info: You've told me to use the font selection of the element
+(scrreprt)           `sectioning' that is an alias of element `disposition'
+(scrreprt)            on input line 23.
+Class scrreprt Info: You've told me to use the font selection of the element
+(scrreprt)           `sectioning' that is an alias of element `disposition'
+(scrreprt)            on input line 24.
+Class scrreprt Info: You've told me to use the font selection of the element
+(scrreprt)           `sectioning' that is an alias of element `disposition'
+(scrreprt)            on input line 25.
 Class scrreprt Info: You've told me to use the font selection of the element
 (scrreprt)           `sectioning' that is an alias of element `disposition'
 (scrreprt)            on input line 26.
 Class scrreprt Info: You've told me to use the font selection of the element
 (scrreprt)           `sectioning' that is an alias of element `disposition'
 (scrreprt)            on input line 27.
-Class scrreprt Info: You've told me to use the font selection of the element
-(scrreprt)           `sectioning' that is an alias of element `disposition'
-(scrreprt)            on input line 28.
-Class scrreprt Info: You've told me to use the font selection of the element
-(scrreprt)           `sectioning' that is an alias of element `disposition'
-(scrreprt)            on input line 29.
 )
 \tf@toc=\write3
 \openout3 = `BP.toc'.
@@ -553,121 +629,171 @@ Class scrreprt Info: You've told me to use the font selection of the element
 ]
 Kapitola 1.
 
-Overfull \hbox (2.40767pt too wide) in paragraph at lines 236--237
+Class scrreprt Warning: \float@addtolists detected!
+(scrreprt)              You should use the features of package `tocbasic'
+(scrreprt)              instead of \float@addtolists.
+(scrreprt)              Support for \float@addtolists may be removed from
+(scrreprt)              `scrreprt' soon .
+
+
+Overfull \hbox (2.40898pt too wide) in paragraph at lines 241--242
 []\T1/cmr/m/n/12 Jak jiº bylo zmín¥no, £asové °ady jsou zák-lad-ním zk-oumaným 
 prvkem p°i analýze
  []
 
-
-Overfull \hbox (24.61917pt too wide) in paragraph at lines 238--239
-\T1/cmr/m/n/12 spot°eba surovin. V tech-nice £asové °ady mo-hou p°ed-stavo-vat 
-pr·b¥h signálu, spolehlivost
- []
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 244.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 249.
 
 (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 244.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 249.
  [8
 
 ]
+Overfull \hbox (5.22197pt too wide) in paragraph at lines 261--262
+\T1/cmr/m/n/12 generována zná-mou matem-at-ickou funkcí. D·sled-kem je srov-nat
+eln¥ jednoduchá
+ []
+
+
+Overfull \hbox (0.77725pt too wide) in paragraph at lines 275--276
+\T1/cmr/m/n/12 ob-sahuje po-drob-n¥j²í charak-ter-is-tiku £asové °ady. Po-mocí 
+to-hoto typu grafu je moºné
+ []
+
 <pictures/users.png, id=42, 803.0pt x 437.635pt>
 File: pictures/users.png Graphic file (type png)
  <use pictures/users.png>
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9]
-[10 <./pictures/users.png>]
-Overfull \hbox (13.03694pt too wide) in paragraph at lines 317--318
-[]\T1/cmr/m/it/12 Sezónní sloºka \T1/cmr/m/n/12 ($\OML/cmm/m/it/12 S[]$\T1/cmr/
-m/n/12 ) vy-jad°uje pravidelné kolísání okolo trendu v rámci kalendá°ního
+[10 <./pictures/users.png>] [11] [12]
+<pictures/primka.png, id=62, 709.65125pt x 415.5525pt>
+File: pictures/primka.png Graphic file (type png)
+
+<use pictures/primka.png> [13 <./pictures/primka.png (PNG copy)>]
+<pictures/krivka.png, id=67, 709.65125pt x 415.5525pt>
+File: pictures/krivka.png Graphic file (type png)
+
+<use pictures/krivka.png> [14 <./pictures/krivka.png (PNG copy)>]
+<pictures/odchylky.png, id=72, 231.86626pt x 213.04594pt>
+File: pictures/odchylky.png Graphic file (type png)
+
+<use pictures/odchylky.png> [15 <./pictures/odchylky.png>] [16]
+Overfull \hbox (6.42363pt too wide) in paragraph at lines 533--534
+[]\T1/cmr/m/n/12 pro p°í-pad s p°eur£eným re-gres-ním mod-elem m·ºeme vy°a-dit 
+zbyte£né vysv¥tlu-
  []
 
-
-Overfull \hbox (9.32536pt too wide) in paragraph at lines 341--345
-[]\T1/cmr/m/n/12 Po mul-ti-p-lika-tivní dekom-pozici je tren-dová sloºka £asové
- °ady ve ste-jných m¥rných
+[17] [18] [19]
+Overfull \hbox (3.53801pt too wide) in paragraph at lines 607--608
+\T1/cmr/m/it/12 IDE \T1/cmr/m/n/12 (IDE - \T1/cmr/m/it/12 In-te-grated De-vel-o
+p-ment En-vi-ron-ment\T1/cmr/m/n/12 ). Je to sou-bor nástroj· pro p°ehled-
  []
 
-
-Overfull \hbox (0.6734pt too wide) in paragraph at lines 341--345
-\T1/cmr/m/n/12 jed-notkách jako p·vodní £asová °ada, ale os-tatní sloºky £asové
- °ady (cyk-lická, sezónní
- []
-
-
-Overfull \hbox (5.1723pt too wide) in paragraph at lines 341--345
-\T1/cmr/m/n/12 a nesys-tem-at-ická) jsou v rel-a-tivním vyjád°ení. Mul-ti-p-lik
-a-tivní dekom-poz-ice se pouºívá
- []
-
-[11] [12] [13] [14]
+[20]
 Kapitola 2.
-<pictures/weka.png, id=67, 770.88pt x 578.16pt>
+<pictures/weka.png, id=96, 770.88pt x 578.16pt>
 File: pictures/weka.png Graphic file (type png)
  <use pictures/weka.png>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[15
+[21
 
-] [16 <./pictures/weka.png>]
-<pictures/log.png, id=75, 1315.91624pt x 633.36626pt>
+] [22 <./pictures/weka.png>]
+<pictures/log.png, id=104, 826.08624pt x 257.96375pt>
 File: pictures/log.png Graphic file (type png)
  <use pictures/log.png>
-<pictures/csv.png, id=76, 873.2625pt x 483.8075pt>
+<pictures/csv.png, id=105, 766.865pt x 355.3275pt>
 File: pictures/csv.png Graphic file (type png)
  <use pictures/csv.png>
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+[23 <./pictures/log.png>]
+Overfull \hbox (3.0247pt too wide) in paragraph at lines 682--697
+[][] 
+ []
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[24 <./pictures/csv.png>] [25]
+Overfull \hbox (14.50908pt too wide) in paragraph at lines 763--764
+\T1/cmr/m/n/12 popisu-jící ur£itý pro-ces se skládá z osmi nezávisle prom¥n-nýc
+h a jedné závisle prom¥nné: 
+ []
 
- [17 <./pictures/log.png>] [18 <./pictures/csv.png>] [19
+[26]
+Overfull \hbox (12.06642pt too wide) in paragraph at lines 813--814
+[]\T1/cmr/m/n/12 Pro re-al-izaci dosaºených výsledk· by-chom m¥li ne-jd°ív ses-
+tavit re-gresní odhadovou
+ []
 
-] [20
+<pictures/regresniFunkce.png, id=121, 1011.78pt x 501.875pt>
+File: pictures/regresniFunkce.png Graphic file (type png)
+
+<use pictures/regresniFunkce.png> [27 <./pictures/regresniFunkce.png>] [28]
+Overfull \hbox (0.28322pt too wide) in paragraph at lines 859--860
+\T1/cmr/m/n/12 sobem ob-je-vit mul-ti-ko-lin-ear-itu, coº je zbyte£ná závis-los
+t mezi vysv¥tlu-jícími prom¥n-
+ []
+
+
+Overfull \hbox (6.09163pt too wide) in paragraph at lines 865--866
+[]\T1/cmr/m/n/12 V záv¥ru jsem pop-sal pouºité pos-tupy pro dosaºení staveného 
+cíle a je-ich výsledky.
+ []
+
+[29
+
+]
+Overfull \hbox (16.78207pt too wide) in paragraph at lines 874--875
+[]\T1/cmr/m/n/12 Pouºitá Java doku-men-tace. URL: <http://commons.apache.org/pr
+oper/commons-
+ []
+
+[30
 
 
 ]
 P\v {r}\'{\i }loha A.
-[21
+[31
 
-] (./BP.aux)
+]
+P\v {r}\'{\i }loha B.
+[32
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+] (./BP.aux) ) 
 Here is how much of TeX's memory you used:
- 3603 strings out of 494818
- 48337 string characters out of 1178665
- 132479 words of memory out of 3000000
- 6741 multiletter control sequences out of 15000+50000
- 17116 words of font info for 39 fonts, out of 3000000 for 9000
+ 5864 strings out of 494818
+ 77090 string characters out of 1178665
+ 167890 words of memory out of 3000000
+ 8963 multiletter control sequences out of 15000+50000
+ 20699 words of font info for 49 fonts, out of 3000000 for 9000
  212 hyphenation exceptions out of 8191
- 36i,9n,43p,843b,223s stack positions out of 5000i,500n,10000p,200000b,50000s
- </home/amid/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx1440.600pk> </home/am
-id/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx1728.600pk> </home/amid/.texmf-va
-r/fonts/pk/ljfour/jknappen/ec/ecsx1200.600pk> </home/amid/.texmf-var/fonts/pk/l
-jfour/jknappen/ec/ecsx2488.600pk> </home/amid/.texmf-var/fonts/pk/ljfour/jknapp
-en/ec/ecti1200.600pk> </home/amid/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm12
-00.600pk> </home/amid/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk> </
-home/amid/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk> </home/amid/.t
-exmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/amid/.texmf-var/fon
-ts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/amid/.texmf-var/fonts/pk/ljfour
-/jknappen/ec/eccc1728.600pk></usr/share/texmf-texlive/fonts/type1/public/amsfon
-ts/cm/cmmi12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi8
-.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/s
-hare/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on BP.pdf (21 pages, 570768 bytes).
+ 36i,9n,43p,949b,1035s stack positions out of 5000i,500n,10000p,200000b,50000s
+ </home/amid/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx1440.600p
+k> </home/amid/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx1728.600pk> </home/am
+id/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx1200.600pk> </home/amid/.texmf-va
+r/fonts/pk/ljfour/jknappen/ec/ecsx2488.600pk> </home/amid/.texmf-var/fonts/pk/l
+jfour/jknappen/ec/ecti1200.600pk> </home/amid/.texmf-var/fonts/pk/ljfour/jknapp
+en/ec/ecrm1200.600pk> </home/amid/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm14
+40.600pk> </home/amid/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk> </
+home/amid/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/amid/.t
+exmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/amid/.texmf-var/fon
+ts/pk/ljfour/jknappen/ec/eccc1728.600pk></usr/share/texmf-texlive/fonts/type1/p
+ublic/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfo
+nts/cm/cmbx8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex1
+0.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr
+/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf
+-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fon
+ts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/publ
+ic/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb
+>
+Output written on BP.pdf (32 pages, 751519 bytes).
 PDF statistics:
- 597 PDF objects out of 1000 (max. 8388607)
+ 695 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
