@@ -701,7 +701,7 @@ Celý program se skládá ze tří tříd:
 
 \begin{enumerate}
 \item \begin{lstlisting}
-ReadData.java
+com.bp.prediction.oldClasses.ReadData.java
 \end{lstlisting}
 
 Daná třída byla vytvořena pro načítání dat. Jak již bylo zmíněno, pro vytvoření programu byl použit datový soubor \textit{Data.csv}, proto byl využit externí balíček na práci s CSV soubory pomocí
@@ -713,7 +713,7 @@ import au.com.bytecode.opencsv.CSVReader;
 Následně se tento soubor stal maticí z vysvětlujících a vysvětlované proměnné. 
 
 \item \begin{lstlisting}
-NumberPrediction.java
+com.bp.prediction.oldClasses.NumberPrediction.java
 \end{lstlisting}
 
 V této třídě se prováděly hlavní procedury a vypočty. Obsahuje tato třída několik různých metod. 
@@ -750,7 +750,7 @@ double[] regressionParameters(int[] bestParameters)
 
 
 \item \begin{lstlisting}
-GraphDrawing.java
+com.bp.prediction.oldClasses.GraphDrawing.java
 \end{lstlisting}
 
 Tato třída byla využita pro nakreslení vývoje zkoumané časové řady a odhadnuté regresní přímky. 
@@ -816,7 +816,7 @@ Pro realizaci dosažených výsledků bychom měli nejdřív sestavit regresní 
 \hat{y} = 3430.5582 + 0.5897x_3 + 6.1441x_4
 \end{equation}
 
-Pomocí třídy \textit{GraphDrawing.java} dostáváme graf popisující vývoj časové řady a její odhadnutý trend.
+Pomocí třídy \textit{com.bp.prediction.oldClasses.GraphDrawing.java} dostáváme graf popisující vývoj časové řady a její odhadnutý trend.
 
 \begin{figure}[h]
   \centering
@@ -885,9 +885,9 @@ Výslednou aplikací se v této práci rozumí zdrojový kód, který slouží p
 
 Po otevření programu v Intellij IDEA by uživatel měl nejdřív importovat závislosti nástroje Maven. Tyto závislosti způsobují stažení a využití externích knihoven, potřebných pro příslušné metody. Jednotlivé závislosti se správují v souboru \textit{pom.xml}. 
 
-V třídě \textit{ReadData.java} se nastavuje jmeno zkoumaného souboru dat, který se musí nacházet v adresáři \textit{/NumberPrediction/}. Při změně souboru dat se musí taky v třídě změnit předdefinovaná hodnota \textit{xParams} určující počet nezávisle proměnných v modelu. 
+V třídě \textit{com.bp.prediction.oldClasses.ReadData.java} se nastavuje jmeno zkoumaného souboru dat, který se musí nacházet v adresáři \textit{/com.bp.prediction.oldClasses.NumberPrediction/}. Při změně souboru dat se musí taky v třídě změnit předdefinovaná hodnota \textit{xParams} určující počet nezávisle proměnných v modelu.
 
-Pro analýzu souboru dat se musí spustit třída \textit{NumberPrediction.java}, která obsahuje metodu \textit{public static void main(String[] args)}. 
+Pro analýzu souboru dat se musí spustit třída \textit{com.bp.prediction.oldClasses.NumberPrediction.java}, která obsahuje metodu \textit{public static void main(String[] args)}.
 
 Uživatel by pak měl dostat ve výstupu (předpokládá se využití testovacího souboru \textit{Data.csv}):
 

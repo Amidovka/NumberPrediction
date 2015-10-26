@@ -1,3 +1,5 @@
+package com.bp.prediction.oldClasses;
+
 import org.apache.commons.math3.stat.correlation.PearsonsCorrelation;
 import org.apache.commons.math3.stat.regression.OLSMultipleLinearRegression;
 
@@ -80,7 +82,10 @@ public class NumberPrediction {
             regressionFunc[i] = regParams[0] + (i+1)*(regParams[1]+regParams[2]);
         }
 
+        GraphDrawing graph = new GraphDrawing("new graph");
+        System.out.println(graph);
         GraphDrawing.draw();
+
     }
 
     /**
