@@ -85,7 +85,7 @@ public class NumberPredictor implements Predictor{
      * @param pos
      * @param inPos initial position in array to begin permutation from
      */
-    void permutation(int pos, int inPos, int k, int n, int[] a, int[] xParams) {
+    private void permutation(int pos, int inPos, int k, int n, int[] a, int[] xParams) {
 
         if (pos == k) {
             int[] b = new int[a.length];

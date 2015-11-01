@@ -24,15 +24,15 @@ public class CsvDataReader implements DataReader {
      * @return List of string arrays
      */
     public List<String[]> parseData() {
-        FileReader reader = null;
-        CSVReader csvReader = null;
+        FileReader reader;
+        CSVReader csvReader;
 
         try {
             reader = new FileReader(new File("Data.csv").getAbsolutePath());
             csvReader = new CSVReader(reader);
             this.setData(csvReader.readAll());
         } catch (FileNotFoundException e) {
-            System.out.println("Cannot find file to process! " + e);;
+            System.out.println("Cannot find file to process! " + e);
         } catch (IOException e) {
             System.out.println("Cannot find file to process! " + e);
         }
@@ -47,7 +47,7 @@ public class CsvDataReader implements DataReader {
         int numOfRows = this.getData().size();
         int numOfCol = this.getData().get(0).length;
         int[] xParameters = this.getxParams();
-        double[][] xMatrix = new double[numOfRows][numOfCol];
+        double[][] xMatrix = new double[numOfRows][xParameters.length];
         double[] yMatrix = new double[numOfRows];
 
         for (int i = 0; i < numOfRows; i++) {
