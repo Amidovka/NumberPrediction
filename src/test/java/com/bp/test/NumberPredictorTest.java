@@ -25,4 +25,20 @@ public class NumberPredictorTest {
         List<int[]> combinations = predictor.getCombinations();
         assertEquals((Math.pow(2,testParam.length) - 1), combinations.size(), 0);
     }
+
+    @Test
+    public void testCreateCombinations1() {
+        int[] testParam = {1, -2, 4, 5};
+        NumberPredictor predictor = new NumberPredictor();
+        predictor.createCombinations(testParam);
+        List<int[]> combinations = predictor.getCombinations();
+        System.out.println();
+        for (int[] list : combinations) {
+            for (int i : list) {
+                System.out.print(i + ", ");
+            }
+            System.out.println();
+            assertEquals((Math.pow(2, testParam.length) - 1), combinations.size(), 0);
+        }
+    }
 }

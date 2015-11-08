@@ -23,7 +23,7 @@ public class CsvDataReader implements DataReader {
      * file to list of string arrays.
      * @return List of string arrays
      */
-    public List<String[]> parseData() {
+    public void parseData() {
         FileReader reader;
         CSVReader csvReader;
 
@@ -36,7 +36,6 @@ public class CsvDataReader implements DataReader {
         } catch (IOException e) {
             System.out.println("Cannot find file to process! " + e);
         }
-        return this.getData();
     }
 
     /**

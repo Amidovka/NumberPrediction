@@ -3,6 +3,7 @@ package com.bp.prediction;
 import com.bp.prediction.ui.GraphVisualization;
 import com.bp.prediction.data.CsvDataReader;
 import com.bp.prediction.predictor.NumberPredictor;
+import com.numericalmethod.suanshu.stats.timeseries.linear.multivariate.arima.VARIMAModel;
 
 import java.io.IOException;
 import java.util.List;
@@ -20,11 +21,11 @@ public class Main {
     public static void main(String[] args) {
 
         /*
-        Choosing X parameters to use in analysis.
+        Choosing X parameters from range (1..8) to use in analysis.
         E.g. if input is {3, 6, 7} it means, that
         only X3, X6 and X7 parameters are chosen and will
         be used to create X matrix with explanatory variables*/
-        int[] params = {3, 4};
+        int[] params = {6, 7};
         //reading, parsing data according to given X parameters
         CsvDataReader dataReader = new CsvDataReader();
         dataReader.setxParams(params);
