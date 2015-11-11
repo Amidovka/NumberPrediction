@@ -25,7 +25,7 @@ public class Main {
         E.g. if input is {3, 6, 7} it means, that
         only X3, X6 and X7 parameters are chosen and will
         be used to create X matrix with explanatory variables*/
-        int[] params = {6, 7};
+        int[] params = {1, 2, 3, 4};
         //reading, parsing data according to given X parameters
         CsvDataReader dataReader = new CsvDataReader();
         dataReader.setxParams(params);

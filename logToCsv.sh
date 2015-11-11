@@ -24,22 +24,22 @@ echo -n "Processing..."
 while IFS= read line
 do
    # get data
-    dataSetNumber=$(cut -d, -f5<<<"$line" | cut -d":" -f2)
+   # dataSetNumber=$(cut -d, -f5<<<"$line" | cut -d":" -f2)
     numFlows=$(cut -d, -f7<<<"$line" | cut -d":" -f2)
     flowLoadingTime=$(cut -d, -f8<<<"$line" | cut -d":" -f2)
     # numCollections=$(cut -d, -f11<<<"$line" | cut -d":" -f3)
-    # CollectionDuration=$(cut -d, -f12<<<"$line" | cut -d":" -f2 | cut -d} -f1)
+    collectionDuration=$(cut -d, -f10<<<"$line" | cut -d":" -f2 | cut -d} -f1)
     numPrimitiveIncidents=$(cut -d, -f13<<<"$line" | cut -d":" -f2)
     numEvents=$(cut -d, -f14<<<"$line" | cut -d":" -f2)
     numFlowsInEvents=$(cut -d, -f15<<<"$line" | cut -d":" -f2)
     resultSize=$(cut -d, -f16<<<"$line" | cut -d":" -f2)
     numArtificialFileDownloadEvents=$(cut -d, -f17<<<"$line" | cut -d":" -f2)
     numFileDownloadFlows=$(cut -d, -f18<<<"$line" | cut -d":" -f2)
-    numFileDownloadFlowsInEvents=$(cut -d, -f19<<<"$line" | cut -d":" -f2 | cut -d} -f1)
+    # numFileDownloadFlowsInEvents=$(cut -d, -f19<<<"$line" | cut -d":" -f2 | cut -d} -f1)
 
     computationTime=$(cut -d, -f6<<<"$line" | cut -d":" -f2) 
    # write csv formatted output
-    echo "${dataSetNumber},${numFlows},${flowLoadingTime},${numEvents},${numFlowsInEvents},${resultSize},${numArtificialFileDownloadEvents},${numFileDownloadFlows},${computationTime}" >>$OUTPUT
+    echo "${numFlows},${flowLoadingTime},${numEvents},${collectionDuration},${numPrimitiveIncidents},${numFlowsInEvents},${resultSize},${numArtificialFileDownloadEvents},${numFileDownloadFlows},${computationTime}" >>$OUTPUT
     # update counter
     s=$(( ++s ))
 done < "$INPUT" 
