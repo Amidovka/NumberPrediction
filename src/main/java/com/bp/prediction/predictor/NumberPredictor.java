@@ -101,6 +101,10 @@ public class NumberPredictor implements Predictor{
         }
     }
 
+    public double predictNextDouble(double[] numberSeq) {
+        return 0;
+    }
+
     public ArrayList<int[]> getCombinations() {
         return combinations;
     }

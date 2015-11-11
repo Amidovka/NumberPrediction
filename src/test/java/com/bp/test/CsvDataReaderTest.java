@@ -3,7 +3,9 @@ package com.bp.test;
 import com.bp.prediction.data.CsvDataReader;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+
 
 /**
  * Created by burdind on 8.11.2015.

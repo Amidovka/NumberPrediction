@@ -39,7 +39,7 @@ do
 
     computationTime=$(cut -d, -f6<<<"$line" | cut -d":" -f2) 
    # write csv formatted output
-    echo "${dataSetNumber},${numFlows},${flowLoadingTime},${numPrimitiveIncidents},${numEvents},${numFlowsInEvents},${resultSize},${numArtificialFileDownloadEvents},${numFileDownloadFlows},${numFileDownloadFlowsInEvents},${computationTime}" >>$OUTPUT
+    echo "${dataSetNumber},${numFlows},${flowLoadingTime},${numEvents},${numFlowsInEvents},${resultSize},${numArtificialFileDownloadEvents},${numFileDownloadFlows},${computationTime}" >>$OUTPUT
     # update counter
     s=$(( ++s ))
 done < "$INPUT" 

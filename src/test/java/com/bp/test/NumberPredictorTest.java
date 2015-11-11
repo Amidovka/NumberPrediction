@@ -5,7 +5,10 @@ import org.junit.Test;
 
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.hamcrest.core.Is.is;
+import static org.hamcrest.core.IsEqual.equalTo;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
 /**
  * Created by burdind on 1.11.2015.
@@ -27,18 +30,26 @@ public class NumberPredictorTest {
     }
 
     @Test
-    public void testCreateCombinations1() {
-        int[] testParam = {1, -2, 4, 5};
+    public void testAscend(){
         NumberPredictor predictor = new NumberPredictor();
-        predictor.createCombinations(testParam);
-        List<int[]> combinations = predictor.getCombinations();
-        System.out.println();
-        for (int[] list : combinations) {
-            for (int i : list) {
-                System.out.print(i + ", ");
-            }
-            System.out.println();
-            assertEquals((Math.pow(2, testParam.length) - 1), combinations.size(), 0);
-        }
+        assertThat(predictor.predictNextDouble(new double[]{1, 2, 3, 4, 5}), is(equalTo(6.0)));
+    }
+
+    @Test
+    public void testJumps(){
+        NumberPredictor predictor = new NumberPredictor();
+        assertThat(predictor.predictNextDouble(new double[]{1, 2, 3, 1, 2, 3}), is(equalTo(1.0)));
+    }
+
+    @Test
+    public void testJumpsInverse(){
+        NumberPredictor predictor = new NumberPredictor();
+        assertThat(predictor.predictNextDouble(new double[]{3, 2, 1, 3, 2, 1, 3}), is(equalTo(2.0)));
+    }
+
+    @Test
+    public void testJumpsRising(){
+        NumberPredictor predictor = new NumberPredictor();
+        assertThat(predictor.predictNextDouble(new double[]{1, 2, 3, 2, 3, 4}), is(equalTo(3.0)));
     }
 }
