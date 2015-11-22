@@ -1,5 +1,6 @@
 package com.bp.prediction;
 
+import com.bp.prediction.statsModel.AutoregressiveModel;
 import com.bp.prediction.ui.GraphVisualization;
 import com.bp.prediction.data.CsvDataReader;
 import com.bp.prediction.predictor.NumberPredictor;
@@ -19,13 +20,12 @@ public class Main {
     public static double[] regressionFunc;
 
     public static void main(String[] args) {
-
         /*
-        Choosing X parameters from range (1..8) to use in analysis.
+        Choosing X parameters from range (1..8) to use in analysis
         E.g. if input is {3, 6, 7} it means, that
         only X3, X6 and X7 parameters are chosen and will
         be used to create X matrix with explanatory variables*/
-        int[] params = {1, 2, 3, 4};
+        int[] params = {2,4,6};
         //reading, parsing data according to given X parameters
         CsvDataReader dataReader = new CsvDataReader();
         dataReader.setxParams(params);
@@ -65,19 +65,5 @@ public class Main {
         } catch (IOException e) {
             System.out.println("Cannot draw graph! " + e);
         }
-
-        /*Checking combinations creating by
-          printing all combinations.
-          Uncomment to use.*/
-        /*predictor.createCombinations(params);
-        List<int[]> combinations = predictor.getCombinations();
-        System.out.println();
-        for (int[] list : combinations) {
-            for (int i : list) {
-                System.out.print(i + ", ");
-            }
-            System.out.println();
-        }*/
-
     }
 }

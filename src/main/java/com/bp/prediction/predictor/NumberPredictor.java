@@ -59,14 +59,12 @@ public class NumberPredictor implements Predictor{
 
         OLSMultipleLinearRegression regression = new OLSMultipleLinearRegression();
         regression.newSampleData(yData, xData);
-        double[] regParams = regression.estimateRegressionParameters();
 
-        return regParams;
+        return regression.estimateRegressionParameters();
     }
 
     /**
-     *
-     * @return all the x parameters combinations
+     * Creates all x parameters combinations.
      */
     public void createCombinations(int[] xParams) {
         int n = xParams.length;

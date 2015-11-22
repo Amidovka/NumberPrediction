@@ -23,7 +23,7 @@ public class NumberPredictorTest {
      * must be equal to (2^n - 1) where n - number of parameters
      */
     @Test
-     public void testCreateCombinations() {
+    public void testCreateCombinations() {
         int[] testParam = {1, 2, 3, 4, 5};
         predictor.createCombinations(testParam);
         List<int[]> combinations = predictor.getCombinations();
@@ -47,6 +47,7 @@ public class NumberPredictorTest {
 
     @Test
     public void testJumpsRising(){
+        //AR(3)
         assertThat(predictor.predictNextDouble(new double[]{1, 2, 3, 2, 3, 4}), is(equalTo(3.0)));
     }
 }
