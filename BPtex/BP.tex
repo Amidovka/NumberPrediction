@@ -289,11 +289,18 @@ Většinou se předpokládá, že časová řada $y_t$ pro t = 1, 2, ..., T je s
 
 \textit{Trendová složka} ($T_t$) je obecná dlouhodobá tendence vývoje zkoumaného jevu. Tato složka zachycuje stálé procesy působící během dlouhého období. Trend může mít rostoucí nebo klesající charakter a nebo může být časová řada bez trendu.
 
-\textit{Cyklická složka} ($C_t$) popisuje jednotlivé periody (cykly) v hodnotách ukazatele časové řady. Taková kolísání se okolo trendu objevují během dlouhého období, tj. značně delší než jeden časový úsek časový řady. V těchto cyklech se střídají fáze růstu a poklesu. Délka a amplituda cyklické složky mohou být nepravidelné a mít měnící se charakter. Kvůli tomu, že tato složka působí dlouhodobě, je docela obtížné ji určit a popsat. 
+\textit{Cyklická složka} ($C_t$) popisuje jednotlivé periody (cykly) v hodnotách ukazatele časové řady. Taková kolísání se okolo trendu objevují během dlouhého období, tj. značně delší než jeden časový úsek časový řady. V těchto cyklech se střídají fáze růstu a poklesu. Délka a amplituda cyklické složky mohou být nepravidelné a mít měnící se charakter. 
 
 \textit{Sezónní složka} ($S_t$) vyjadřuje stále se opakující odchylku trendu. Perioda této složky je mnohem menší než u složky cyklické. Takové výkyvy se objevují ve stejných obdobích kvůli obecně známým jevům.
 
-Čtvrtou složkou časové řady je \textit{náhodná} neboli \textit{nesystematická složka} ($u_t$). \\ Náhodné procesy a chyby měření v datech jsou vyjadřeny pomocí této složky. 	
+Čtvrtou složkou časové řady je \textit{náhodná} neboli \textit{nesystematická složka} ($u_t$). \\ Náhodné procesy a chyby měření v datech jsou vyjadřeny pomocí této složky. Náhodná složka má vlastnosti procesu bílého šumu, a proto pro hodnoty $u_t$ platí
+
+\begin{itemize}
+\item střední hodnota v čase $t$ je nulová: $E(u_t) = 0$
+\item konstantní rozptyl: $D(u_t) = \sigma^2$
+\item vzájemně lineární nezávislost: $cov(u_t, u_{t-k}) = 0$ 
+\item normální rozdělení: $u_t \sim N(0, \sigma^2)$\footnote{Bílý šum může mít i jiný typ rozdělení. Vžak normální rozdělení je nejčastějším případem.}
+\end{itemize}
 
 Existují dva typy dekompozice časových řad:
 
@@ -330,7 +337,9 @@ Protože je tato práce zaměřena na predikci časových řad, je konstrukce p�
 
 Předpovědní metody se většinou rozdělují do dvou velkých skupin - \textit{kvalitativní} a \textit{kvantitativní}. Základem kvalitativních metod jsou názory expertů a odborníků v určité oblasti. Takové metody jsou použitelné v případě, kdy se zavádí nová technologie nebo zcela nový produkt a zatím neexistují žádná data. Dále jsou v práci prozkoumány a použity pouze kvantitativní předpovědní metody. Tyto metody jsou oproti kvalitativním založeny na analýze empirických dat. Analýza se provádí pomocí matematicko-statistického přístupu. Použití kvantitativních předpovědních metod předpokládá, že se s časem, kdy se provádí předpověd', charakter řady nemění. Tento fakt nemůžeme vynechávat a proto budeme zavádět drobná omezení v konstrukci předpovědní metody (např. rozdělení dat do intervalů s maximálně stejným vývojem). \cite{cipra}
 
-V případě, že existují předem známá data a předpovědní metoda se určuje na základě těchto dat, hrají chyby v předpovědích a jejich minimalizace důležitou roli. Chyba je většinou definována jako rozdíl mezi reálnou hodnotou $y_t$ a predikovanou hodnotou $\hat{y_t}$, a zároveň je odhadem náhodné složky $u_t$:
+\normalsize \textbf{Chyba předpovědi}
+
+V případě, že existují předem známá data a předpovědní metoda se určuje na základě těchto dat, hrají chyby v předpovědích a jejich minimalizace důležitou roli. Chyby (viz též rezidua) jsou většinou definovány jako rozdíl mezi reálnou hodnotou $y_t$ a predikovanou hodnotou $\hat{y_t}$, a zároveň jsou odhadem náhodné složky $u_t$:
 
 \begin{equation}
 e_t = y_t - \hat{y_t}
@@ -352,6 +361,26 @@ Existují určité míry pro kontrolu kvality provedených předpovědí. Často
 \begin{equation}
 \sum_{t=1}^{n}\frac{|y_t - \hat{y_t}|}{n} = \sum_{t=1}^{n}\frac{|e_t|}{n}
 \end{equation}
+
+\subsection{Klouzavé průměry}
+
+Při analýze časové řady je velmi důležité zkoumat jestli má časová řada trend nebo nemá. Metoda klouzavých průmerů je jednou z adaptivních metod pro modelování trendové složky časové řady. Adaptivní přístup je založen na tom, že pomocí něho můžeme pracovat s trendovou složkou, která se mění v čase a kterou nelze popsat matematickou křivkou s neměnnými parametry. Však můžeme předpokládat, že v malých úsecích časové řady existuje možnost takové vyrovnání matematickou křivkou použit. \cite{cipra}
+
+Základní myšlenkou metody klouzavých průměrů je určení hodnot vyhlazené časové řady pomocí vypočítaných pruměrů hodnot původní časové řady. Počet hodnot, pro které vypočítáme průměr, určujeme pomocí tzv. \textit{okna}.   
+
+\textit{Okno} (délka klouzavé části) je určena počtem sezón v sezonních časových řadách. Pro ostatní časové řady musíme okno volit pro každý případ zvlášt'. Obecně čím je okno větší (delší klouzavá část), tím je vyrovnáná časová řada hladší. \cite{arlt}
+
+Existují různé typy metody klouzavých průměrů. Dva z nich jsou  \textit{jednoduchý klouzavý průměr} (angl. Simple Moving Average - SMA) a  \textit{lineárně vážený klouzavý průměr} (angl. Linear Weighted Moving Average - LWMA). Tyto metody jsou podrobně porbrány v \cite{arlt} a \cite{iastat}. V této práci ale budou popsány pouze jejich využití pro předpovídání.
+
+\normalsize \textbf{Jednoduchý klouzavý průměr}
+
+Jednoduchý neboli aritmetický klouzavý průměr je nejjednodušším a méně spolehlivějším případem, kdy pro vyhlazení nebo předpověd' časové řady vypočítáme aritmetický průměr hodnot z určeného okna. Pro předpoved' zkoumané hodnoty $y_t$ v čase $t+1$ můžeme použit výraz
+
+\begin{equation}
+\hat{y}_{t+1} = \frac{y_t + y_{t-1} + ... + y_{t-n+1}}{n},
+\end{equation}
+
+kde $n$ je velikost okna. 
 
 \newpage
 \section{Regresní analýza}
@@ -574,8 +603,7 @@ a zároveň je druhou mocninou korelačního koeficientu $\bf{R}$.
 
 Koeficient determinace je vhodný ke statistickému testování modelu jako celku a nabývá hodnot z intervalu <0, 1>, kde případ $\bf{R}^2$=1 ukazuje na silnou závislost a vhodnost použití lineární regrese. \cite{fiala} 
 
-
-\newpage
+\chapter{Praktická část}
 \section{Softwarová aplikace}
 \subsection{Způsob realizace}
 
@@ -614,7 +642,7 @@ Jako nástroj pro správu, řízení a automatizaci tvorby aplikace jsem použil
 
 K implementaci analytických metod bylo navrhnuto použít již existující knihovnu v jazyce Java, nebo si vytvořit vlastní. 
 
-\chapter{Praktická část}
+\newpage
 \section{Chybné pokusy}
 \vspace{0.5cm}
 
@@ -871,7 +899,11 @@ V závěru jsem popsal použité postupy pro dosažení staveného cíle a jeich
 	\bibitem{cipra} Tomáš Cipra. \emph{Analýza časových řad s aplikacemi v ekonomii}. Praha. SNTL - Nakladatelství technické literatury, 1986.
 	\bibitem{fiala} Petr Fiala. \emph{Úvod do ekonometrie}. Praha. Nakladatelství ČVUT, 2008. \\ ISBN 978-80-01-04004-1
 	\bibitem{arlt} Josef Arlt, Markéta Arltová, Eva Rublíková. \emph{Analýza ekonomických časových řad s příklady}. Skripta VŠE Praha, 2002. ISBN 80-245-0307-7. V elektronické podobě k dispozici na <http://kstp.vse.cz/o-katedre/clenove-katedry/marketa-arltova/>
-	\bibitem PPoužitá Java dokumentace. URL: <http://commons.apache.org/proper/commons-math/apidocs/org/apache/commons/math3/stat/regression/> 	
+
+	\normalsize\textbf{\newline Internetové zdroje}
+	\bibitem PPoužitá Java dokumentace. URL: <http://commons.apache.org/proper/commons-math/apidocs/org/apache/commons/math3/stat/regression/
+	\bibitem{iastat} Hana Řezanková, Luboš Marek, Michal Vrabec. \emph{IASTAT - Interaktivní učebnice statistiky}. VŠE. URL: <http://iastat.vse.cz/casovky/>
+> 	
 	
 \end{thebibliography}
 

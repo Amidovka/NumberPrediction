@@ -1,13 +1,12 @@
 package com.bp.prediction;
 
 import com.bp.prediction.statsModel.AutoregressiveModel;
+import com.bp.prediction.statsModel.SimpleMovingAverage;
 import com.bp.prediction.ui.GraphVisualization;
 import com.bp.prediction.data.CsvDataReader;
 import com.bp.prediction.predictor.NumberPredictor;
-import com.numericalmethod.suanshu.stats.timeseries.linear.multivariate.arima.VARIMAModel;
 
 import java.io.IOException;
-import java.util.List;
 
 /**
  * Created by burdind on 26.10.2015.
@@ -25,7 +24,7 @@ public class Main {
         E.g. if input is {3, 6, 7} it means, that
         only X3, X6 and X7 parameters are chosen and will
         be used to create X matrix with explanatory variables*/
-        int[] params = {2,4,6};
+        int[] params = {3,4};
         //reading, parsing data according to given X parameters
         CsvDataReader dataReader = new CsvDataReader();
         dataReader.setxParams(params);
@@ -39,7 +38,7 @@ public class Main {
         //creating predictor instance
         NumberPredictor predictor = new NumberPredictor();
         //getting regression function parameters
-        double[] regParams = predictor.getRegParams(yData, xData);
+        double[] regParams = predictor.getMultipleRegParams(yData, xData);
 
         System.out.println("Regression parameters: ");
         for (int i = 0; i < regParams.length; i++){
@@ -54,6 +53,11 @@ public class Main {
             }
             regressionFunc[i] += regParams[0];
         }
+
+        System.out.println();
+        SimpleMovingAverage sma = new SimpleMovingAverage(yData);
+        sma.setN(5);
+        System.out.println("Value predicted by simple moving average using window size 5 is " + sma.getNextPrediction());
 
         /*
         Calling draw() method to draw a graph with

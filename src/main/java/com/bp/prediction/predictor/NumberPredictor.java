@@ -1,6 +1,7 @@
 package com.bp.prediction.predictor;
 
 import org.apache.commons.math3.stat.regression.OLSMultipleLinearRegression;
+import org.apache.commons.math3.stat.regression.SimpleRegression;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,15 +53,32 @@ public class NumberPredictor implements Predictor{
     }*/
 
     /**
-     * Gets regression function parameters
-     * @return  regression parameters
+     * Gets multiple regression function parameters.
+     * @param yData dependent variable values
+     * @param xData independent variable values
+     * @return array of regression parameters
      */
-    public double[] getRegParams(double[] yData, double[][] xData){
-
+    public double[] getMultipleRegParams(double[] yData, double[][] xData){
         OLSMultipleLinearRegression regression = new OLSMultipleLinearRegression();
         regression.newSampleData(yData, xData);
 
         return regression.estimateRegressionParameters();
+    }
+
+    /**
+     * Gets regression parameters - b0 (intercept)
+     * and b1 - slope.
+     * @param yData dependent variable values
+     * @param xData independent variable values
+     * @return array of regression parameters
+     */
+    public double[] getRegParams(double[] yData, double[] xData) {
+        SimpleRegression regression = new SimpleRegression();
+        for (int i = 0; i < yData.length; i++) {
+            regression.addData(xData[i], yData[i]);
+        }
+
+        return regression.regress().getParameterEstimates();
     }
 
     /**

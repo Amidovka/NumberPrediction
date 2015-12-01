@@ -1,59 +1,61 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.10.12)  8 JUL 2015 07:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.30)  1 DEC 2015 01:56
 entering extended mode
- %&-line parsing enabled.
-**BP.tex
-(./BP.tex
-LaTeX2e <2009/09/24>
-Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, bulgarian, ukrainian, russian, loaded.
-(/usr/share/texmf-texlive/tex/latex/koma-script/scrreprt.cls
-Document Class: scrreprt 2009/07/24 v3.04a KOMA-Script document class (report)
-(/usr/share/texmf-texlive/tex/latex/koma-script/scrkbase.sty
-Package: scrkbase 2009/07/24 v3.04a KOMA-Script package (KOMA-Script-dependent 
-basics and keyval usage)
+**C:/Users/burdind/Documents/IdeaProjects/NumberPrediction/BPtex/BP.tex
+(C:/Users/burdind/Documents/IdeaProjects/NumberPrediction/BPtex/BP.tex
+LaTeX2e <2015/01/01> patch level 2
+Babel <3.9m> and hyphenation patterns for 69 languages loaded.
 
-(/usr/share/texmf-texlive/tex/latex/koma-script/scrbase.sty
-Package: scrbase 2009/07/24 v3.04a KOMA-Script package (KOMA-Script-independent
+(C:\Users\burdind\AppData\Roaming\MiKTeX\2.9\tex\latex\koma-script\scrreprt.cls
+Document Class: scrreprt 2015/10/03 v3.19a KOMA-Script document class (report)
+
+(C:\Users\burdind\AppData\Roaming\MiKTeX\2.9\tex\latex\koma-script\scrkbase.sty
+Package: scrkbase 2015/10/03 v3.19a KOMA-Script package (KOMA-Script-dependent 
+basics and keyval usage)
+(C:\Users\burdind\AppData\Roaming\MiKTeX\2.9\tex\latex\koma-script\scrbase.sty
+Package: scrbase 2015/10/03 v3.19a KOMA-Script package (KOMA-Script-independent
  basics and keyval usage)
 
-(/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(/usr/share/texmf-texlive/tex/latex/koma-script/scrlfile.sty
-Package: scrlfile 2009/03/25 v3.03 KOMA-Script package (loading files)
-
-Package scrlfile, 2009/03/25 v3.03 KOMA-Script package (loading files)
+(C:\Users\burdind\AppData\Roaming\MiKTeX\2.9\tex\latex\koma-script\scrlfile.sty
+Package: scrlfile 2015/10/03 v3.19a KOMA-Script package (loading files)
+Package scrlfile, 2015/10/03 v3.19a KOMA-Script package (loading files)
                   Copyright (C) Markus Kohm
 
-))) (/usr/share/texmf-texlive/tex/latex/koma-script/tocbasic.sty
-Package: tocbasic 2009/06/08 v3.03b KOMA-Script package (handling toc-files)
+)))
+(C:\Users\burdind\AppData\Roaming\MiKTeX\2.9\tex\latex\koma-script\tocbasic.sty
+Package: tocbasic 2015/10/03 v3.19a KOMA-Script package (handling toc-files)
 )
 Package tocbasic Info: omitting babel extension for `toc'
 (tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `toc' on input line 117.
+(tocbasic)             for `toc' on input line 125.
 Package tocbasic Info: omitting babel extension for `lof'
 (tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `lof' on input line 118.
+(tocbasic)             for `lof' on input line 126.
 Package tocbasic Info: omitting babel extension for `lot'
 (tocbasic)             because of feature `nobabel' available
-(tocbasic)             for `lot' on input line 119.
-Package scrreprt Info: You've used obsolete option `12pt'.
-(scrreprt)             \KOMAExecuteOptions{fontsize=12pt} will be
-(scrreprt)             used instead.
-(scrreprt)             You may simply replace `12pt'
-(scrreprt)             by `fontsize=12pt'.
+(tocbasic)             for `lot' on input line 127.
+Package tocbasic Info: defining new hook before heading of `' on input line 158
+8.
+Package scrreprt Info: You've used standard option `12pt'.
+(scrreprt)             This is correct!
+(scrreprt)             Internally I'm using `fontsize=12pt'.
+(scrreprt)             If you'd like to set the option with \KOMAoptions,
+(scrreprt)             you'd have to use `fontsize=12pt' there
+(scrreprt)             instead of `12pt', too.
 Class scrreprt Info: File `scrsize12pt.clo' used to setup font sizes on input l
-ine 1271.
+ine 2248.
 
-(/usr/share/texmf-texlive/tex/latex/koma-script/scrsize12pt.clo
-File: scrsize12pt.clo 2009/07/24 v3.04a KOMA-Script font size class option (12p
+(C:\Users\burdind\AppData\Roaming\MiKTeX\2.9\tex\latex\koma-script\scrsize12pt.
+clo
+File: scrsize12pt.clo 2015/10/03 v3.19a KOMA-Script font size class option (12p
 t)
 )
-(/usr/share/texmf-texlive/tex/latex/koma-script/typearea.sty
-Package: typearea 2009/07/24 v3.04a KOMA-Script package (type area)
-
-Package typearea, 2009/07/24 v3.04a KOMA-Script package (type area)
+(C:\Users\burdind\AppData\Roaming\MiKTeX\2.9\tex\latex\koma-script\typearea.sty
+Package: typearea 2015/10/03 v3.19a KOMA-Script package (type area)
+Package typearea, 2015/10/03 v3.19a KOMA-Script package (type area)
                   Copyright (C) Frank Neukam, 1992-1994
                   Copyright (C) Markus Kohm, 1994-
 
@@ -61,13 +63,14 @@ Package typearea, 2009/07/24 v3.04a KOMA-Script package (type area)
 \ta@div=\count79
 Package typearea Info: You've used standard option `a4paper'.
 (typearea)             This is correct!
-(typearea)             Internaly I'm using `paper=a4'.
+(typearea)             Internally I'm using `paper=a4'.
 (typearea)             If you'd like to set the option with \KOMAoptions,
 (typearea)             you'd have to use `paper=a4' there
 (typearea)             instead of `a4paper', too.
 \ta@hblk=\skip42
 \ta@vblk=\skip43
 \ta@temp=\skip44
+\footheight=\skip45
 Package typearea Info: These are the values describing the layout:
 (typearea)             DIV  = 12
 (typearea)             BCOR = 0.0pt
@@ -84,7 +87,7 @@ Package typearea Info: These are the values describing the layout:
 (typearea)              \topskip        = 12.0pt
 (typearea)              \footskip       = 50.75pt
 (typearea)              \baselineskip   = 14.5pt
-(typearea)              on input line 1115.
+(typearea)              on input line 1509.
 )
 \c@part=\count80
 \c@chapter=\count81
@@ -93,33 +96,34 @@ Package typearea Info: These are the values describing the layout:
 \c@subsubsection=\count84
 \c@paragraph=\count85
 \c@subparagraph=\count86
-\abovecaptionskip=\skip45
-\belowcaptionskip=\skip46
+LaTeX Info: Redefining \textsubscript on input line 4652.
+\abovecaptionskip=\skip46
+\belowcaptionskip=\skip47
 \c@pti@nb@sid@b@x=\box26
 \c@figure=\count87
 \c@table=\count88
 \bibindent=\dimen102
-) (/usr/share/texmf-texlive/tex/latex/base/fontenc.sty
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fontenc.sty"
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-(/usr/share/texmf-texlive/tex/latex/base/t1enc.def
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.def"
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
-LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ))
-(/usr/share/texmf-texlive/tex/latex/base/inputenc.sty
-Package: inputenc 2008/03/30 v1.1d Input encoding file
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks15
 \inpenc@posthook=\toks16
 
-(/usr/share/texmf-texlive/tex/latex/base/utf8.def
-File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\utf8.def"
+File: utf8.def 2015/06/27 v1.1n UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-(/usr/share/texmf-texlive/tex/latex/base/t1enc.dfu
-File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
+File: t1enc.dfu 2015/06/27 v1.1n UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
    defining Unicode char U+00AB (decimal 171)
@@ -268,8 +272,8 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-(/usr/share/texmf-texlive/tex/latex/base/ot1enc.dfu
-File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
+File: ot1enc.dfu 2015/06/27 v1.1n UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
    defining Unicode char U+00B8 (decimal 184)
@@ -299,8 +303,8 @@ File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-(/usr/share/texmf-texlive/tex/latex/base/omsenc.dfu
-File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
+File: omsenc.dfu 2015/06/27 v1.1n UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
    defining Unicode char U+00B7 (decimal 183)
@@ -323,36 +327,40 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-(/usr/share/texmf-texlive/tex/generic/babel/babel.sty
-Package: babel 2008/07/06 v3.8l The Babel package
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.sty"
+Package: babel 2015/08/03 3.9m The Babel package
 
-(/usr/share/texmf-texlive/tex/generic/babel/czech.ldf
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
+File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
+)
+(C:\Users\burdind\AppData\Roaming\MiKTeX\2.9\tex\latex\babel-czech\czech.ldf
 Language: czech 2008/07/06 v3.1a Czech support from the babel system
 
-(/usr/share/texmf-texlive/tex/generic/babel/babel.def
-File: babel.def 2008/07/06 v3.8l Babel common definitions
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.def"
+File: babel.def 2015/08/03 3.9m Babel common definitions
 \babel@savecnt=\count89
 \U@D=\dimen103
 )
-
-Package babel Warning: No hyphenation patterns were loaded for
-(babel)                the language `Czech'
-(babel)                I will use the patterns loaded for \language=0 instead.
-
-\l@czech = a dialect from \language0
 Package babel Info: Making " an active character on input line 172.
 \cs@wordlen=\count90
 Package babel Info: Making - an active character on input line 226.
-)) (/usr/share/texmf-texlive/tex/latex/geometry/geometry.sty
-Package: geometry 2008/12/21 v4.2 Page Geometry
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+Package: geometry 2010/09/12 v5.6 Page Geometry
 
-(/usr/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in pdf mode detected.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
-(/usr/share/texmf-texlive/tex/generic/oberdiek/ifvtex.sty
-Package: ifvtex 2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count91
 \Gm@cntv=\count92
@@ -361,98 +369,146 @@ Package ifvtex Info: VTeX not detected.
 \Gm@wd@mp=\dimen105
 \Gm@odd@mp=\dimen106
 \Gm@even@mp=\dimen107
+\Gm@layoutwidth=\dimen108
+\Gm@layoutheight=\dimen109
+\Gm@layouthoffset=\dimen110
+\Gm@layoutvoffset=\dimen111
 \Gm@dimlist=\toks17
-)
-(/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
-Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/etc/texmf/tex/latex/config/graphics.cfg
-File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
-Package graphics Info: Driver file: pdftex.def on input line 91.
+Package graphics Info: Driver file: pdftex.def on input line 94.
 
-(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
 \Gread@gobject=\count94
 ))
-\Gin@req@height=\dimen108
-\Gin@req@width=\dimen109
+\Gin@req@height=\dimen112
+\Gin@req@width=\dimen113
 )
-(/usr/share/texmf-texlive/tex/latex/tools/tabularx.sty
-Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\tabularx.sty"
+Package: tabularx 2014/10/28 v2.10 `tabularx' package (DPC)
 
-(/usr/share/texmf-texlive/tex/latex/tools/array.sty
-Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen110
-\extrarowheight=\dimen111
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen114
+\extrarowheight=\dimen115
 \NC@list=\toks18
-\extratabsurround=\skip47
-\backup@length=\skip48
+\extratabsurround=\skip48
+\backup@length=\skip49
 )
-\TX@col@width=\dimen112
-\TX@old@table=\dimen113
-\TX@old@col=\dimen114
-\TX@target=\dimen115
-\TX@delta=\dimen116
+\TX@col@width=\dimen116
+\TX@old@table=\dimen117
+\TX@old@col=\dimen118
+\TX@target=\dimen119
+\TX@delta=\dimen120
 \TX@cols=\count95
 \TX@ftn=\toks19
 )
-(/usr/share/texmf-texlive/tex/latex/tools/indentfirst.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\indentfirst.sty"
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 )
-(/usr/share/texmf-texlive/tex/latex/titlesec/titlesec.sty
-Package: titlesec 2007/08/12 v2.8 Sectioning titles
+
+Class scrreprt Warning: Usage of package `titlesec' together
+(scrreprt)              with a KOMA-Script class is not recommended.
+(scrreprt)              I'd suggest to use the package only
+(scrreprt)              if you really need it, because it breaks several
+(scrreprt)              KOMA-Script features, i.e., option `headings' and
+(scrreprt)              the extended optional argument of the section
+(scrreprt)              commands.
+(scrreprt)              Nevertheless, using requested
+(scrreprt)              package `titlesec' on input line 11.
+
+(C:\Users\burdind\AppData\Roaming\MiKTeX\2.9\tex\latex\titlesec\titlesec.sty
+Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
 \ttl@box=\box27
-\beforetitleunit=\skip49
-\aftertitleunit=\skip50
-\ttl@plus=\dimen117
-\ttl@minus=\dimen118
+\beforetitleunit=\skip50
+\aftertitleunit=\skip51
+\ttl@plus=\dimen121
+\ttl@minus=\dimen122
 \ttl@toksa=\toks20
-\titlewidth=\dimen119
-\titlewidthlast=\dimen120
-\titlewidthfirst=\dimen121
+\titlewidth=\dimen123
+\titlewidthlast=\dimen124
+\titlewidthfirst=\dimen125
+
+
+Package titlesec Warning: Non standard sectioning command detected
+(titlesec)                Using default spacing and no format.
+
+
+Package titlesec Warning: Non standard sectioning command detected
+(titlesec)                Using default spacing and no format.
+
+
+Package titlesec Warning: Non standard sectioning command detected
+(titlesec)                Using default spacing and no format.
+
+
+Package titlesec Warning: Non standard sectioning command detected
+(titlesec)                Using default spacing and no format.
+
+
+Package titlesec Warning: Non standard sectioning command detected
+(titlesec)                Using default spacing and no format.
+
 )
-(/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2000/07/18 v2.13 AMS math features
-\@mathmargin=\skip51
+
+Package scrreprt Warning: Activating an ugly workaround for a missing
+(scrreprt)                feature of package `titlesec` on input line 11.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip52
 
 For additional information on amsmath, use the `?' option.
-(/usr/share/texmf-texlive/tex/latex/amsmath/amstext.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
 Package: amstext 2000/06/29 v2.01
 
-(/usr/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks21
-\ex@=\dimen122
+\ex@=\dimen126
 ))
-(/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen123
+\pmbraise@=\dimen127
 )
-(/usr/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count96
-LaTeX Info: Redefining \frac on input line 211.
+LaTeX Info: Redefining \frac on input line 210.
 \uproot@=\count97
 \leftroot@=\count98
-LaTeX Info: Redefining \overline on input line 307.
+LaTeX Info: Redefining \overline on input line 306.
 \classnum@=\count99
 \DOTSCASE@=\count100
-LaTeX Info: Redefining \ldots on input line 379.
-LaTeX Info: Redefining \dots on input line 382.
-LaTeX Info: Redefining \cdots on input line 467.
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
 \Mathstrutbox@=\box28
 \strutbox@=\box29
-\big@size=\dimen124
-LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\big@size=\dimen128
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \macc@depth=\count101
 \c@MaxMatrixCols=\count102
 \dotsspace@=\muskip10
@@ -463,46 +519,45 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \column@=\count106
 \maxfields@=\count107
 \andhelp@=\toks23
-\eqnshift@=\dimen125
-\alignsep@=\dimen126
-\tagshift@=\dimen127
-\tagwidth@=\dimen128
-\totwidth@=\dimen129
-\lineht@=\dimen130
+\eqnshift@=\dimen129
+\alignsep@=\dimen130
+\tagshift@=\dimen131
+\tagwidth@=\dimen132
+\totwidth@=\dimen133
+\lineht@=\dimen134
 \@envbody=\toks24
-\multlinegap=\skip52
-\multlinetaggap=\skip53
+\multlinegap=\skip53
+\multlinetaggap=\skip54
 \mathdisplay@stack=\toks25
-LaTeX Info: Redefining \[ on input line 2666.
-LaTeX Info: Redefining \] on input line 2667.
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
 )
-(/usr/share/texmf-texlive/tex/latex/listings/listings.sty
+(C:\Users\burdind\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.sty
 \lst@mode=\count108
 \lst@gtempboxa=\box30
 \lst@token=\toks26
 \lst@length=\count109
-\lst@currlwidth=\dimen131
+\lst@currlwidth=\dimen135
 \lst@column=\count110
 \lst@pos=\count111
-\lst@lostspace=\dimen132
-\lst@width=\dimen133
+\lst@lostspace=\dimen136
+\lst@width=\dimen137
 \lst@newlines=\count112
 \lst@lineno=\count113
-\lst@maxwidth=\dimen134
+\lst@maxwidth=\dimen138
 
-(/usr/share/texmf-texlive/tex/latex/listings/lstmisc.sty
-File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+(C:\Users\burdind\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 \c@lstnumber=\count114
 \lst@skipnumbers=\count115
 \lst@framebox=\box31
 )
-(/usr/share/texmf-texlive/tex/latex/listings/listings.cfg
-File: listings.cfg 2007/02/22 1.4 listings configuration
+(C:\Users\burdind\AppData\Roaming\MiKTeX\2.9\tex\latex\listings\listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
-Package: listings 2007/02/22 1.4 (Carsten Heinz)
- (./BP.aux)
-\openout1 = `BP.aux'.
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
 
+(BP.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 84.
 LaTeX Font Info:    ... okay on input line 84.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 84.
@@ -516,73 +571,203 @@ LaTeX Font Info:    ... okay on input line 84.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 84.
 LaTeX Font Info:    ... okay on input line 84.
 
-*geometry auto-detecting driver*
-*geometry detected driver: pdftex*
--------------------- Geometry parameters
-paper: a4paper
-landscape: --
-twocolumn: --
-twoside: true
-asymmetric: --
-h-parts: 107.55249pt, 0.7\paperwidth , 71.7017pt (default)
-v-parts: 101.40665pt, 0.7\paperheight , 152.11pt (default)
-hmarginratio: 3:2
-vmarginratio: 2:3
-lines: --
-heightrounded: --
-bindingoffset: 0.0pt
-truedimen: --
-includehead: --
-includefoot: --
-includemp: --
-driver: pdftex
--------------------- Page layout dimensions and switches
-\paperwidth  597.50787pt
-\paperheight 845.04684pt
-\textwidth  426.79134pt
-\textheight 682.86613pt
-\oddsidemargin  35.2825pt
-\evensidemargin -0.56828pt
-\topmargin  -42.67912pt
-\headheight 18.125pt
-\headsep    21.75pt
-\footskip   50.75pt
-\marginparwidth 74.68849pt
-\marginparsep   12.8401pt
-\columnsep  10.0pt
-\skip\footins  10.8pt plus 4.0pt minus 2.0pt
-\hoffset 0.0pt
-\voffset 0.0pt
-\mag 1000
-\@twosidetrue \@mparswitchtrue 
-(1in=72.27pt, 1cm=28.45pt)
------------------------
-(/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* hratio: 3:2
+* modes: twoside 
+* h-part:(L,W,R)=(107.55249pt, 418.25368pt, 71.7017pt)
+* v-part:(T,H,B)=(101.40665pt, 591.5302pt, 152.11pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=426.79134pt
+* \textheight=682.86613pt
+* \oddsidemargin=35.2825pt
+* \evensidemargin=-0.56828pt
+* \topmargin=-42.67912pt
+* \headheight=18.125pt
+* \headsep=21.75pt
+* \topskip=12.0pt
+* \footskip=50.75pt
+* \marginparwidth=74.68849pt
+* \marginparsep=12.8401pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(C:\Users\burdind\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count116
-\scratchdimen=\dimen135
+\scratchdimen=\dimen139
 \scratchbox=\box32
 \nofMPsegments=\count117
 \nofMParguments=\count118
 \everyMPshowfont=\toks27
 \MPscratchCnt=\count119
-\MPscratchDim=\dimen136
+\MPscratchDim=\dimen140
 \MPnumerator=\count120
+\makeMPintoPDFobject=\count121
 \everyMPtoPDFconversion=\toks28
 )
-\c@lstlisting=\count121
- <lev.pdf, id=1, 91.34125pt x 69.25874pt>
-File: lev.pdf Graphic file (type pdf)
- <use lev.pdf> [1
+\c@lstlisting=\count122
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./lev.pdf>] [2]
+
+Class scrreprt Warning: Usage of deprecated font command `\bf'!
+(scrreprt)              You should note, that in 1994 font command `\bf' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\bf' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\bf' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
+(scrreprt)              by `\normalfont \bfseries ' on input line 94.
+
+
+Class scrreprt Warning: Usage of deprecated font command `\bf'!
+(scrreprt)              You should note, that in 1994 font command `\bf' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\bf' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\bf' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
+(scrreprt)              by `\normalfont \bfseries ' on input line 95.
+
+
+Class scrreprt Warning: Usage of deprecated font command `\bf'!
+(scrreprt)              You should note, that in 1994 font command `\bf' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\bf' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\bf' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
+(scrreprt)              by `\normalfont \bfseries ' on input line 96.
+
+<lev.pdf, id=1, 91.34125pt x 69.25874pt>
+File: lev.pdf Graphic file (type pdf)
+ <use lev.pdf>
+Package pdftex.def Info: lev.pdf used on input line 100.
+(pdftex.def)             Requested size: 93.81213pt x 71.13188pt.
+
+
+Class scrreprt Warning: Usage of deprecated font command `\bf'!
+(scrreprt)              You should note, that in 1994 font command `\bf' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\bf' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\bf' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
+(scrreprt)              by `\normalfont \bfseries ' on input line 103.
+
+
+Class scrreprt Warning: Usage of deprecated font command `\bf'!
+(scrreprt)              You should note, that in 1994 font command `\bf' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\bf' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\bf' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
+(scrreprt)              by `\normalfont \bfseries ' on input line 105.
+
+[1
+
+{C:/Users/burdind/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./lev.pdf
+>] [2]
+
+Class scrreprt Warning: Usage of deprecated font command `\bf'!
+(scrreprt)              You should note, that in 1994 font command `\bf' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\bf' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\bf' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
+(scrreprt)              by `\normalfont \bfseries ' on input line 149.
+
+
 Overfull \hbox (22.0pt too wide) in paragraph at lines 159--160
 [][] 
  []
 
-[3] [4]
+[3]
+
+Class scrreprt Warning: Usage of deprecated font command `\bf'!
+(scrreprt)              You should note, that in 1994 font command `\bf' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\bf' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\bf' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
+(scrreprt)              by `\normalfont \bfseries ' on input line 169.
+
+[4]
 \odstavecbox=\box33
-\vyskaodstavce=\skip54
+\vyskaodstavce=\skip55
+
+
+Class scrreprt Warning: Usage of deprecated font command `\bf'!
+(scrreprt)              You should note, that in 1994 font command `\bf' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\bf' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\bf' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
+(scrreprt)              by `\normalfont \bfseries ' on input line 195.
+
+
+Class scrreprt Warning: Usage of deprecated font command `\bf'!
+(scrreprt)              You should note, that in 1994 font command `\bf' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\bf' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\bf' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
+(scrreprt)              by `\normalfont \bfseries ' on input line 207.
+
 
 Overfull \hbox (34.89583pt too wide) in paragraph at lines 193--213
 [][] 
@@ -591,209 +776,318 @@ Overfull \hbox (34.89583pt too wide) in paragraph at lines 193--213
 [5]
 LaTeX Font Info:    Try loading font information for T1+cmss on input line 218.
 
- (/usr/share/texmf-texlive/tex/latex/base/t1cmss.fd
-File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-) (./BP.toc
-Class scrreprt Info: You've told me to use the font selection of the element
-(scrreprt)           `sectioning' that is an alias of element `disposition'
-(scrreprt)            on input line 2.
-Class scrreprt Info: You've told me to use the font selection of the element
-(scrreprt)           `sectioning' that is an alias of element `disposition'
-(scrreprt)            on input line 3.
-Class scrreprt Info: You've told me to use the font selection of the element
-(scrreprt)           `sectioning' that is an alias of element `disposition'
-(scrreprt)            on input line 14.
-Class scrreprt Info: You've told me to use the font selection of the element
-(scrreprt)           `sectioning' that is an alias of element `disposition'
-(scrreprt)            on input line 23.
-Class scrreprt Info: You've told me to use the font selection of the element
-(scrreprt)           `sectioning' that is an alias of element `disposition'
-(scrreprt)            on input line 24.
-Class scrreprt Info: You've told me to use the font selection of the element
-(scrreprt)           `sectioning' that is an alias of element `disposition'
-(scrreprt)            on input line 25.
-Class scrreprt Info: You've told me to use the font selection of the element
-(scrreprt)           `sectioning' that is an alias of element `disposition'
-(scrreprt)            on input line 26.
-Class scrreprt Info: You've told me to use the font selection of the element
-(scrreprt)           `sectioning' that is an alias of element `disposition'
-(scrreprt)            on input line 27.
-)
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1cmss.fd"
+File: t1cmss.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+) (BP.toc)
 \tf@toc=\write3
-\openout3 = `BP.toc'.
 
- [6
+[6
 
 ] [7
 
 ]
-Kapitola 1.
+chapter 1.
 
 Class scrreprt Warning: \float@addtolists detected!
-(scrreprt)              You should use the features of package `tocbasic'
-(scrreprt)              instead of \float@addtolists.
-(scrreprt)              Support for \float@addtolists may be removed from
-(scrreprt)              `scrreprt' soon .
-
-
-Overfull \hbox (2.40898pt too wide) in paragraph at lines 241--242
-[]\T1/cmr/m/n/12 Jak jiº bylo zmín¥no, £asové °ady jsou zák-lad-ním zk-oumaným 
-prvkem p°i analýze
- []
+(scrreprt)              Implementation of \float@addtolist became
+(scrreprt)              deprecated in KOMA-Script v3.01 2008/11/14 and
+(scrreprt)              has been replaced by several more flexible
+(scrreprt)              features of package `tocbasic`.
+(scrreprt)              Since Version 3.12 support for deprecated
+(scrreprt)              \float@addtolist interface has been
+(scrreprt)              restricted to only some of the KOMA-Script
+(scrreprt)              features and been removed from others.
+(scrreprt)              Loading of package `scrhack' may help to
+(scrreprt)              avoid this warning, if you are using a
+(scrreprt)              a package that still implements the
+(scrreprt)              deprecated \float@addtolist interface .
 
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 249.
 
-(/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 249.
  [8
 
 ]
-Overfull \hbox (5.22197pt too wide) in paragraph at lines 261--262
-\T1/cmr/m/n/12 generována zná-mou matem-at-ickou funkcí. D·sled-kem je srov-nat
-eln¥ jednoduchá
- []
-
-
 Overfull \hbox (0.77725pt too wide) in paragraph at lines 275--276
-\T1/cmr/m/n/12 ob-sahuje po-drob-n¥j²í charak-ter-is-tiku £asové °ady. Po-mocí 
-to-hoto typu grafu je moºné
+\T1/cmr/m/n/12 ob-sa-huje po-drob-n¥j²í cha-rak-te-ris-tiku £a-sové °ady. Po-mo
+cí to-hoto typu grafu je moºné
  []
 
 <pictures/users.png, id=42, 803.0pt x 437.635pt>
 File: pictures/users.png Graphic file (type png)
  <use pictures/users.png>
+Package pdftex.def Info: pictures/users.png used on input line 279.
+(pdftex.def)             Requested size: 426.79134pt x 232.60654pt.
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9]
-[10 <./pictures/users.png>] [11] [12]
-<pictures/primka.png, id=62, 709.65125pt x 415.5525pt>
+[10 <./pictures/users.png>] [11] [12] [13]
+<pictures/primka.png, id=70, 709.65125pt x 415.5525pt>
 File: pictures/primka.png Graphic file (type png)
 
-<use pictures/primka.png> [13 <./pictures/primka.png (PNG copy)>]
-<pictures/krivka.png, id=67, 709.65125pt x 415.5525pt>
+<use pictures/primka.png>
+Package pdftex.def Info: pictures/primka.png used on input line 405.
+(pdftex.def)             Requested size: 426.79134pt x 249.92311pt.
+ [14 <./pictures/primka.png>]
+<pictures/krivka.png, id=74, 709.65125pt x 415.5525pt>
 File: pictures/krivka.png Graphic file (type png)
 
-<use pictures/krivka.png> [14 <./pictures/krivka.png (PNG copy)>]
-<pictures/odchylky.png, id=72, 231.86626pt x 213.04594pt>
+<use pictures/krivka.png>
+Package pdftex.def Info: pictures/krivka.png used on input line 428.
+(pdftex.def)             Requested size: 426.79134pt x 249.92311pt.
+ [15 <./pictures/krivka.png>]
+<pictures/odchylky.png, id=79, 231.86626pt x 213.04594pt>
 File: pictures/odchylky.png Graphic file (type png)
 
-<use pictures/odchylky.png> [15 <./pictures/odchylky.png>] [16]
-Overfull \hbox (6.42363pt too wide) in paragraph at lines 533--534
-[]\T1/cmr/m/n/12 pro p°í-pad s p°eur£eným re-gres-ním mod-elem m·ºeme vy°a-dit 
-zbyte£né vysv¥tlu-
- []
+<use pictures/odchylky.png>
+Package pdftex.def Info: pictures/odchylky.png used on input line 453.
+(pdftex.def)             Requested size: 227.62204pt x 209.15092pt.
+ [16 <./pictures/odchylky.png>] [17]
 
-[17] [18] [19]
-Overfull \hbox (3.53801pt too wide) in paragraph at lines 607--608
-\T1/cmr/m/it/12 IDE \T1/cmr/m/n/12 (IDE - \T1/cmr/m/it/12 In-te-grated De-vel-o
-p-ment En-vi-ron-ment\T1/cmr/m/n/12 ). Je to sou-bor nástroj· pro p°ehled-
- []
+Class scrreprt Warning: Usage of deprecated font command `\bf'!
+(scrreprt)              You should note, that in 1994 font command `\bf' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\bf' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\bf' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
+(scrreprt)              by `\mathbf ' on input line 537.
 
-[20]
-Kapitola 2.
-<pictures/weka.png, id=96, 770.88pt x 578.16pt>
+
+Class scrreprt Warning: Usage of deprecated font command `\bf'!
+(scrreprt)              You should note, that in 1994 font command `\bf' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\bf' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\bf' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
+(scrreprt)              by `\mathbf ' on input line 552.
+
+
+Class scrreprt Warning: Usage of deprecated font command `\bf'!
+(scrreprt)              You should note, that in 1994 font command `\bf' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\bf' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\bf' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
+(scrreprt)              by `\mathbf ' on input line 557.
+
+
+Class scrreprt Warning: Usage of deprecated font command `\bf'!
+(scrreprt)              You should note, that in 1994 font command `\bf' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\bf' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\bf' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
+(scrreprt)              by `\mathbf ' on input line 557.
+
+[18]
+
+Class scrreprt Warning: Usage of deprecated font command `\bf'!
+(scrreprt)              You should note, that in 1994 font command `\bf' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\bf' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\bf' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
+(scrreprt)              by `\mathbf ' on input line 596.
+
+
+Class scrreprt Warning: Usage of deprecated font command `\bf'!
+(scrreprt)              You should note, that in 1994 font command `\bf' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\bf' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\bf' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
+(scrreprt)              by `\mathbf ' on input line 602.
+
+
+Class scrreprt Warning: Usage of deprecated font command `\bf'!
+(scrreprt)              You should note, that in 1994 font command `\bf' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\bf' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\bf' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
+(scrreprt)              by `\mathbf ' on input line 604.
+
+[19]
+chapter 2.
+[20
+
+] [21] <pictures/weka.png, id=102, 770.88pt x 578.16pt>
 File: pictures/weka.png Graphic file (type png)
- <use pictures/weka.png>
+
+<use pictures/weka.png>
+Package pdftex.def Info: pictures/weka.png used on input line 666.
+(pdftex.def)             Requested size: 426.79134pt x 320.08861pt.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[21
-
-] [22 <./pictures/weka.png>]
-<pictures/log.png, id=104, 826.08624pt x 257.96375pt>
+[22] [23 <./pictures/weka.png>]
+<pictures/log.png, id=110, 826.08624pt x 257.96375pt>
 File: pictures/log.png Graphic file (type png)
  <use pictures/log.png>
-<pictures/csv.png, id=105, 766.865pt x 355.3275pt>
+Package pdftex.def Info: pictures/log.png used on input line 688.
+(pdftex.def)             Requested size: 426.79134pt x 133.27594pt.
+
+<pictures/csv.png, id=111, 766.865pt x 355.3275pt>
 File: pictures/csv.png Graphic file (type png)
  <use pictures/csv.png>
+Package pdftex.def Info: pictures/csv.png used on input line 699.
+(pdftex.def)             Requested size: 426.79134pt x 197.75668pt.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[23 <./pictures/log.png>]
-Overfull \hbox (3.0247pt too wide) in paragraph at lines 682--697
+[24 <./pictures/log.png>]
+
+Class scrreprt Warning: Usage of deprecated font command `\bf'!
+(scrreprt)              You should note, that in 1994 font command `\bf' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\bf' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\bf' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
+(scrreprt)              by `\normalfont \bfseries ' on input line 712.
+
+
+Class scrreprt Warning: Usage of deprecated font command `\bf'!
+(scrreprt)              You should note, that in 1994 font command `\bf' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\bf' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\bf' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
+(scrreprt)              by `\normalfont \bfseries ' on input line 712.
+
+
+Overfull \hbox (3.0247pt too wide) in paragraph at lines 710--725
 [][] 
  []
 
-[24 <./pictures/csv.png>] [25]
-Overfull \hbox (14.50908pt too wide) in paragraph at lines 763--764
-\T1/cmr/m/n/12 popisu-jící ur£itý pro-ces se skládá z osmi nezávisle prom¥n-nýc
-h a jedné závisle prom¥nné: 
- []
-
-[26]
-Overfull \hbox (12.06642pt too wide) in paragraph at lines 813--814
-[]\T1/cmr/m/n/12 Pro re-al-izaci dosaºených výsledk· by-chom m¥li ne-jd°ív ses-
-tavit re-gresní odhadovou
- []
-
-<pictures/regresniFunkce.png, id=121, 1011.78pt x 501.875pt>
+[25 <./pictures/csv.png>] [26] [27]
+<pictures/regresniFunkce.png, id=127, 1011.78pt x 501.875pt>
 File: pictures/regresniFunkce.png Graphic file (type png)
 
-<use pictures/regresniFunkce.png> [27 <./pictures/regresniFunkce.png>] [28]
-Overfull \hbox (0.28322pt too wide) in paragraph at lines 859--860
-\T1/cmr/m/n/12 sobem ob-je-vit mul-ti-ko-lin-ear-itu, coº je zbyte£ná závis-los
-t mezi vysv¥tlu-jícími prom¥n-
- []
-
-
-Overfull \hbox (6.09163pt too wide) in paragraph at lines 865--866
-[]\T1/cmr/m/n/12 V záv¥ru jsem pop-sal pouºité pos-tupy pro dosaºení staveného 
-cíle a je-ich výsledky.
- []
-
-[29
-
-]
-Overfull \hbox (16.78207pt too wide) in paragraph at lines 874--875
-[]\T1/cmr/m/n/12 Pouºitá Java doku-men-tace. URL: <http://commons.apache.org/pr
-oper/commons-
- []
-
+<use pictures/regresniFunkce.png>
+Package pdftex.def Info: pictures/regresniFunkce.png used on input line 851.
+(pdftex.def)             Requested size: 426.79134pt x 211.70502pt.
+ [28 <./pictures/regresniFunkce.png>] [29]
 [30
 
-
 ]
-P\v {r}\'{\i }loha A.
+Overfull \hbox (16.78207pt too wide) in paragraph at lines 904--905
+[]\T1/cmr/m/n/12 Pouºitá Java do-ku-men-tace. URL: <http://commons.apache.org/p
+roper/commons-
+ []
+
 [31
 
+
 ]
-P\v {r}\'{\i }loha B.
+chapter A.
+
+Overfull \hbox (105.36334pt too wide) in paragraph at lines 920--921
+\T1/cmr/m/n/12 ma-ného sou-boru dat, který se musí na-chá-zet v ad-re-sá°i \T1/
+cmr/m/it/12 /com.bp.prediction.oldClasses.NumberPrediction/\T1/cmr/m/n/12 .
+ []
+
+
+Overfull \hbox (93.52301pt too wide) in paragraph at lines 922--923
+[]\T1/cmr/m/n/12 Pro ana-lýzu sou-boru dat se musí spus-tit t°ída \T1/cmr/m/it/
+12 com.bp.prediction.oldClasses.NumberPrediction.java\T1/cmr/m/n/12 ,
+ []
+
 [32
 
-] (./BP.aux) ) 
+]
+chapter B.
+[33
+
+] (BP.aux) ) 
 Here is how much of TeX's memory you used:
- 5864 strings out of 494818
- 77090 string characters out of 1178665
- 167890 words of memory out of 3000000
- 8963 multiletter control sequences out of 15000+50000
- 20699 words of font info for 49 fonts, out of 3000000 for 9000
- 212 hyphenation exceptions out of 8191
- 36i,9n,43p,949b,1035s stack positions out of 5000i,500n,10000p,200000b,50000s
- </home/amid/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx1440.600p
-k> </home/amid/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx1728.600pk> </home/am
-id/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecsx1200.600pk> </home/amid/.texmf-va
-r/fonts/pk/ljfour/jknappen/ec/ecsx2488.600pk> </home/amid/.texmf-var/fonts/pk/l
-jfour/jknappen/ec/ecti1200.600pk> </home/amid/.texmf-var/fonts/pk/ljfour/jknapp
-en/ec/ecrm1200.600pk> </home/amid/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm14
-40.600pk> </home/amid/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1728.600pk> </
-home/amid/.texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx2488.600pk> </home/amid/.t
-exmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/amid/.texmf-var/fon
-ts/pk/ljfour/jknappen/ec/eccc1728.600pk></usr/share/texmf-texlive/fonts/type1/p
-ublic/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfo
-nts/cm/cmbx8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex1
-0.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr
-/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf
--texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/fon
-ts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/publ
-ic/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb
->
-Output written on BP.pdf (32 pages, 751519 bytes).
+ 6954 strings out of 493673
+ 98185 string characters out of 3141523
+ 241909 words of memory out of 3000000
+ 10198 multiletter control sequences out of 15000+200000
+ 22457 words of font info for 52 fonts, out of 3000000 for 9000
+ 1025 hyphenation exceptions out of 8191
+ 43i,9n,66p,1012b,1035s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\burdind\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappe
+n\ec\dpi600\ecrm1000.pk> <C:\Users\burdind\AppData\Local\MiKTeX\2.9\fonts\pk\lj
+four\jknappen\ec\dpi600\ecrm0700.pk> <C:\Users\burdind\AppData\Local\MiKTeX\2.9
+\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk> <C:\Users\burdind\AppData\Loca
+l\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx1440.pk> <C:\Users\burdind\
+AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx1728.pk> <C:\Us
+ers\burdind\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx120
+0.pk> <C:\Users\burdind\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dp
+i600\ecsx2488.pk> <C:\Users\burdind\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jk
+nappen\ec\dpi600\ecti1200.pk> <C:\Users\burdind\AppData\Local\MiKTeX\2.9\fonts\
+pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\burdind\AppData\Local\MiKTe
+X\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1440.pk> <C:\Users\burdind\AppData
+\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1728.pk> <C:\Users\bur
+dind\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2488.pk> <
+C:\Users\burdind\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ec
+bx1200.pk> <C:\Users\burdind\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\
+ec\dpi600\eccc1728.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmbx8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmex10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmmi12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
+12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.p
+fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><
+C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:
+/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on BP.pdf (33 pages, 760545 bytes).
 PDF statistics:
- 695 PDF objects out of 1000 (max. 8388607)
+ 747 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
