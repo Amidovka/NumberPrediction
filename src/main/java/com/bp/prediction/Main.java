@@ -6,17 +6,10 @@ import com.bp.prediction.ui.GraphVisualization;
 import com.bp.prediction.data.CsvDataReader;
 import com.bp.prediction.predictor.NumberPredictor;
 
-import java.io.IOException;
-
 /**
  * Created by burdind on 26.10.2015.
  */
 public class Main {
-
-    //static variables created so that they
-    //could be used in GraphVisualisation class
-    public static double[] yData;
-    public static double[] regressionFunc;
 
     public static void main(String[] args) {
         /*
@@ -33,7 +26,7 @@ public class Main {
         //creating matrices with X and Y values
         dataReader.createMatrix();
         double[][] xData = dataReader.getxData();
-        yData = dataReader.getyData();
+        double[] yData = dataReader.getyData();
 
         //creating predictor instance
         NumberPredictor predictor = new NumberPredictor();
@@ -46,7 +39,7 @@ public class Main {
         }
 
         //creating time series from regression function values
-        regressionFunc = new double[yData.length];
+        double[] regressionFunc = new double[yData.length];
         for (int i = 0; i < regressionFunc.length; i++) {
             for (int j = 1; j < regParams.length; j++) {
                 regressionFunc[i] = (regParams[j])*xData[i][j-1];
@@ -54,6 +47,7 @@ public class Main {
             regressionFunc[i] += regParams[0];
         }
 
+        //example of using SimpleMovingAverage class
         System.out.println();
         SimpleMovingAverage sma = new SimpleMovingAverage(yData);
         sma.setN(5);
@@ -64,10 +58,9 @@ public class Main {
         two time series. One with actual values - yData.
         Second is regression function values - regressionFunc.
          */
-        try {
-            GraphVisualization.draw();
-        } catch (IOException e) {
-            System.out.println("Cannot draw graph! " + e);
-        }
+        GraphVisualization chart = new GraphVisualization("Time-series Visualization");
+        chart.setRealData(yData);
+        chart.setEstimatedData(regressionFunc);
+        chart.draw();
     }
 }

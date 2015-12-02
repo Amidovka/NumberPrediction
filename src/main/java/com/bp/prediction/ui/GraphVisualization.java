@@ -1,22 +1,15 @@
 package com.bp.prediction.ui;
 
-import com.bp.prediction.Main;
-import org.jfree.chart.ChartFactory;
-import org.jfree.chart.ChartPanel;
-import org.jfree.chart.JFreeChart;
-import org.jfree.chart.StandardChartTheme;
+import org.jfree.chart.*;
 import org.jfree.chart.axis.DateAxis;
 import org.jfree.chart.plot.XYPlot;
-import org.jfree.data.time.Millisecond;
-import org.jfree.data.time.TimeSeries;
-import org.jfree.data.time.TimeSeriesCollection;
+import org.jfree.data.time.*;
 import org.jfree.data.xy.XYDataset;
 import org.jfree.ui.ApplicationFrame;
-import org.jfree.ui.RectangleInsets;
 import org.jfree.ui.RefineryUtilities;
 
 import javax.swing.*;
-import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 
@@ -25,103 +18,155 @@ import java.text.SimpleDateFormat;
  */
 public class GraphVisualization extends ApplicationFrame {
 
-    private static final long serialVersionUID = 1L;
+    private String chartWindowTitle;
+    private double[] realData;
+    private double[] estimatedData;
 
     {
-        // set a theme using the new shadow generator feature
+        //set a theme using the new shadow generator feature
         ChartFactory.setChartTheme(new StandardChartTheme("JFree/Shadow", true));
     }
 
-    public GraphVisualization(String title) throws IOException {
-        super(title);
-        ChartPanel chartPanel = (ChartPanel) createPanel();
-        chartPanel.setPreferredSize(new java.awt.Dimension(1000, 500));
-        setContentPane(chartPanel);
+    /**
+     * GraphVisualization class constructor.
+     * @param chartWindowTitle chart window title.
+     */
+    public GraphVisualization(String chartWindowTitle) {
+        super(chartWindowTitle);
+        this.chartWindowTitle = chartWindowTitle;
     }
 
     /**
-     * Creates a chart.
-     *
-     * @param dataset  a dataset.
-     * @return A chart.
+     * Creates graph with set width and length of window.
      */
-    private static JFreeChart createChart(XYDataset dataset) {
-
-        JFreeChart chart = ChartFactory.createTimeSeriesChart(
-                "Computation Time Values",  // title
-                "Time",                // x-axis label
-                "Computation Time",    // y-axis label
-                dataset,               // data
-                true,                  // create legend?
-                true,                  // generate tooltips?
-                false                  // generate URLs?
-        );
-
-        chart.setBackgroundPaint(Color.white);
-
-        XYPlot plot = (XYPlot) chart.getPlot();
-        plot.setBackgroundPaint(Color.lightGray);
-        plot.setDomainGridlinePaint(Color.white);
-        plot.setRangeGridlinePaint(Color.white);
-        plot.setAxisOffset(new RectangleInsets(5.0, 5.0, 5.0, 5.0));
-        plot.setDomainCrosshairVisible(true);
-        plot.setRangeCrosshairVisible(true);
-
-        DateAxis axis = (DateAxis) plot.getDomainAxis();
-        axis.setDateFormatOverride(new SimpleDateFormat());
-
-        return chart;
-    }
-
-    /**
-     * Creates a dataset, consisting of two series of monthly data.
-     *
-     * @return The dataset.
-     */
-    private static XYDataset createDataset() throws IOException {
-
-        TimeSeries empiricalData = new TimeSeries("Empirická data");
-        double[] empData = Main.yData;
-        int dataSize = empData.length;
-
-        for (int k = 0; k < dataSize; k++){
-            empiricalData.add(new Millisecond(k*50, 57, 46, 8, 30, 3, 2014),empData[k]);
+    private void createGraph() {
+        ChartPanel chartPanel;
+        try {
+            chartPanel = (ChartPanel) createPanel();
+            chartPanel.setPreferredSize(new java.awt.Dimension(1000, 500));
+            setContentPane(chartPanel);
+        } catch (IOException e) {
+            System.err.println("Cannot create graph!");
         }
-
-        TimeSeries regression = new TimeSeries("Regresní pøímka");
-        double[] regresFunc = Main.regressionFunc;
-        int regSize = regresFunc.length;
-
-        for (int k = 0; k < regSize; k++){
-            regression.add(new Millisecond(k*50, 57, 46, 8, 30, 3, 2014), regresFunc[k]);
-        }
-
-        TimeSeriesCollection dataset = new TimeSeriesCollection();
-        dataset.addSeries(empiricalData);
-        dataset.addSeries(regression);
-        return dataset;
     }
 
     /**
-     * Creates a panel for the graph.
-     *
-     * @return A panel.
+     * Creates ChartPanel instance.
+     * Uses JFreeChart. Sets graph zooming,
+     * viewing options.
+     * @return panel
+     * @throws IOException
      */
-    public JPanel createPanel() throws IOException {
-        JFreeChart chart = createChart(createDataset());
+    private JPanel createPanel() throws IOException {
+        JFreeChart chart = createChart();
         ChartPanel panel = new ChartPanel(chart);
         panel.setFillZoomRectangle(true);
         panel.setMouseWheelEnabled(true);
         return panel;
     }
 
-    public static double draw() throws IOException {
+    /**
+     * Creates JFreeChart type chart.
+     * Sets title, x-axis and y-axis labels.
+     * Sets time-series x-axis format to date.
+     * Uses data set of time-series.
+     * @return chart
+     */
+    private JFreeChart createChart() {
+        JFreeChart xyLineChart = ChartFactory.createTimeSeriesChart(
+                "Computational Time Values Graph", //title
+                "Time",                            //x-axis label
+                "Computational Time",              //y-axis label
+                createDataSet(),                   //data
+                true,                              //create legend?
+                true,                              //generate tooltips?
+                false                              //generate URLs?
+        );
 
-        GraphVisualization graph = new GraphVisualization("Time Series Prediction");
-        graph.pack();
-        RefineryUtilities.centerFrameOnScreen(graph);
-        graph.setVisible(true);
+        final XYPlot plot = xyLineChart.getXYPlot();
+        plot.setDomainCrosshairVisible(true);
+        plot.setRangeCrosshairVisible(true);
 
-        return 0;
+        DateAxis axis = (DateAxis) plot.getDomainAxis();
+        axis.setDateFormatOverride(new SimpleDateFormat("HH:mm:ss"));
+
+        return xyLineChart;
+    }
+
+    /**
+     * Creates data set of two time-series.
+     * Both time-series have time intervals of 5 minutes
+     * starting from 8:44:00, 30.3.2014.
+     * @return data set of time-series.
+     */
+    private XYDataset createDataSet() {
+        TimeSeries realDataSeries = new TimeSeries("Real Data");
+        double[] realData = this.getRealData();
+        Minute realTimePeriod = new Minute(44, 8, 30, 3, 2014);
+
+        if (realData.length == 0) {
+            throw new IllegalArgumentException("Real data are empty!");
+        } else {
+            for (int i = 0; i < realData.length; i++) {
+                realDataSeries.add(realTimePeriod, realData[i]);
+                realTimePeriod = (Minute) realTimePeriod.next().next().next().next().next();
+            }
+        }
+
+        TimeSeries estimatedDataSeries = new TimeSeries("Estimated Data");
+        double[] estimatedData = this.getEstimatedData();
+        Minute estimatedTimePeriod = new Minute(44, 8, 30, 3, 2014);
+
+        if (estimatedData.length == 0) {
+            throw new IllegalArgumentException("Estimated data are empty!");
+        } else {
+            for (int i = 0; i < estimatedData.length; i++) {
+                estimatedDataSeries.add(estimatedTimePeriod, estimatedData[i]);
+                estimatedTimePeriod = (Minute) estimatedTimePeriod.next().next().next().next().next();
+            }
+        }
+
+        TimeSeriesCollection dataSet = new TimeSeriesCollection();
+        dataSet.addSeries(realDataSeries);
+        dataSet.addSeries(estimatedDataSeries);
+        return dataSet;
+    }
+
+    /**
+     * Creates a graph with two time-series
+     * in a new window.
+     */
+    public void draw() {
+        this.createGraph();
+        this.pack();
+        RefineryUtilities.centerFrameOnScreen(this);
+        this.setVisible(true);
+    }
+
+    public void saveGraphAsImage() {
+        int width = 1000;
+        int height = 500;
+        File timeSeriesGraph = new File(this.chartWindowTitle + ".jpeg");
+        try {
+            ChartUtilities.saveChartAsJPEG(timeSeriesGraph, createChart(), width, height);
+        } catch (IOException e) {
+            System.err.println("Cannot save graph as image!");
+        }
+    }
+
+    public double[] getEstimatedData() {
+        return this.estimatedData;
+    }
+
+    public void setEstimatedData(double[] estimatedData) {
+        this.estimatedData = estimatedData;
+    }
+
+    public double[] getRealData() {
+        return this.realData;
+    }
+
+    public void setRealData(double[] realData) {
+        this.realData = realData;
     }
 }
