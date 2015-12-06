@@ -12,8 +12,7 @@ public class SimpleMovingAverageTest {
 
     @Before
     public void setup(){
-        model = new SimpleMovingAverage(new double[]{1, 2, 3, 4, 5});
-        model.setN(3);
+        model = new SimpleMovingAverage(new double[]{1, 2, 3, 4, 5}, 3);
     }
 
     @Test

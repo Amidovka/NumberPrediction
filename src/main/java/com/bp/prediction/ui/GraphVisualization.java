@@ -13,16 +13,13 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 
-/**
- * Created by burdind on 26.10.2015.
- */
 public class GraphVisualization extends ApplicationFrame {
 
     private String chartWindowTitle;
     private double[] realData;
     private double[] estimatedData;
 
-    {
+    static {
         //set a theme using the new shadow generator feature
         ChartFactory.setChartTheme(new StandardChartTheme("JFree/Shadow", true));
     }
@@ -107,8 +104,8 @@ public class GraphVisualization extends ApplicationFrame {
         if (realData.length == 0) {
             throw new IllegalArgumentException("Real data are empty!");
         } else {
-            for (int i = 0; i < realData.length; i++) {
-                realDataSeries.add(realTimePeriod, realData[i]);
+            for (double aRealData : realData) {
+                realDataSeries.add(realTimePeriod, aRealData);
                 realTimePeriod = (Minute) realTimePeriod.next().next().next().next().next();
             }
         }
@@ -120,8 +117,8 @@ public class GraphVisualization extends ApplicationFrame {
         if (estimatedData.length == 0) {
             throw new IllegalArgumentException("Estimated data are empty!");
         } else {
-            for (int i = 0; i < estimatedData.length; i++) {
-                estimatedDataSeries.add(estimatedTimePeriod, estimatedData[i]);
+            for (double anEstimatedData : estimatedData) {
+                estimatedDataSeries.add(estimatedTimePeriod, anEstimatedData);
                 estimatedTimePeriod = (Minute) estimatedTimePeriod.next().next().next().next().next();
             }
         }

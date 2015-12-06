@@ -1,14 +1,10 @@
 package com.bp.prediction;
 
-import com.bp.prediction.statsModel.AutoregressiveModel;
 import com.bp.prediction.statsModel.SimpleMovingAverage;
 import com.bp.prediction.ui.GraphVisualization;
 import com.bp.prediction.data.CsvDataReader;
 import com.bp.prediction.predictor.NumberPredictor;
 
-/**
- * Created by burdind on 26.10.2015.
- */
 public class Main {
 
     public static void main(String[] args) {
@@ -49,8 +45,7 @@ public class Main {
 
         //example of using SimpleMovingAverage class
         System.out.println();
-        SimpleMovingAverage sma = new SimpleMovingAverage(yData);
-        sma.setN(5);
+        SimpleMovingAverage sma = new SimpleMovingAverage(yData, 5);
         System.out.println("Value predicted by simple moving average using window size 5 is " + sma.getNextPrediction());
 
         /*
@@ -62,7 +57,5 @@ public class Main {
         chart.setRealData(yData);
         chart.setEstimatedData(regressionFunc);
         chart.draw();
-        //comment 30
-        //<!--comment 4 gitignore-->
     }
 }

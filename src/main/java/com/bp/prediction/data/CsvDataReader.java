@@ -3,14 +3,10 @@ package com.bp.prediction.data;
 import au.com.bytecode.opencsv.CSVReader;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.List;
 
-/**
- * Created by burdind on 26.10.2015.
- */
 public class CsvDataReader implements DataReader {
 
     private List<String[]> data;
@@ -21,7 +17,6 @@ public class CsvDataReader implements DataReader {
     /**
      * Reads, parses .csv file and saves the data from
      * file to list of string arrays.
-     * @return List of string arrays
      */
     public void parseData() {
         FileReader reader;
@@ -31,8 +26,6 @@ public class CsvDataReader implements DataReader {
             reader = new FileReader(new File("Data.csv").getAbsolutePath());
             csvReader = new CSVReader(reader);
             this.setData(csvReader.readAll());
-        } catch (FileNotFoundException e) {
-            System.out.println("Cannot find file to process! " + e);
         } catch (IOException e) {
             System.out.println("Cannot find file to process! " + e);
         }
@@ -45,13 +38,12 @@ public class CsvDataReader implements DataReader {
     public void createMatrix() {
         int numOfRows = this.getData().size();
         int numOfCol = this.getData().get(0).length;
-        int[] xParameters = this.getxParams();
-        double[][] xMatrix = new double[numOfRows][xParameters.length];
+        double[][] xMatrix = new double[numOfRows][xParams.length];
         double[] yMatrix = new double[numOfRows];
 
         for (int i = 0; i < numOfRows; i++) {
-            for (int j = 0; j < xParameters.length; j++) {
-                xMatrix[i][j] = Double.parseDouble(data.get(i)[xParameters[j]-1]);
+            for (int j = 0; j < xParams.length; j++) {
+                xMatrix[i][j] = Double.parseDouble(data.get(i)[xParams[j]-1]);
             }
             yMatrix[i] = Double.parseDouble(data.get(i)[numOfCol - 1]);
         }
@@ -81,10 +73,6 @@ public class CsvDataReader implements DataReader {
 
     public void setData(List<String[]> data) {
         this.data = data;
-    }
-
-    public int[] getxParams() {
-        return xParams;
     }
 
     public void setxParams(int[] xParams) {

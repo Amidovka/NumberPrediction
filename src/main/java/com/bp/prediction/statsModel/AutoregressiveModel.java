@@ -2,9 +2,6 @@ package com.bp.prediction.statsModel;
 
 import org.apache.commons.math3.stat.regression.OLSMultipleLinearRegression;
 
-/**
- * Created by burdind on 22.11.2015.
- */
 public class AutoregressiveModel {
 
     private int p;

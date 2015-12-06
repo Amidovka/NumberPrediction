@@ -1,6 +1,7 @@
 package com.bp.test;
 
 import com.bp.prediction.predictor.NumberPredictor;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
@@ -15,7 +16,12 @@ import static org.junit.Assert.assertThat;
  */
 public class NumberPredictorTest {
 
-    NumberPredictor predictor = new NumberPredictor();
+    private NumberPredictor predictor;
+
+    @Before
+    public void setup(){
+        predictor = new NumberPredictor();
+    }
 
     /**
      * Tests the number of combinations.

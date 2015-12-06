@@ -4,19 +4,17 @@ import org.apache.commons.math3.stat.regression.OLSMultipleLinearRegression;
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 
 import java.util.ArrayList;
-import java.util.List;
 
-/**
- * Created by burdind on 26.10.2015.
- */
 public class NumberPredictor implements Predictor{
 
-    private ArrayList<int[]> combinations = new ArrayList<int[]>();
+    private ArrayList<int[]> combinations = new ArrayList<>();
 
+    @Override
     public double getNextPrediction() {
         return 0;
     }
 
+    @Override
     public void update(double y, double[] xVector) {
 
     }
@@ -98,7 +96,7 @@ public class NumberPredictor implements Predictor{
      * Algorithm for permutations without repeats.
      * Number of combintaions = 2^n - 1.
      * n - number of parameters to combinate.
-     * @param pos
+     * @param pos position
      * @param inPos initial position in array to begin permutation from
      */
     private void permutation(int pos, int inPos, int k, int n, int[] a, int[] xParams) {
