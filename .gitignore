@@ -1,4 +1,4 @@
 NumberPrediction.iml
 SimplePrediction.iml
-.idea/
+.idea/*
 /target
