@@ -1,6 +1,5 @@
 package com.bp.prediction;
 
-import com.bp.prediction.statsModel.SimpleMovingAverage;
 import com.bp.prediction.ui.GraphVisualization;
 import com.bp.prediction.data.CsvDataReader;
 import com.bp.prediction.predictor.NumberPredictor;
@@ -43,14 +42,9 @@ public class Main {
             regressionFunc[i] += regParams[0];
         }
 
-        //example of using SimpleMovingAverage class
-        System.out.println();
-        SimpleMovingAverage sma = new SimpleMovingAverage(yData, 5);
-        System.out.println("Value predicted by simple moving average using window size 5 is " + sma.getNextPrediction());
-
         /*
         Calling draw() method to draw a graph with
-        two time series. One with actual values - yData.
+        two time series. One with actual values - yData
         Second is regression function values - regressionFunc.
          */
         GraphVisualization chart = new GraphVisualization("Time-series Visualization");

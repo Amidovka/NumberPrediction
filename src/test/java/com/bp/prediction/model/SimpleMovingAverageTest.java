@@ -1,4 +1,4 @@
-package com.bp.prediction.statsModel;
+package com.bp.prediction.model;
 
 import org.junit.Before;
 import org.junit.Test;
