@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba70029b-9a51-4aab-891f-42aaf76cbe2b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bp/prediction/Main.java" afterPath="$PROJECT_DIR$/src/main/java/com/bp/prediction/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="NumberPrediction.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,7 +29,7 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/bp/prediction/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.0500895">
+            <state vertical-scroll-proportion="0.72629696">
               <caret line="64" column="20" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
               <folding />
             </state>
@@ -62,7 +60,7 @@
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="1146" column="10" selection-start-line="1146" selection-start-column="10" selection-end-line="1146" selection-end-column="10" />
+              <caret line="1142" column="10" selection-start-line="1142" selection-start-column="10" selection-end-line="1142" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -1018,7 +1016,7 @@
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="1146" column="10" selection-start-line="1146" selection-start-column="10" selection-end-line="1146" selection-end-column="10" />
+          <caret line="1142" column="10" selection-start-line="1142" selection-start-column="10" selection-end-line="1142" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -1049,7 +1047,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bp/prediction/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0500895">
+        <state vertical-scroll-proportion="0.72629696">
           <caret line="64" column="20" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
           <folding />
         </state>
