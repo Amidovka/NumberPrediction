@@ -1,5 +1,4 @@
 NumberPrediction.iml
 SimplePrediction.iml
-/.idea
-.idea/workspace.xml
+**/.idea
 /target
