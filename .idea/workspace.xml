@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba70029b-9a51-4aab-891f-42aaf76cbe2b" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bp/prediction/Main.java" afterPath="$PROJECT_DIR$/src/main/java/com/bp/prediction/Main.java" />
     </list>
     <ignored path="NumberPrediction.iws" />
@@ -50,7 +51,7 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+              <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -60,7 +61,7 @@
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="1142" column="10" selection-start-line="1142" selection-start-column="10" selection-end-line="1142" selection-end-column="10" />
+              <caret line="1144" column="10" selection-start-line="1144" selection-start-column="10" selection-end-line="1144" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -1016,7 +1017,7 @@
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="1142" column="10" selection-start-line="1142" selection-start-column="10" selection-end-line="1142" selection-end-column="10" />
+          <caret line="1144" column="10" selection-start-line="1144" selection-start-column="10" selection-end-line="1144" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -1040,7 +1041,7 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="7" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+          <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
           <folding />
         </state>
       </provider>
