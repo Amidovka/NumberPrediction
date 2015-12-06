@@ -62,7 +62,7 @@ public class Main {
         chart.setRealData(yData);
         chart.setEstimatedData(regressionFunc);
         chart.draw();
-        //comment 6
+        //comment 7
         //<!--comment 4 gitignore-->
     }
 }
