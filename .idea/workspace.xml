@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba70029b-9a51-4aab-891f-42aaf76cbe2b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/bp/prediction/Main.java" afterPath="$PROJECT_DIR$/src/main/java/com/bp/prediction/Main.java" />
     </list>
     <ignored path="NumberPrediction.iws" />
@@ -61,7 +60,7 @@
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-747.37036">
-              <caret line="1187" column="10" selection-start-line="1187" selection-start-column="10" selection-end-line="1187" selection-end-column="10" />
+              <caret line="1188" column="10" selection-start-line="1188" selection-start-column="10" selection-end-line="1188" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -1076,7 +1075,7 @@
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-747.37036">
-          <caret line="1187" column="10" selection-start-line="1187" selection-start-column="10" selection-end-line="1187" selection-end-column="10" />
+          <caret line="1188" column="10" selection-start-line="1188" selection-start-column="10" selection-end-line="1188" selection-end-column="10" />
           <folding />
         </state>
       </provider>
