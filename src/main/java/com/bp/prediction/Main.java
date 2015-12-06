@@ -63,5 +63,6 @@ public class Main {
         chart.setEstimatedData(regressionFunc);
         chart.draw();
         // git ignore comment
+        // git ignore comment 2
     }
 }
