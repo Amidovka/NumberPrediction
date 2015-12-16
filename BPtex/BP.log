@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.30)  1 DEC 2015 01:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.30)  16 DEC 2015 02:20
 entering extended mode
 **C:/Users/burdind/Documents/IdeaProjects/NumberPrediction/BPtex/BP.tex
 (C:/Users/burdind/Documents/IdeaProjects/NumberPrediction/BPtex/BP.tex
@@ -826,28 +826,43 @@ Package pdftex.def Info: pictures/users.png used on input line 279.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [9]
-[10 <./pictures/users.png>] [11] [12] [13]
-<pictures/primka.png, id=70, 709.65125pt x 415.5525pt>
+[10 <./pictures/users.png>] [11]
+<pictures/linearMAweights.png, id=62, 1027.84pt x 770.88pt>
+File: pictures/linearMAweights.png Graphic file (type png)
+
+<use pictures/linearMAweights.png>
+Package pdftex.def Info: pictures/linearMAweights.png used on input line 368.
+(pdftex.def)             Requested size: 199.16928pt x 149.3741pt.
+ [12 <./pictures/linearMAweights.png (PNG copy)>] <pictures/exponentialMAweight
+s.png, id=67, 1304.875pt x 978.65625pt>
+File: pictures/exponentialMAweights.png Graphic file (type png)
+
+<use pictures/exponentialMAweights.png>
+Package pdftex.def Info: pictures/exponentialMAweights.png used on input line 3
+97.
+(pdftex.def)             Requested size: 199.16928pt x 149.37552pt.
+ [13 <./pictures/exponentialMAweights.png>] [14] <pictures/primka.png, id=76, 7
+09.65125pt x 415.5525pt>
 File: pictures/primka.png Graphic file (type png)
 
 <use pictures/primka.png>
-Package pdftex.def Info: pictures/primka.png used on input line 405.
+Package pdftex.def Info: pictures/primka.png used on input line 455.
 (pdftex.def)             Requested size: 426.79134pt x 249.92311pt.
- [14 <./pictures/primka.png>]
-<pictures/krivka.png, id=74, 709.65125pt x 415.5525pt>
+ [15 <./pictures/primka.png>]
+<pictures/krivka.png, id=80, 709.65125pt x 415.5525pt>
 File: pictures/krivka.png Graphic file (type png)
 
 <use pictures/krivka.png>
-Package pdftex.def Info: pictures/krivka.png used on input line 428.
+Package pdftex.def Info: pictures/krivka.png used on input line 478.
 (pdftex.def)             Requested size: 426.79134pt x 249.92311pt.
- [15 <./pictures/krivka.png>]
-<pictures/odchylky.png, id=79, 231.86626pt x 213.04594pt>
+ [16 <./pictures/krivka.png>]
+<pictures/odchylky.png, id=85, 231.86626pt x 213.04594pt>
 File: pictures/odchylky.png Graphic file (type png)
 
 <use pictures/odchylky.png>
-Package pdftex.def Info: pictures/odchylky.png used on input line 453.
+Package pdftex.def Info: pictures/odchylky.png used on input line 503.
 (pdftex.def)             Requested size: 227.62204pt x 209.15092pt.
- [16 <./pictures/odchylky.png>] [17]
+ [17 <./pictures/odchylky.png>] [18]
 
 Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              You should note, that in 1994 font command `\bf' has
@@ -860,64 +875,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\bf' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
-(scrreprt)              by `\mathbf ' on input line 537.
-
-
-Class scrreprt Warning: Usage of deprecated font command `\bf'!
-(scrreprt)              You should note, that in 1994 font command `\bf' has
-(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
-(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
-(scrreprt)              shouldn't use such commands any longer and within
-(scrreprt)              KOMA-Script usage of `\bf' is definitely deprecated.
-(scrreprt)              See `fntguide.pdf' for more information about
-(scrreprt)              recommended font commands.
-(scrreprt)              Note also, that KOMA-Script will remove the definition
-(scrreprt)              of `\bf' anytime until release of about version 3.20.
-(scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
-(scrreprt)              by `\mathbf ' on input line 552.
-
-
-Class scrreprt Warning: Usage of deprecated font command `\bf'!
-(scrreprt)              You should note, that in 1994 font command `\bf' has
-(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
-(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
-(scrreprt)              shouldn't use such commands any longer and within
-(scrreprt)              KOMA-Script usage of `\bf' is definitely deprecated.
-(scrreprt)              See `fntguide.pdf' for more information about
-(scrreprt)              recommended font commands.
-(scrreprt)              Note also, that KOMA-Script will remove the definition
-(scrreprt)              of `\bf' anytime until release of about version 3.20.
-(scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
-(scrreprt)              by `\mathbf ' on input line 557.
-
-
-Class scrreprt Warning: Usage of deprecated font command `\bf'!
-(scrreprt)              You should note, that in 1994 font command `\bf' has
-(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
-(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
-(scrreprt)              shouldn't use such commands any longer and within
-(scrreprt)              KOMA-Script usage of `\bf' is definitely deprecated.
-(scrreprt)              See `fntguide.pdf' for more information about
-(scrreprt)              recommended font commands.
-(scrreprt)              Note also, that KOMA-Script will remove the definition
-(scrreprt)              of `\bf' anytime until release of about version 3.20.
-(scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
-(scrreprt)              by `\mathbf ' on input line 557.
-
-[18]
-
-Class scrreprt Warning: Usage of deprecated font command `\bf'!
-(scrreprt)              You should note, that in 1994 font command `\bf' has
-(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
-(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
-(scrreprt)              shouldn't use such commands any longer and within
-(scrreprt)              KOMA-Script usage of `\bf' is definitely deprecated.
-(scrreprt)              See `fntguide.pdf' for more information about
-(scrreprt)              recommended font commands.
-(scrreprt)              Note also, that KOMA-Script will remove the definition
-(scrreprt)              of `\bf' anytime until release of about version 3.20.
-(scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
-(scrreprt)              by `\mathbf ' on input line 596.
+(scrreprt)              by `\mathbf ' on input line 587.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\bf'!
@@ -945,39 +903,96 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\bf' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
-(scrreprt)              by `\mathbf ' on input line 604.
+(scrreprt)              by `\mathbf ' on input line 607.
+
+
+Class scrreprt Warning: Usage of deprecated font command `\bf'!
+(scrreprt)              You should note, that in 1994 font command `\bf' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\bf' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\bf' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
+(scrreprt)              by `\mathbf ' on input line 607.
 
 [19]
-chapter 2.
-[20
 
-] [21] <pictures/weka.png, id=102, 770.88pt x 578.16pt>
+Class scrreprt Warning: Usage of deprecated font command `\bf'!
+(scrreprt)              You should note, that in 1994 font command `\bf' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\bf' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\bf' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
+(scrreprt)              by `\mathbf ' on input line 646.
+
+
+Class scrreprt Warning: Usage of deprecated font command `\bf'!
+(scrreprt)              You should note, that in 1994 font command `\bf' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\bf' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\bf' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
+(scrreprt)              by `\mathbf ' on input line 652.
+
+
+Class scrreprt Warning: Usage of deprecated font command `\bf'!
+(scrreprt)              You should note, that in 1994 font command `\bf' has
+(scrreprt)              been defined for compatiblitiy to Script 2.0 only.
+(scrreprt)              Now, after two decades of LaTeX2e and NFSS2, you
+(scrreprt)              shouldn't use such commands any longer and within
+(scrreprt)              KOMA-Script usage of `\bf' is definitely deprecated.
+(scrreprt)              See `fntguide.pdf' for more information about
+(scrreprt)              recommended font commands.
+(scrreprt)              Note also, that KOMA-Script will remove the definition
+(scrreprt)              of `\bf' anytime until release of about version 3.20.
+(scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
+(scrreprt)              by `\mathbf ' on input line 654.
+
+[20]
+chapter 2.
+[21
+
+] [22] <pictures/weka.png, id=108, 770.88pt x 578.16pt>
 File: pictures/weka.png Graphic file (type png)
 
 <use pictures/weka.png>
-Package pdftex.def Info: pictures/weka.png used on input line 666.
+Package pdftex.def Info: pictures/weka.png used on input line 716.
 (pdftex.def)             Requested size: 426.79134pt x 320.08861pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[22] [23 <./pictures/weka.png>]
-<pictures/log.png, id=110, 826.08624pt x 257.96375pt>
+[23] [24 <./pictures/weka.png>]
+<pictures/log.png, id=116, 826.08624pt x 257.96375pt>
 File: pictures/log.png Graphic file (type png)
  <use pictures/log.png>
-Package pdftex.def Info: pictures/log.png used on input line 688.
+Package pdftex.def Info: pictures/log.png used on input line 738.
 (pdftex.def)             Requested size: 426.79134pt x 133.27594pt.
 
-<pictures/csv.png, id=111, 766.865pt x 355.3275pt>
+<pictures/csv.png, id=117, 766.865pt x 355.3275pt>
 File: pictures/csv.png Graphic file (type png)
  <use pictures/csv.png>
-Package pdftex.def Info: pictures/csv.png used on input line 699.
+Package pdftex.def Info: pictures/csv.png used on input line 749.
 (pdftex.def)             Requested size: 426.79134pt x 197.75668pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[24 <./pictures/log.png>]
+[25 <./pictures/log.png>]
 
 Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              You should note, that in 1994 font command `\bf' has
@@ -990,7 +1005,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\bf' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
-(scrreprt)              by `\normalfont \bfseries ' on input line 712.
+(scrreprt)              by `\normalfont \bfseries ' on input line 762.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\bf'!
@@ -1004,58 +1019,58 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\bf' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
-(scrreprt)              by `\normalfont \bfseries ' on input line 712.
+(scrreprt)              by `\normalfont \bfseries ' on input line 762.
 
 
-Overfull \hbox (3.0247pt too wide) in paragraph at lines 710--725
+Overfull \hbox (3.0247pt too wide) in paragraph at lines 760--775
 [][] 
  []
 
-[25 <./pictures/csv.png>] [26] [27]
-<pictures/regresniFunkce.png, id=127, 1011.78pt x 501.875pt>
+[26 <./pictures/csv.png>] [27] [28]
+<pictures/regresniFunkce.png, id=133, 1011.78pt x 501.875pt>
 File: pictures/regresniFunkce.png Graphic file (type png)
 
 <use pictures/regresniFunkce.png>
-Package pdftex.def Info: pictures/regresniFunkce.png used on input line 851.
+Package pdftex.def Info: pictures/regresniFunkce.png used on input line 901.
 (pdftex.def)             Requested size: 426.79134pt x 211.70502pt.
- [28 <./pictures/regresniFunkce.png>] [29]
-[30
+ [29 <./pictures/regresniFunkce.png>] [30]
+[31
 
 ]
-Overfull \hbox (16.78207pt too wide) in paragraph at lines 904--905
+Overfull \hbox (16.78207pt too wide) in paragraph at lines 954--955
 []\T1/cmr/m/n/12 Pouºitá Java do-ku-men-tace. URL: <http://commons.apache.org/p
 roper/commons-
  []
 
-[31
+[32
 
 
 ]
 chapter A.
 
-Overfull \hbox (105.36334pt too wide) in paragraph at lines 920--921
+Overfull \hbox (105.36334pt too wide) in paragraph at lines 970--971
 \T1/cmr/m/n/12 ma-ného sou-boru dat, který se musí na-chá-zet v ad-re-sá°i \T1/
 cmr/m/it/12 /com.bp.prediction.oldClasses.NumberPrediction/\T1/cmr/m/n/12 .
  []
 
 
-Overfull \hbox (93.52301pt too wide) in paragraph at lines 922--923
+Overfull \hbox (93.52301pt too wide) in paragraph at lines 972--973
 []\T1/cmr/m/n/12 Pro ana-lýzu sou-boru dat se musí spus-tit t°ída \T1/cmr/m/it/
 12 com.bp.prediction.oldClasses.NumberPrediction.java\T1/cmr/m/n/12 ,
  []
 
-[32
+[33
 
 ]
 chapter B.
-[33
+[34
 
 ] (BP.aux) ) 
 Here is how much of TeX's memory you used:
- 6954 strings out of 493673
- 98185 string characters out of 3141523
- 241909 words of memory out of 3000000
- 10198 multiletter control sequences out of 15000+200000
+ 6968 strings out of 493673
+ 98584 string characters out of 3141523
+ 241931 words of memory out of 3000000
+ 10210 multiletter control sequences out of 15000+200000
  22457 words of font info for 52 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  43i,9n,66p,1012b,1035s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1085,9 +1100,9 @@ cmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
 fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><
 C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:
 /Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on BP.pdf (33 pages, 760545 bytes).
+Output written on BP.pdf (34 pages, 782641 bytes).
 PDF statistics:
- 747 PDF objects out of 1000 (max. 8388607)
+ 755 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

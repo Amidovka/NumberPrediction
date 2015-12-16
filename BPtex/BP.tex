@@ -329,6 +329,76 @@ V případě multiplikativní dekompozice má trendová složka stejné jednotky
 \item[d)] dekompozice umožňuje provést předpověd' jednotlivých složek, což vede k lepšímu výsledku v předpovídání samotné časové řady; předpovědi složek se v takovém případě sečtou nebo vynásobí v závislosti na typu dekompozice
 \end{itemize}
 
+\subsection{Klouzavé průměry}
+
+Při analýze časové řady je velmi důležité zkoumat jestli má časová řada trend nebo nemá. Metoda klouzavých průmerů je jednou z adaptivních metod pro modelování trendové složky časové řady. Adaptivní přístup je založen na tom, že pomocí něho můžeme pracovat s trendovou složkou, která se mění v čase a kterou nelze popsat matematickou křivkou s neměnnými parametry. Však můžeme předpokládat, že v malých úsecích časové řady existuje možnost takové vyrovnání matematickou křivkou použit. \cite{cipra}
+
+Základní myšlenkou metody klouzavých průměrů je určení hodnot vyhlazené časové řady pomocí vypočítaných pruměrů hodnot původní časové řady. Počet hodnot, pro které vypočítáme průměr, určujeme pomocí tzv. \textit{okna}.   
+
+\textit{Okno} (délka klouzavé části) je určena počtem sezón v sezonních časových řadách. Pro ostatní časové řady musíme okno volit pro každý případ zvlášt'. Obecně čím je okno větší (delší klouzavá část), tím je vyrovnáná časová řada hladší. \cite{arlt}
+
+Existují různé typy metody klouzavých průměrů. Nejčastějšími typy jsou \textit{jednoduchý klouzavý průměr} (angl. Simple Moving Average - SMA), \textit{lineárně vážený klouzavý průměr} (angl. Linear Weighted Moving Average - LWMA) a  \textit{exponenciální klouzavý průměr} (angl. Exponential Moving Average). Tyto metody jsou podrobně porbrány v \cite{arlt} a \cite{iastat}. V této práci ale budou popsány pouze jejich využití pro předpovídání časových řad.
+
+\normalsize \textbf{Jednoduchý klouzavý průměr}
+
+Jednoduchý neboli aritmetický klouzavý průměr je nejjednodušším a méně spolehlivějším případem, kdy pro vyhlazení nebo předpověd' časové řady vypočítáme aritmetický průměr hodnot z určeného okna. Pro předpoved' zkoumané hodnoty $y_t$ v čase $t+1$ můžeme použit výraz
+
+\begin{equation}
+\hat{y}_{t+1} = \frac{y_t + y_{t-1} + ... + y_{t-n+1}}{n},
+\end{equation}
+
+kde $n$ je velikost okna. 
+
+\normalsize \textbf{Lineárně vážený klouzavý průměr}
+
+Lineárně vážený klouzavý průměr se od jednoduchého liší tím, že jsou jeho hodnotam přiřazeny váhy, které jsou lineárně uspořádány podle velikosti. To znamená, že při výpočtu lineárně váženého klouzavého průměru předpokládáme, že poslední (nejnovější) hodnoty časové řady jsou významnější  a mají větší vliv, než hodnoty předešlé. Predikovanou hodnotu časové čady $y_t$ v čase $t+1$ můžeme vypočítat pomocí následujícího výrazu
+
+\begin{equation}
+\hat{y}_{t+1} = \frac{2}{n(n+1)}\sum_{i=0}^{n-1}(n-i)y_{t-i},
+\end{equation}
+
+kde $n$ je velikost okna a zároveň musí platit, že součet všech váh je roven jedné
+
+\begin{equation}
+\frac{2}{n(n+1)}\sum_{i=0}^{n-1}(n-i) = 1
+\end{equation}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=7cm]{pictures/linearMAweights.png}
+  \caption{Graf ukazující váhy v případě velikosti okna n = 15 pro LWMA. \newline(Zdroj: <https://cs.wikipedia.org>)}
+  \label{fig:linearWeights}
+\end{figure}
+
+\normalsize \textbf{Exponenciální klouzavý průměr}
+
+Při výpočtu exponenciálního klouzavého průměru se využívají váhy, jejichž hodnoty se zmenšují exponenciálně. Obecný výraz pro tento typ klouzavých průměrů je následující 
+
+\begin{equation}
+\hat{y}_{t} = \alpha{y}_t + (1-\alpha)\hat{y}_{t-1}, 
+\end{equation}  
+
+kde $\hat{y}_{t-1}$ je hodnota exponenciálního klouzavého průměru v časový okamžik $t-1$, což znamená, že tento výraz je rekurzivní. Číslo $\alpha$ je vyrovnávací konstanta, která je nejčastěji určena pomocí velikosti zkoumaného "okna" \space dat
+
+\begin{equation}
+\alpha = \frac{2}{n+1}, 
+\end{equation}  
+
+kde $n$ je velikost okna.
+
+Na základě rekurentnosti může být výraz pro exponenciální průměr přepsán a pro predikovanou hodnotu tehdy platí 
+
+\begin{equation}
+\hat{y}_{t+1} = \alpha\sum_{i=0}^{n-2}(1-\alpha)^iy_{t-i} + (1-\alpha)^{n-1}y_{t-n},
+\end{equation}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=7cm]{pictures/exponentialMAweights.png}
+  \caption{Graf ukazující váhy v případě velikosti okna n = 15 pro EMA. \newline(Zdroj: <https://cs.wikipedia.org>)}
+  \label{fig:exponentialWeights}
+\end{figure}
+
 \subsection{Predikce}
 
 Protože je tato práce zaměřena na predikci časových řad, je konstrukce předpovědí jednou z nejdůležitějších částí. Vhodná konstrukce předpovědí má velký význam pro dosažení lepších výsledků. V praktické části bude použit určitý model predikce, ale ještě předtím se v této kapitole zmíníme o některých jiných obecných aspektech, které jsou spojeny s předpovídáním časových řad. 
@@ -361,26 +431,6 @@ Existují určité míry pro kontrolu kvality provedených předpovědí. Často
 \begin{equation}
 \sum_{t=1}^{n}\frac{|y_t - \hat{y_t}|}{n} = \sum_{t=1}^{n}\frac{|e_t|}{n}
 \end{equation}
-
-\subsection{Klouzavé průměry}
-
-Při analýze časové řady je velmi důležité zkoumat jestli má časová řada trend nebo nemá. Metoda klouzavých průmerů je jednou z adaptivních metod pro modelování trendové složky časové řady. Adaptivní přístup je založen na tom, že pomocí něho můžeme pracovat s trendovou složkou, která se mění v čase a kterou nelze popsat matematickou křivkou s neměnnými parametry. Však můžeme předpokládat, že v malých úsecích časové řady existuje možnost takové vyrovnání matematickou křivkou použit. \cite{cipra}
-
-Základní myšlenkou metody klouzavých průměrů je určení hodnot vyhlazené časové řady pomocí vypočítaných pruměrů hodnot původní časové řady. Počet hodnot, pro které vypočítáme průměr, určujeme pomocí tzv. \textit{okna}.   
-
-\textit{Okno} (délka klouzavé části) je určena počtem sezón v sezonních časových řadách. Pro ostatní časové řady musíme okno volit pro každý případ zvlášt'. Obecně čím je okno větší (delší klouzavá část), tím je vyrovnáná časová řada hladší. \cite{arlt}
-
-Existují různé typy metody klouzavých průměrů. Dva z nich jsou  \textit{jednoduchý klouzavý průměr} (angl. Simple Moving Average - SMA) a  \textit{lineárně vážený klouzavý průměr} (angl. Linear Weighted Moving Average - LWMA). Tyto metody jsou podrobně porbrány v \cite{arlt} a \cite{iastat}. V této práci ale budou popsány pouze jejich využití pro předpovídání.
-
-\normalsize \textbf{Jednoduchý klouzavý průměr}
-
-Jednoduchý neboli aritmetický klouzavý průměr je nejjednodušším a méně spolehlivějším případem, kdy pro vyhlazení nebo předpověd' časové řady vypočítáme aritmetický průměr hodnot z určeného okna. Pro předpoved' zkoumané hodnoty $y_t$ v čase $t+1$ můžeme použit výraz
-
-\begin{equation}
-\hat{y}_{t+1} = \frac{y_t + y_{t-1} + ... + y_{t-n+1}}{n},
-\end{equation}
-
-kde $n$ je velikost okna. 
 
 \newpage
 \section{Regresní analýza}
