@@ -23,7 +23,7 @@ public class CsvDataReader implements DataReader {
         CSVReader csvReader;
 
         try {
-            reader = new FileReader(new File("Data.csv").getAbsolutePath());
+            reader = new FileReader(new File("resources/Data.csv").getAbsolutePath());
             csvReader = new CSVReader(reader);
             this.setData(csvReader.readAll());
         } catch (IOException e) {

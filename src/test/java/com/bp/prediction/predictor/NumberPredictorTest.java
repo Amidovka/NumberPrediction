@@ -1,6 +1,5 @@
-package com.bp.test;
+package com.bp.prediction.predictor;
 
-import com.bp.prediction.predictor.NumberPredictor;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -11,9 +10,6 @@ import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
-/**
- * Created by burdind on 1.11.2015.
- */
 public class NumberPredictorTest {
 
     private NumberPredictor predictor;

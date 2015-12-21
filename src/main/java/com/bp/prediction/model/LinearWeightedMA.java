@@ -12,6 +12,12 @@ public class LinearWeightedMA implements WeightedMovingAverage, Predictor {
         this.n = n;
     }
 
+    /**
+     * Predicts next value in time-series by
+     * calculating linearly weighted average of n
+     * previous values.
+     * @return predicted value
+     */
     @Override
     public double getNextPrediction() {
         double sum = 0;
@@ -19,7 +25,7 @@ public class LinearWeightedMA implements WeightedMovingAverage, Predictor {
             throw new IllegalArgumentException("Input data is empty or there are less values than window size!");
         }
 
-        if (n >= 1) {
+        if (n >= 2) {
             //create weights
             double[] weights = new double[n];
             double denominator = n*(n+1)/2;
@@ -31,14 +37,31 @@ public class LinearWeightedMA implements WeightedMovingAverage, Predictor {
                 sum += yData[yData.length - 1 - i]*weights[n - 1 - i];
             }
         } else {
-            throw new IllegalArgumentException("Window size must be a positive number greater than one!");
+            throw new IllegalArgumentException("Window size must be a positive number greater than two!");
         }
 
         return sum;
     }
 
+    /**
+     * Adds new value to the Y data array.
+     * X values are not used.
+     * @param y new value
+     * @param xVector new x values
+     */
     @Override
     public void update(double y, double[] xVector) {
+        double[] updatedYData = new double[yData.length + 1];
+        System.arraycopy(yData, 0, updatedYData, 0, yData.length);
+        updatedYData[yData.length] = y;
+        this.setYData(updatedYData);
+    }
 
+    public double[] getYData() {
+        return yData;
+    }
+
+    public void setYData(double[] yData) {
+        this.yData = yData;
     }
 }

@@ -1,21 +1,27 @@
 package com.bp.prediction.ui;
 
-import org.jfree.chart.*;
+import org.jfree.chart.ChartUtilities;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.StandardChartTheme;
 import org.jfree.chart.axis.DateAxis;
 import org.jfree.chart.plot.XYPlot;
-import org.jfree.data.time.*;
+import org.jfree.data.time.Minute;
+import org.jfree.data.time.TimeSeries;
+import org.jfree.data.time.TimeSeriesCollection;
 import org.jfree.data.xy.XYDataset;
 import org.jfree.ui.ApplicationFrame;
 import org.jfree.ui.RefineryUtilities;
 
-import javax.swing.*;
+import javax.swing.JPanel;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 
 public class GraphVisualization extends ApplicationFrame {
 
-    private String chartWindowTitle;
+    private String chartTitle;
     private double[] realData;
     private double[] estimatedData;
 
@@ -26,11 +32,11 @@ public class GraphVisualization extends ApplicationFrame {
 
     /**
      * GraphVisualization class constructor.
-     * @param chartWindowTitle chart window title.
+     * @param chartTitle chart window title.
      */
-    public GraphVisualization(String chartWindowTitle) {
-        super(chartWindowTitle);
-        this.chartWindowTitle = chartWindowTitle;
+    public GraphVisualization(String chartTitle) {
+        super(chartTitle);
+        this.chartTitle = chartTitle;
     }
 
     /**
@@ -71,7 +77,7 @@ public class GraphVisualization extends ApplicationFrame {
      */
     private JFreeChart createChart() {
         JFreeChart xyLineChart = ChartFactory.createTimeSeriesChart(
-                "Computational Time Values Graph", //title
+                chartTitle,
                 "Time",                            //x-axis label
                 "Computational Time",              //y-axis label
                 createDataSet(),                   //data
@@ -143,11 +149,11 @@ public class GraphVisualization extends ApplicationFrame {
     public void saveGraphAsImage() {
         int width = 1000;
         int height = 500;
-        File timeSeriesGraph = new File(this.chartWindowTitle + ".jpeg");
         try {
+            File timeSeriesGraph = new File("resources/" + this.chartTitle + ".jpeg");
             ChartUtilities.saveChartAsJPEG(timeSeriesGraph, createChart(), width, height);
         } catch (IOException e) {
-            System.err.println("Cannot save graph as image!");
+            System.err.println("Failed to save graph as image.");
         }
     }
 

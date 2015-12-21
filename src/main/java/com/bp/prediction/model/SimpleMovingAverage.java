@@ -2,7 +2,7 @@ package com.bp.prediction.model;
 
 import com.bp.prediction.predictor.Predictor;
 
-public class SimpleMovingAverage implements Predictor{
+public class SimpleMovingAverage implements Predictor {
 
     private double[] yData;
     private int n; //window size
@@ -51,7 +51,7 @@ public class SimpleMovingAverage implements Predictor{
         this.setYData(updatedYData);
     }
 
-    public double[] getyData() {
+    public double[] getYData() {
         return yData;
     }
 

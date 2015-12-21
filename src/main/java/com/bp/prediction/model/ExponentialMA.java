@@ -12,6 +12,12 @@ public class ExponentialMA implements WeightedMovingAverage, Predictor {
         this.n = n;
     }
 
+    /**
+     * Predicts next value in time-series by
+     * calculating exponentially weighted average of n
+     * previous values.
+     * @return predicted value
+     */
     @Override
     public double getNextPrediction() {
         double nextValue;
@@ -32,8 +38,25 @@ public class ExponentialMA implements WeightedMovingAverage, Predictor {
         return nextValue;
     }
 
+    /**
+     * Adds new value to the Y data array.
+     * X values are not used.
+     * @param y new value
+     * @param xVector new x values
+     */
     @Override
     public void update(double y, double[] xVector) {
+        double[] updatedYData = new double[yData.length + 1];
+        System.arraycopy(yData, 0, updatedYData, 0, yData.length);
+        updatedYData[yData.length] = y;
+        this.setYData(updatedYData);
+    }
 
+    public double[] getYData() {
+        return yData;
+    }
+
+    public void setYData(double[] yData) {
+        this.yData = yData;
     }
 }
