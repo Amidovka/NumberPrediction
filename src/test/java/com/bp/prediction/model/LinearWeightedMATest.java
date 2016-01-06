@@ -4,7 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 public class LinearWeightedMATest {
 
@@ -28,4 +28,13 @@ public class LinearWeightedMATest {
         assertThat(model.getYData().length, is(length + 1));
         assertThat(model.getNextPrediction(), is(6.0));
     }
+
+    @Test
+    public void testCalculatePredictions() {
+        int predictionStart = 4;
+        model.calculatePredictions(predictionStart);
+        assertThat(model.getPredictions()[0], is(3.0));
+        assertThat(model.getPredictions()[1], is(4.0));
+    }
+
 }

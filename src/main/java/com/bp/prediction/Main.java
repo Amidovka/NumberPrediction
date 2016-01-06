@@ -1,13 +1,23 @@
 package com.bp.prediction;
 
+import com.bp.prediction.model.AutoregressiveModel;
 import com.bp.prediction.model.ExponentialMA;
 import com.bp.prediction.model.LinearWeightedMA;
 import com.bp.prediction.model.SimpleMovingAverage;
+import com.bp.prediction.ui.BarChart;
 import com.bp.prediction.ui.GraphVisualization;
 import com.bp.prediction.data.CsvDataReader;
 import com.bp.prediction.predictor.NumberPredictor;
 
 public class Main {
+
+    static double[] getErrors(double[] realValues, double[] estimatedValues) {
+        double[] errors = new double[realValues.length];
+        for (int i = 0; i < realValues.length; i++) {
+            errors[i] = realValues[i] - estimatedValues[i];
+        }
+        return errors;
+    }
 
     public static void main(String[] args) {
 
@@ -48,56 +58,51 @@ public class Main {
         }
 
         /**
-         * creating predictions from certain index startingIndex
+         * creating predictions from certain index predictionStart
          * to see the difference in real time-series and predicted time-series
          */
 
-        int startingIndex = 200; //approximately the middle point of time-series data (387 items)
+        System.out.println();
+        int predictionStart = 200; //approximately the middle point of time-series data (387 items)
         int window = 10;
-        double[] windowData = new double[window];
 
-        //filling windowData with values
-        System.arraycopy(yData, startingIndex-window, windowData, 0, window);
+        AutoregressiveModel arModel = new AutoregressiveModel(yData, 5);
+        arModel.calculatePredictions(predictionStart);
+        arModel.drawAndSaveGraph();
 
-        double[] simplePredictions = new double[yData.length];
-        double[] weightedPredictions = new double[yData.length];
-        double[] exponentialPredictions = new double[yData.length];
-        System.arraycopy(yData, 0, simplePredictions, 0, startingIndex);
-        System.arraycopy(yData, 0, weightedPredictions, 0, startingIndex);
-        System.arraycopy(yData, 0, exponentialPredictions, 0, startingIndex);
+        SimpleMovingAverage sma = new SimpleMovingAverage(yData, window);
+        sma.calculatePredictions(predictionStart);
+        sma.drawAndSaveGraph();
 
-        SimpleMovingAverage sma = new SimpleMovingAverage(windowData, window);
-        LinearWeightedMA lwma = new LinearWeightedMA(windowData, window);
-        ExponentialMA ema = new ExponentialMA(windowData, window);
+        LinearWeightedMA lwma = new LinearWeightedMA(yData, window);
+        lwma.calculatePredictions(predictionStart);
+        lwma.drawAndSaveGraph();
 
-        for (int i = startingIndex; i < yData.length; i++) {
-            simplePredictions[i] = sma.getNextPrediction();
-            weightedPredictions[i] = lwma.getNextPrediction();
-            exponentialPredictions[i] = ema.getNextPrediction();
-            sma.update(yData[i], null);
-            lwma.update(yData[i], null);
-            ema.update(yData[i], null);
-        }
-
-        GraphVisualization chart = new GraphVisualization("Simple Moving Average Visualization");
-        chart.setRealData(yData);
-        chart.setEstimatedData(simplePredictions);
-        chart.draw();
-        chart.saveGraphAsImage();
-
-        GraphVisualization chart1 = new GraphVisualization("Weighted Moving Average Visualization");
-        chart1.setRealData(yData);
-        chart1.setEstimatedData(weightedPredictions);
-        chart1.draw();
-        chart1.saveGraphAsImage();
-
-        GraphVisualization chart2 = new GraphVisualization("Exponential Moving Average Visualization");
-        chart2.setRealData(yData);
-        chart2.setEstimatedData(exponentialPredictions);
-        chart2.draw();
-        chart2.saveGraphAsImage();
+        ExponentialMA ema = new ExponentialMA(yData, window);
+        ema.calculatePredictions(predictionStart);
+        ema.drawAndSaveGraph();
 
         System.out.println();
+
+        /**
+         * creating errors bar chart.
+         */
+
+        /*double[] yDataExamined = new double[30];
+        System.arraycopy(yData, yData.length-30, yDataExamined, 0, 30);
+        double[] simplePredictionsExamined = new double[30];
+        double[] weightedPredictionsExamined = new double[30];
+        double[] exponentialPredictionsExamined = new double[30];
+        System.arraycopy(simplePredictions, simplePredictions.length-30, simplePredictionsExamined, 0, 30);
+        System.arraycopy(weightedPredictions, weightedPredictions.length-30, weightedPredictionsExamined, 0, 30);
+        System.arraycopy(exponentialPredictions, exponentialPredictions.length-30, exponentialPredictionsExamined, 0, 30);
+
+        BarChart barChart = new BarChart("Moving Averages Errors Bar Chart");
+        barChart.setSMAErrors(getErrors(yDataExamined, simplePredictionsExamined));
+        barChart.setLWMAErrors(getErrors(yDataExamined, weightedPredictionsExamined));
+        barChart.setEMAErrors(getErrors(yDataExamined, exponentialPredictionsExamined));
+        barChart.draw();
+        barChart.saveChartAsImage();*/
 
        /* double[] yValues = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 15, 17, 19};
         double[] yValues1 = {6, 3, 2};

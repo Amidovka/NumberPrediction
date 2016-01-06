@@ -4,7 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 public class ExponentialMATest {
 
@@ -27,5 +27,13 @@ public class ExponentialMATest {
         model.update(6.0, null);
         assertThat(model.getYData().length, is(length + 1));
         assertThat(model.getNextPrediction(), is(5.25));
+    }
+
+    @Test
+    public void testCalculatePredictions() {
+        int predictionStart = 3;
+        model.calculatePredictions(predictionStart);
+        assertThat(model.getPredictions()[0], is(2.25));
+        assertThat(model.getPredictions()[1], is(3.25));
     }
 }

@@ -34,9 +34,11 @@ public class GraphVisualization extends ApplicationFrame {
      * GraphVisualization class constructor.
      * @param chartTitle chart window title.
      */
-    public GraphVisualization(String chartTitle) {
+    public GraphVisualization(String chartTitle, double[] realData, double[] estimatedData) {
         super(chartTitle);
         this.chartTitle = chartTitle;
+        this.realData = realData;
+        this.estimatedData = estimatedData;
     }
 
     /**
@@ -104,7 +106,6 @@ public class GraphVisualization extends ApplicationFrame {
      */
     private XYDataset createDataSet() {
         TimeSeries realDataSeries = new TimeSeries("Real Data");
-        double[] realData = this.getRealData();
         Minute realTimePeriod = new Minute(44, 8, 30, 3, 2014);
 
         if (realData.length == 0) {
@@ -117,8 +118,13 @@ public class GraphVisualization extends ApplicationFrame {
         }
 
         TimeSeries estimatedDataSeries = new TimeSeries("Estimated Data");
-        double[] estimatedData = this.getEstimatedData();
         Minute estimatedTimePeriod = new Minute(44, 8, 30, 3, 2014);
+
+        //set up time line from prediction start
+        int predictionStart = realData.length - estimatedData.length;
+        for (int i = 0; i < predictionStart; i++){
+            estimatedTimePeriod = (Minute) estimatedTimePeriod.next().next().next().next().next();
+        }
 
         if (estimatedData.length == 0) {
             throw new IllegalArgumentException("Estimated data are empty!");
@@ -155,21 +161,5 @@ public class GraphVisualization extends ApplicationFrame {
         } catch (IOException e) {
             System.err.println("Failed to save graph as image.");
         }
-    }
-
-    public double[] getEstimatedData() {
-        return this.estimatedData;
-    }
-
-    public void setEstimatedData(double[] estimatedData) {
-        this.estimatedData = estimatedData;
-    }
-
-    public double[] getRealData() {
-        return this.realData;
-    }
-
-    public void setRealData(double[] realData) {
-        this.realData = realData;
     }
 }

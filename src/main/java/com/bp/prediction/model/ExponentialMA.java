@@ -1,11 +1,13 @@
 package com.bp.prediction.model;
 
 import com.bp.prediction.predictor.Predictor;
+import com.bp.prediction.ui.GraphVisualization;
 
 public class ExponentialMA implements WeightedMovingAverage, Predictor {
 
     private double[] yData;
     private int n; //window size
+    private double[] predictions;
 
     public ExponentialMA(double[] yData, int n) {
         this.yData = yData;
@@ -52,11 +54,51 @@ public class ExponentialMA implements WeightedMovingAverage, Predictor {
         this.setYData(updatedYData);
     }
 
+    /**
+     * Calculates predictions for the values after the
+     * prediction start index.
+     * @param predictionStart index to start predict from
+     */
+    public void calculatePredictions(int predictionStart) {
+        double[] windowData = new double[n];
+        double[] realData = yData;
+        if (yData.length > predictionStart) {
+            predictions = new double[yData.length - predictionStart];
+        } else {
+            throw new IllegalArgumentException("Prediction start point must be in a range of real data values!");
+        }
+
+        //filling windowData with values
+        System.arraycopy(yData, predictionStart-n, windowData, 0, n);
+        this.setYData(windowData);
+
+        for (int i = 0; i < predictions.length; i++) {
+            predictions[i] = this.getNextPrediction();
+            this.update(realData[predictionStart + i], null);
+        }
+        this.setYData(realData);
+    }
+
+    /**
+     * Creates a graph with two real and estimated
+     * time series and saves it as image in resources folder.
+     */
+    public void drawAndSaveGraph() {
+        String title = "Exponential Moving Average Model Visualization " + "EMA(" + n + ")";
+        GraphVisualization chart = new GraphVisualization(title, yData, predictions);
+        chart.draw();
+        chart.saveGraphAsImage();
+    }
+
     public double[] getYData() {
         return yData;
     }
 
     public void setYData(double[] yData) {
         this.yData = yData;
+    }
+
+    public double[] getPredictions() {
+        return predictions;
     }
 }
