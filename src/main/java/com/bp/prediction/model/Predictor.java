@@ -1,4 +1,4 @@
-package com.bp.prediction.predictor;
+package com.bp.prediction.model;
 
 public interface Predictor {
 

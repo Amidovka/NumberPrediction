@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.30)  16 DEC 2015 02:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.11.30)  7 JAN 2016 09:57
 entering extended mode
 **C:/Users/burdind/Documents/IdeaProjects/NumberPrediction/BPtex/BP.tex
 (C:/Users/burdind/Documents/IdeaProjects/NumberPrediction/BPtex/BP.tex
@@ -970,7 +970,7 @@ chapter 2.
 File: pictures/weka.png Graphic file (type png)
 
 <use pictures/weka.png>
-Package pdftex.def Info: pictures/weka.png used on input line 716.
+Package pdftex.def Info: pictures/weka.png used on input line 714.
 (pdftex.def)             Requested size: 426.79134pt x 320.08861pt.
 
 
@@ -980,13 +980,13 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <pictures/log.png, id=116, 826.08624pt x 257.96375pt>
 File: pictures/log.png Graphic file (type png)
  <use pictures/log.png>
-Package pdftex.def Info: pictures/log.png used on input line 738.
+Package pdftex.def Info: pictures/log.png used on input line 739.
 (pdftex.def)             Requested size: 426.79134pt x 133.27594pt.
 
 <pictures/csv.png, id=117, 766.865pt x 355.3275pt>
 File: pictures/csv.png Graphic file (type png)
  <use pictures/csv.png>
-Package pdftex.def Info: pictures/csv.png used on input line 749.
+Package pdftex.def Info: pictures/csv.png used on input line 750.
 (pdftex.def)             Requested size: 426.79134pt x 197.75668pt.
 
 
@@ -1005,7 +1005,7 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\bf' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
-(scrreprt)              by `\normalfont \bfseries ' on input line 762.
+(scrreprt)              by `\normalfont \bfseries ' on input line 763.
 
 
 Class scrreprt Warning: Usage of deprecated font command `\bf'!
@@ -1019,10 +1019,10 @@ Class scrreprt Warning: Usage of deprecated font command `\bf'!
 (scrreprt)              Note also, that KOMA-Script will remove the definition
 (scrreprt)              of `\bf' anytime until release of about version 3.20.
 (scrreprt)              But for now, KOMA-Script will replace deprecated `\bf'
-(scrreprt)              by `\normalfont \bfseries ' on input line 762.
+(scrreprt)              by `\normalfont \bfseries ' on input line 763.
 
 
-Overfull \hbox (3.0247pt too wide) in paragraph at lines 760--775
+Overfull \hbox (3.0247pt too wide) in paragraph at lines 761--776
 [][] 
  []
 
@@ -1031,13 +1031,13 @@ Overfull \hbox (3.0247pt too wide) in paragraph at lines 760--775
 File: pictures/regresniFunkce.png Graphic file (type png)
 
 <use pictures/regresniFunkce.png>
-Package pdftex.def Info: pictures/regresniFunkce.png used on input line 901.
+Package pdftex.def Info: pictures/regresniFunkce.png used on input line 902.
 (pdftex.def)             Requested size: 426.79134pt x 211.70502pt.
  [29 <./pictures/regresniFunkce.png>] [30]
 [31
 
 ]
-Overfull \hbox (16.78207pt too wide) in paragraph at lines 954--955
+Overfull \hbox (16.78207pt too wide) in paragraph at lines 955--956
 []\T1/cmr/m/n/12 Pouºitá Java do-ku-men-tace. URL: <http://commons.apache.org/p
 roper/commons-
  []
@@ -1048,13 +1048,13 @@ roper/commons-
 ]
 chapter A.
 
-Overfull \hbox (105.36334pt too wide) in paragraph at lines 970--971
+Overfull \hbox (105.36334pt too wide) in paragraph at lines 971--972
 \T1/cmr/m/n/12 ma-ného sou-boru dat, který se musí na-chá-zet v ad-re-sá°i \T1/
 cmr/m/it/12 /com.bp.prediction.oldClasses.NumberPrediction/\T1/cmr/m/n/12 .
  []
 
 
-Overfull \hbox (93.52301pt too wide) in paragraph at lines 972--973
+Overfull \hbox (93.52301pt too wide) in paragraph at lines 973--974
 []\T1/cmr/m/n/12 Pro ana-lýzu sou-boru dat se musí spus-tit t°ída \T1/cmr/m/it/
 12 com.bp.prediction.oldClasses.NumberPrediction.java\T1/cmr/m/n/12 ,
  []
@@ -1073,7 +1073,7 @@ Here is how much of TeX's memory you used:
  10210 multiletter control sequences out of 15000+200000
  22457 words of font info for 52 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 43i,9n,66p,1012b,1035s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 43i,9n,66p,1071b,1035s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\burdind\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappe
 n\ec\dpi600\ecrm1000.pk> <C:\Users\burdind\AppData\Local\MiKTeX\2.9\fonts\pk\lj
 four\jknappen\ec\dpi600\ecrm0700.pk> <C:\Users\burdind\AppData\Local\MiKTeX\2.9
@@ -1100,9 +1100,9 @@ cmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
 fb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><
 C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:
 /Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on BP.pdf (34 pages, 782641 bytes).
+Output written on BP.pdf (34 pages, 781659 bytes).
 PDF statistics:
- 755 PDF objects out of 1000 (max. 8388607)
+ 753 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  56 words of extra memory for PDF output out of 10000 (max. 10000000)
 

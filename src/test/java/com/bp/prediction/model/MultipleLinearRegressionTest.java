@@ -1,4 +1,4 @@
-package com.bp.prediction.predictor;
+package com.bp.prediction.model;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -10,13 +10,17 @@ import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
-public class NumberPredictorTest {
+public class MultipleLinearRegressionTest {
 
-    private NumberPredictor predictor;
+    private MultipleLinearRegression predictor;
 
     @Before
     public void setup(){
-        predictor = new NumberPredictor();
+        double[] yData = {1, 2, 3, 4, 5};
+        double[] xData = {1, 2, 3, 4, 5};
+        int window = 3;
+        int predictionStart = 2;
+        predictor = new MultipleLinearRegression(yData, xData, window, predictionStart);
     }
 
     /**
@@ -34,7 +38,8 @@ public class NumberPredictorTest {
 
     @Test
     public void testAscend(){
-        assertThat(predictor.predictNextDouble(new double[]{1, 2, 3, 4, 5}), is(equalTo(6.0)));
+        //assertThat(predictor.predictNextDouble(new double[]{1, 2, 3, 4, 5}), is(equalTo(6.0)));
+        assertThat(predictor.getNextPrediction(), is(equalTo(6.0)));
     }
 
     @Test

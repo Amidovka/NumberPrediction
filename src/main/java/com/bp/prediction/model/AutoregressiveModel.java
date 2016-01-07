@@ -1,6 +1,5 @@
 package com.bp.prediction.model;
 
-import com.bp.prediction.predictor.Predictor;
 import com.bp.prediction.ui.GraphVisualization;
 import org.apache.commons.math3.stat.regression.OLSMultipleLinearRegression;
 

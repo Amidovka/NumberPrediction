@@ -65,7 +65,7 @@
 \newcommand{\nazevcz}{Modely zátěže výpočetních serverů}        % zde VYPLŇTE český název práce (přesně podle zadání!)
 \newcommand{\nazeven}{Computational requirements modelling}     % zde VYPLŇTE anglický název práce (přesně podle zadání!)
 \newcommand{\autor}{Dmitriy Burdin}           % zde VYPLŇTE své jméno a příjmení
-\newcommand{\rok}{2015}          % zde VYPLŇTE měsíc a rok odevzdání, např. May 2011
+\newcommand{\rok}{2016}          % zde VYPLŇTE měsíc a rok odevzdání, např. May 2011
 \newcommand{\vedouci}{Ing. Jan Doubek}         % zde VYPLŇTE jméno a příjmení vedoucího práce, včetně titulů, např. Doc. Ing. Ivo Malý, Ph.D.
 
 \newcommand{\druh}{BAKALÁŘSKÁ PRÁCE}
@@ -654,49 +654,47 @@ a zároveň je druhou mocninou korelačního koeficientu $\bf{R}$.
 Koeficient determinace je vhodný ke statistickému testování modelu jako celku a nabývá hodnot z intervalu <0, 1>, kde případ $\bf{R}^2$=1 ukazuje na silnou závislost a vhodnost použití lineární regrese. \cite{fiala} 
 
 \chapter{Praktická část}
-\section{Softwarová aplikace}
+\section{Softwarová knihovna}
 \subsection{Způsob realizace}
 
-Po důkladném seznámení se s problematikou práce a s ní související teorií, byl stanoven způsob dosažení cílů práce, tj. způsob její praktické realizace. Tato realizace měla tři hlavní kroky:
+Po důkladném seznámení se s problematikou práce a s ní související teorií, byl stanoven způsob dosažení cílů práce, tj. způsob její praktické realizace. Tato realizace má tři hlavní kroky:
 
 \begin{enumerate}
-\item Pomocí regresní a korelační analýzy zjistit určité parametry v datech, které nejméně nebo nejvíce ovlivňují závislé parametry, a jestli mezi sebou vůbec mají nějakou souvislost. 
+\item Implementovat různé ekonometrické modely, které se používají pro analýzu časových řad.
 
-\item Potom na základě těchto údajů, s uvážením výsledků regresní a korelační analýzy získat regresní model, který může být použitelný k predikci budoucích hodnot zkoumaného parametru. V daném případě jde o daný parametr \textit{Computation time} (z angl. doba trvání výpočtu), který vyvolává zatížení, jehož snížení je vlastně problematikou práce.
+\item Součástí implementace by taky měl být alogritmus pro výpočet predikcí, který je popsán níže. 
 
-\item Posledním krokem je posouzení kvality výsledků.	
+\item Posledním krokem je posouzení kvality výsledků pomocí statistických testů, výpočtu standardních chyb a porovnáním grafů původních a predikovaných hodnot časové řady.	
 \end{enumerate}
  
-Pro konstrukci aplikace je dán soubor dat skládající se z matice vysvětlujících promenných \textbf{X} a vektoru vysvětlovaných proměnných \textbf{y}. Protože je vysvětlovaná proměnná závislá na více než jedné vysvětlující proměnné, potřebujeme využít vícenásobnou lineární regresi. Pomocí korelační analýzy nejdřív zjistíme vzájemnou závislost mezi vysvětlujícími proměnnými. Na základě dosažených výsledků dokažeme řict, které jsou nezávisle proměnné pro nás významné nebo zbytečné. Uvidíme to z korelační matice, která popisuje závislosti mezi všemi proměnnými v modelu. 
+Implementace základních ekonometrických modelů a algoritmu pro predikování bude umístěna do knihovny. Algoritmus predikování je založen na postupném procházení datového souboru tzv. oknem dat určité velikosti. Toto okno slouží pro určení těch hodnot, na základě kterých se predikuje. Pro testování aplikace je dán soubor dat skládající se z matice vysvětlujících promenných \textbf{X} a vektoru vysvětlovaných proměnných \textbf{y}. Pomocí vícenásobného regresního modelu můžeme určit závislost vysvětlované proměnné na různých vysvětlujících proměnných. Tím dokažeme říct jaké parametry nejvíc ovlivňují zkoumanou hodnotu \textbf{y}. Autoregresní model nám ukaže vliv předchozích hodnot vysvětlované proměnné časové řady na budoucí hodnoty. Modely klouzavých průměru můžou vyhladit časovou řadu a tím určit její přibližný trend. Tyto ekonometrické modely jsou hlavními prvky implementace.
 
-Zároveň použijme metodu výběru nejlepší podmnožiny pro určení vysvětlujících parametrů s nejlepším koeficientem determinace. Metoda spočívá v tom, že z množiny všech vysvětlujících proměnných \{$x_1, x_2, ..., x_k$\} se vybírají kombinace (podmnožiny), pro které se vypočítá koeficient determinace. Podmnožina s nejlepším koeficientem determinace se pak bude použita pro odhad regresního modelu. Pomocí regresní analýzy pak dokažeme získat hodnoty regresních koeficientu, které mají větší vliv na chování závisle proměnné. 
+Pro vytvoření takové softwarové knihovny využím během studia získané znalosti v oblasti ekonometrie a programování. Tato knihovna by pak mohla být užitečná jak pro osobní tak pro akademické účely. Její výhodou je volná dostupnost, otevřenost zdrojového kódu a programovací jazyk Java, ve kterém je napsána. 
 
 \subsection{Základní předpoklady a nástroje}
-Za výsledek této práce může být také považována softwarová aplikace, která by měla být užitečnou pomůckou pro dosažení cíle práce. Podstatou aplikace je načíst a zanalizovat datový soubor regresní metodou, poté použít dosažené výsledky pro získání regresního modelu a případně udělat predikci budoucích hodnot a vykreslit vývoj nejlépe predikovaných hodnot ve tvaru grafu časových řad. 
 
-Jako programovací nástroj jsem vybral objektově orientovaný programovací jazyk \textit{Java}. Jedná se o populární a docela starý programovací jazyk jehož historie sahá do roku 1990, kdy ve firmě Sun Microsystems začali pracovat na jeho vytvoření. Na začátku to byl efektivní a jednoduchý jazyk určený pro spotřební elektroniku. S postupem času a s rostoucím užitím internetu se Java stala jedním z nejpoužívanějších programovacích jazyků ve světě. Hlavními důvody proč jsem zvolil pravě tento jazyk jsou: 
+Jako programovací nástroj byl vybrán objektově orientovaný programovací jazyk \textit{Java}. Jedná se o populární a docela starý programovací jazyk jehož historie sahá do roku 1990, kdy ve firmě Sun Microsystems začali pracovat na jeho vytvoření. Na začátku to byl efektivní a jednoduchý jazyk určený pro spotřební elektroniku. S postupem času a s rostoucím užitím internetu se Java stala jedním z nejpoužívanějších programovacích jazyků ve světě. Hlavními důvody proč byl zvolen pravě tento jazyk jsou: 
 
 \begin{itemize}
 \item výkonnost a jednoduchost syntaxe
 \item široká použitelnost
 \item přenositelnost a nezávislost na architektuře nebo na operačním systému
+\item nedostatek softwaru v jazyku Java pro analýzu ekonometrických modelů, který by byl volně dostupný a měl otevřený zdrojový kód
 \end{itemize} 
 
 Pro snadnější programatorskou práci se hojně využívá \textit{vývojové prostředí} neboli \textit{IDE} (IDE - \textit{Integrated Development Environment}). Je to soubor nástrojů pro přehlednější přístup ke zdrojovému kódu, ladění programů, hledání a opravu chyb a další užitečné věci pro programování. Vývojové prostředí se většinou skládá z textového editoru, kompilátoru a debuggeru. 
 
 S programovacím jazykem Java se používá několik různých IDE. Liší se podle nabízených vlastností a možností. Pro svou práci jsem zvolil vývojové prostředí \textit{IntelliJ IDEA}. 
 
-Pro lepší koordinaci se svým vedoucím jsem během práce použil webový nástroj \textit{GitHub}. Je to služba usnadňující spolupraci vývojářů, kteři používají verzovací nástroj Git. Využívá se pro sdílení a společnou práci na softwarových projektech. Tato služba poskytuje možnost sdílet a upravovat projekty jiných programatorů, což vede k lepším výsledkům a rychlejšímu ladění kódu. 
+Pro lepší koordinaci se svým vedoucím jsem během práce použival webový nástroj \textit{GitHub}. Je to služba usnadňující spolupraci vývojářů, kteři používají verzovací nástroj Git. Využívá se pro sdílení a společnou práci na softwarových projektech. Tato služba poskytuje možnost sdílet a upravovat projekty jiných programatorů, což vede k lepším výsledkům a rychlejšímu ladění kódu. 
 
-Jako nástroj pro správu, řízení a automatizaci tvorby aplikace jsem použil \textit{Apache}. I když je možné využit tento nástroj k psaní projektů v různých programovacích jazycích, podporován je převážně programovací jazyk Java. Maven se používá hlavně pro usnadnění práce při buildování programů a aplikací. Vývojové prostředí Intellij IDEA umožňuje pomocí nástroje Maven vytvořit programatorský projekt podle modelu \textit{Project Object Model}. Tento model určuje ze začátku kostru zdrojového kódu, závislosti na externích knihovnách a proces spouštění potřebných testů a podobně. Základ samotného nástroje Maven jsou pluginy, které běží pouze na příkazové řádce. 
-
-K implementaci analytických metod bylo navrhnuto použít již existující knihovnu v jazyce Java, nebo si vytvořit vlastní. 
+Jako nástroj pro správu, řízení a automatizaci tvorby aplikace jsem použil \textit{Apache Maven}. I když je možné využit tento nástroj k psaní projektů v různých programovacích jazycích, podporován je převážně programovací jazyk Java. Maven se používá hlavně pro usnadnění práce při buildování programů a aplikací. Vývojové prostředí Intellij IDEA umožňuje pomocí nástroje Maven vytvořit programatorský projekt podle modelu \textit{Project Object Model}. Tento model určuje ze začátku kostru zdrojového kódu, závislosti na externích knihovnách a proces spouštění potřebných testů a podobně. Základ samotného nástroje Maven jsou pluginy, které běží pouze na příkazové řádce. 
 
 \newpage
 \section{Chybné pokusy}
 \vspace{0.5cm}
 
-Při výběru programovacích nástrojů byla uvažována možnost využití cizích, svobodně distribuovaných knihoven nebo frameworků vhodných pro práci s daty a případně pro jejich analýzu. Předpokladem pro pomocné nástroje byla jejich kompatibilita s programovacím jazykem Java. 
+Při výběru programovacích nástrojů byla uvažována možnost využití cizích, svobodně distribuovaných knihoven nebo frameworků vhodných pro základní zpracování dat a pro jejich analýzu. Předpokladem pro pomocné nástroje byla jejich kompatibilita s programovacím jazykem Java a výhodou by byla k tomu otevřenost kódu. 
 
 Knihovna je v programování soubor funkcí, procedur, datových typů a tříd, které slouží pro různé programy. Každá knihovna má své \textit{API} (z angl. \textit{application programming interface} - rozhraní pro programování aplikací). Pomocí kterého se určuje jakým způsobem jsou funkce z knihovny volány. Zatímco framework je softwarová struktura, která volá samotný kód uživatele. Framework může obsahovat vlastní procedury, podprogramy i knihovny. Framework nás ovšem může omezovat svoji pevnou strukturou a architekturou. 
 
@@ -709,7 +707,7 @@ Weka je populární balík programů, který slouží pro analýzu dat, modelov�
 
 Tato sbírka nástrojů pro analýzu dat je napsaná v jazyce Java a proto jsem se rozhodl ji zkusit zapojit do programu a využít její možnosti. Hned zkraje jsem narazil na problém při konverzi CSV souboru do formátu ARFF, při kterém se vyskytovaly chyby v datech.
 
-Po několika pokusech odstranit tyto chyby jsem zistil, že se zdrojový kód stává komplkovanějším a využití tohoto způsobu už nedává moc smysl. Proto hlavní důvod proč jsem odmítmul balík programů Weka, je nekompatibilita se strukturou kódu mého programu a ztěžování při konverzi a načítání datového souboru.            
+Po několika pokusech odstranit tyto chyby jsem zjistil, že zdrojový kód tohoto balíku obsahuje hodně jiných implementovaných technologií mimo oblast mé práce a nejsou vhodné na to abych to využil při dosažení svého cíle. Proto hlavní důvody proč jsem odmítnul balík programů Weka, jsou nekompatibilita formatu datových souboru, které se používají pro analýzu a komplikovanost zdrojového kódu, což je v rozporu s původně postaveným cílem napsat knihovnu se základními ekonometrickými funkcemi.            
 
 \begin{figure}[h]
   \centering
@@ -721,10 +719,13 @@ Po několika pokusech odstranit tyto chyby jsem zistil, že se zdrojový kód st
 \newpage
 \textbf{Encog}
 
-Encog je framework pro strojové učení (z angl. \textit{Machine Learning}), což je oblast zabívající se algoritmy, které dávají strojům schopnost "učit se". Je to podoblast umělé inteligence (z angl. \textit{Artificial Intelligence}), která se používá pro studování inteligentního chování, adaptaci ve strojích, a také pro řízení, rozhodování a plánování procesů v různých systémech.
+Encog je framework pro strojové učení (z angl. \textit{Machine Learning}), což je oblast zabývající se algoritmy, které dávají strojům schopnost "učit se". Je to podoblast umělé inteligence (z angl. \textit{Artificial Intelligence}), která se používá pro studování inteligentního chování, adaptaci ve strojích, a také pro řízení, rozhodování a plánování procesů v různých systémech.
 
-Tento framework zahrnuje pro problematiku této práce velmi užitečné techniky s regresními modely. Komplikace jeho využití byla v tom, že je vytvořen za použití neuronových sítí. Jak jsem později zjistil, ovládnutí těchto technologií pro mě bylo časově náročné a mimo oblast analytických metod, které jsem si na začátku stanovil. Kvůli tomu jsem se rozhodl zanechat tento nápad použití frameworku a hledat jiná řešení. 
+Tento framework zahrnuje pro problematiku této práce velmi užitečné techniky s regresními modely. Komplikace jeho využití byla v tom, že je vytvořen za použití neuronových sítí. což je mimo oblast analytických metod, které jsem si na začátku stanovil. Kvůli tomu jsem se rozhodl zanechat tento nápad použití frameworku a hledat jiná řešení. 
 
+\textbf{Jiná řešení}
+
+...popis použití knihoven opencsv, common-math, jfree, junit...
 
 \newpage
 \section{Implementace}

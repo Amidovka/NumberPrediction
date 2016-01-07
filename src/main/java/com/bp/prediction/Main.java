@@ -4,10 +4,8 @@ import com.bp.prediction.model.AutoregressiveModel;
 import com.bp.prediction.model.ExponentialMA;
 import com.bp.prediction.model.LinearWeightedMA;
 import com.bp.prediction.model.SimpleMovingAverage;
-import com.bp.prediction.ui.BarChart;
-import com.bp.prediction.ui.GraphVisualization;
 import com.bp.prediction.data.CsvDataReader;
-import com.bp.prediction.predictor.NumberPredictor;
+import com.bp.prediction.model.MultipleLinearRegression;
 
 public class Main {
 
@@ -22,51 +20,33 @@ public class Main {
     public static void main(String[] args) {
 
         /**
-         * Choosing X parameters from range (1..8) to use in analysis
+         * Choosing X parameters from range (1..8) to use in analysis.
          * E.g. if input is {3, 6, 7} it means, that
          * only X3, X6 and X7 parameters are chosen and will
-         * be used to create X matrix with explanatory variables
+         * be used to create X matrix with explanatory variables.
          */
-        int[] params = {3,4};
         //reading, parsing data according to given X parameters
         CsvDataReader dataReader = new CsvDataReader();
-        dataReader.setxParams(params);
-        dataReader.parseData();
-
+        dataReader.parseData("resources/Data.csv");
+        int[] params = {3};
         //creating matrices with X and Y values
-        dataReader.createMatrix();
-        double[][] xData = dataReader.getxData();
-        double[] yData = dataReader.getyData();
-
-        //creating predictor instance
-        NumberPredictor predictor = new NumberPredictor();
-        //getting regression function parameters
-        double[] regParams = predictor.getMultipleRegParams(yData, xData);
-
-        System.out.println("Regression parameters: ");
-        for (int i = 0; i < regParams.length; i++){
-            System.out.print("b_"+i+" = " + regParams[i] + " ");
-        }
-
-        //creating time series from regression function values
-        double[] regressionFunc = new double[yData.length];
-        for (int i = 0; i < regressionFunc.length; i++) {
-            for (int j = 1; j < regParams.length; j++) {
-                regressionFunc[i] = (regParams[j])*xData[i][j-1];
-            }
-            regressionFunc[i] += regParams[0];
-        }
+        dataReader.createMatrix(params);
+        double[][] xData = dataReader.getXData();
+        double[] yData = dataReader.getYData();
 
         /**
          * creating predictions from certain index predictionStart
          * to see the difference in real time-series and predicted time-series
          */
 
-        System.out.println();
-        int predictionStart = 200; //approximately the middle point of time-series data (387 items)
-        int window = 10;
+        int predictionStart = 200;  //approximately the middle point of time-series data (387 items)
+        int window = 10;            //window size
 
-        AutoregressiveModel arModel = new AutoregressiveModel(yData, 5);
+        MultipleLinearRegression predictor = new MultipleLinearRegression(yData, xData, window, predictionStart);
+        predictor.calculatePredictions();
+        predictor.drawAndSaveGraph();
+
+        AutoregressiveModel arModel = new AutoregressiveModel(yData, 5); //5 - autoregressive model parameter
         arModel.calculatePredictions(predictionStart);
         arModel.drawAndSaveGraph();
 
@@ -81,8 +61,6 @@ public class Main {
         ExponentialMA ema = new ExponentialMA(yData, window);
         ema.calculatePredictions(predictionStart);
         ema.drawAndSaveGraph();
-
-        System.out.println();
 
         /**
          * creating errors bar chart.
@@ -110,15 +88,5 @@ public class Main {
         System.out.println("lwma prediction: " + lwma.getNextPrediction());
         ExponentialMA ema = new ExponentialMA(yValues, 3);
         System.out.println("ema prediction: " + ema.getNextPrediction());*/
-
-        /**
-         * Calling draw() method to draw a graph with
-         * two time series. One with actual values - yData
-         * Second is regression function values - regressionFunc.
-         */
-        /*GraphVisualization chart = new GraphVisualization("Time-series Visualization");
-        chart.setRealData(yData);
-        chart.setEstimatedData(regressionFunc);
-        chart.draw();*/
     }
 }

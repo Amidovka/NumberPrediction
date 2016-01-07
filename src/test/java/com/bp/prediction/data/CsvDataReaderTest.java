@@ -14,7 +14,7 @@ public class CsvDataReaderTest {
     @Test
      public void testParseData() {
         CsvDataReader dataReader = new CsvDataReader();
-        dataReader.parseData();
+        dataReader.parseData("resources/Data.csv");
         assertNotNull(dataReader.getData());
     }
 
@@ -26,13 +26,12 @@ public class CsvDataReaderTest {
     @Test
     public void testCreateMatrix() {
         CsvDataReader dataReader = new CsvDataReader();
-        dataReader.parseData();
+        dataReader.parseData("resources/Data.csv");
         int dataRowLength = dataReader.getData().get(0).length;
-        dataReader.setxParams(new int[]{1, 3, 5});
-        dataReader.createMatrix();
-        assertEquals(Double.parseDouble(dataReader.getData().get(0)[0]), dataReader.getxData()[0][0], 0);
-        assertEquals(Double.parseDouble(dataReader.getData().get(0)[2]), dataReader.getxData()[0][1], 0);
-        assertEquals(Double.parseDouble(dataReader.getData().get(0)[4]), dataReader.getxData()[0][2], 0);
-        assertEquals(Double.parseDouble(dataReader.getData().get(0)[dataRowLength - 1]), dataReader.getyData()[0], 0);
+        dataReader.createMatrix(new int[]{1, 3, 5});
+        assertEquals(Double.parseDouble(dataReader.getData().get(0)[0]), dataReader.getXData()[0][0], 0);
+        assertEquals(Double.parseDouble(dataReader.getData().get(0)[2]), dataReader.getXData()[0][1], 0);
+        assertEquals(Double.parseDouble(dataReader.getData().get(0)[4]), dataReader.getXData()[0][2], 0);
+        assertEquals(Double.parseDouble(dataReader.getData().get(0)[dataRowLength - 1]), dataReader.getYData()[0], 0);
     }
 }
