@@ -228,7 +228,9 @@ V dnešní době náš život je naplněn obrovským a rostoucím množstvím r�
 
 Důležitým prvkem řešení této problematiky je datacentrum. Jsou to specializované prostory pro umístění a zajištění stabilního provozu výpočetní a serverové techniky. Většinou se tato technika skládá z počítačových clusterů, což je několik spolupracujícich počítačů propojených počítačovou sítí. Clustery se využívají pro výpočet komplikovaných početních úloh. Jeden z hlavních parametrů kvalitních datacenter je správné planování distribuovaných úloh pro rychlé zpracování dat. Při stále se zvětšujícím množstvím dat se tento problém komplikuje. Proto je potřeba vědět v jakém pořadí zpracovávat určité úlohy a jak dlouho to bude trvat. 
 
-Cílem této bakalářské práce bylo navrhnout a vytvořit softwarovou aplikaci pro analytické zpracování dat, se kterými pracují výpočetní servery. Podstatou aplikace je predikce budoucího chování určité hodnoty na základě analýzy minulých výsledků. Určitou hodnotou pro zkoumání v této práci je prvek log souboru \textit{Computation time}, který byl spolu se souborem poskytnut vedoucím bakalářské práce. Protože velká data obvykle obsahují dynamické systémy dat, které se mění s časem, zkoumaná data jsou většinou ve formě časových řad. Proto se tato práce v první (teoretické) části věnuje způsobům zpracování, analýzy a predikce časových řad. Potom jsou uvedeny principy lineární regrese. Závěrem první části práce je popis využití těchto znalostí v tvorbě softwarové aplikace. 
+Cílem této bakalářské práce bylo navrhnout a vytvořit softwarovou aplikaci pro analytické zpracování dat, se kterými pracují výpočetní servery. Podstatou aplikace je predikce budoucího chování určité hodnoty na základě analýzy minulých výsledků. Určitou hodnotou pro zkoumání v této práci je prvek log souboru \textit{Computation time}, který byl spolu se souborem poskytnut vedoucím bakalářské práce. 
+
+Protože velká data obvykle obsahují dynamické systémy dat, které se mění s časem, zkoumaná data jsou většinou ve formě časových řad. Proto se tato práce v první (teoretické) části věnuje způsobům zpracování, analýzy a predikce časových řad. Potom jsou uvedeny principy lineární regrese. Závěrem první části práce je popis využití těchto znalostí v tvorbě softwarové aplikace. 
 
 Druhá (praktická) část bakalářské práce za prvé popisuje chybné postupy v realizaci postaveného cíle. Poté následjue implementace vhodné analytické metody a konstrukce aplikace. Na konci praktické části je demonstrováno využití aplikace na vzorových datech. Vlastní posouzení dosažených výsledků a jejich možná zlepšení jsou uvedeny v závěru bakalářské práce.
 
@@ -262,7 +264,7 @@ Obvykle rozlišujeme dva základní modely časových řad:
 \item Stochastický - model popisuje náhodný proces a časová řada obsahuje náhodný prvek. Většina běžně se vyskytujících časových řad v praxi mají stochastické modely.
 \end{itemize}
 
-Jedna z dalších důležitých charakteristik časových řad, vyplývající ze stochastického modelu, je jejich stacionarita, případně nestacionarita. Při stacionaritě se střední hodnota a rozptyl časové řady v čase nemění, což nelze říct o nestacionárních časových řadách, ve kterých se objevují změny ve střední hodnotě či rozptylu. Proto se říká, že nestacionární časové řady mají určitý trend vývoje. I když stacionarita je běžným předpokladem většiny metod analýzy časových řad, některé modely se omezují pouze na modely stacionárních procesů.  
+Jedna z dalších důležitých charakteristik časových řad, vyplývající ze stochastického modelu, je jejich stacionarita, případně nestacionarita. Při stacionaritě se střední hodnota a rozptyl časové řady v čase nemění, což nelze říct o nestacionárních časových řadách, ve kterých se objevují změny ve střední hodnotě či rozptylu. Proto se říká, že nestacionární časové řady mají určitý trend vývoje. Stacionarita je tedy běžným předpokladem většiny metod analýzy časových řad z nichž některé se omezují pouze na modely stacionárních procesu.  
 
 
 \subsection{Analýza časových řad}
@@ -366,7 +368,7 @@ kde $n$ je velikost okna a zároveň musí platit, že součet všech váh je ro
 \begin{figure}[h]
   \centering
   \includegraphics[width=7cm]{pictures/linearMAweights.png}
-  \caption{Graf ukazující váhy v případě velikosti okna n = 15 pro LWMA. \newline(Zdroj: <https://cs.wikipedia.org>)}
+  \caption{Graf ukazující váhy v případě velikosti okna n = 15 pro LWMA. \newline(Vlastní zdroj)}
   \label{fig:linearWeights}
 \end{figure}
 
@@ -395,7 +397,7 @@ Na základě rekurentnosti může být výraz pro exponenciální průměr přep
 \begin{figure}[h]
   \centering
   \includegraphics[width=7cm]{pictures/exponentialMAweights.png}
-  \caption{Graf ukazující váhy v případě velikosti okna n = 15 pro EMA. \newline(Zdroj: <https://cs.wikipedia.org>)}
+  \caption{Graf ukazující váhy v případě velikosti okna n = 15 pro EMA. \newline(Vlastní zdroj)}
   \label{fig:exponentialWeights}
 \end{figure}
 
@@ -453,7 +455,7 @@ hovoříme o lineární regresní funkci, kde \textit{$b_j$} jsou regresní koef
 \begin{figure}[h]
   \centering
   \includegraphics[width=15cm]{pictures/primka.png}
-  \caption{Příklad proložení bodů v grafu regresní přímkou. \newline($R^2$ - koeficient determinace. Vlastní zdroj.)}
+  \caption{Příklad proložení bodů v grafu regresní přímkou. \newline($R^2$ - koeficient determinace. Vlastní zdroj)}
   \label{fig:přímka}
 \end{figure}
 
@@ -476,7 +478,7 @@ V komplikovanějším případě regresní funkce může být například mocnin
 \begin{figure}[h]
   \centering
   \includegraphics[width=15cm]{pictures/krivka.png}
-  \caption{Příklad proložení bodů v grafu regresní exponenciální křivkou. \newline($R^2$ - koeficient determinace. Vlastní zdroj.)}
+  \caption{Příklad proložení bodů v grafu regresní exponenciální křivkou. \newline($R^2$ - koeficient determinace. Vlastní zdroj)}
   \label{fig:křivka}
 \end{figure}
 
@@ -669,7 +671,7 @@ Po důkladném seznámení se s problematikou práce a s ní související teori
  
 Implementace základních ekonometrických modelů a algoritmu pro predikování bude umístěna do knihovny. Algoritmus predikování je založen na postupném procházení datového souboru tzv. oknem dat určité velikosti. Toto okno slouží pro určení těch hodnot, na základě kterých se predikuje. Pro testování aplikace je dán soubor dat skládající se z matice vysvětlujících promenných \textbf{X} a vektoru vysvětlovaných proměnných \textbf{y}. Pomocí vícenásobného regresního modelu můžeme určit závislost vysvětlované proměnné na různých vysvětlujících proměnných. Tím dokažeme říct jaké parametry nejvíc ovlivňují zkoumanou hodnotu \textbf{y}. Autoregresní model nám ukaže vliv předchozích hodnot vysvětlované proměnné časové řady na budoucí hodnoty. Modely klouzavých průměru můžou vyhladit časovou řadu a tím určit její přibližný trend. Tyto ekonometrické modely jsou hlavními prvky implementace.
 
-Pro vytvoření takové softwarové knihovny využím během studia získané znalosti v oblasti ekonometrie a programování. Tato knihovna by pak mohla být užitečná jak pro osobní tak pro akademické účely. Její výhodou je volná dostupnost, otevřenost zdrojového kódu a programovací jazyk Java, ve kterém je napsána. 
+Pro vytvoření takové softwarové knihovny využiji během studia získané znalosti v oblasti ekonometrie a programování. Tato knihovna by pak mohla být užitečná jak pro osobní tak pro akademické účely. Její výhodou je volná dostupnost, otevřenost zdrojového kódu a programovací jazyk Java, ve kterém je napsána. 
 
 \subsection{Základní předpoklady a nástroje}
 
@@ -686,7 +688,7 @@ Pro snadnější programatorskou práci se hojně využívá \textit{vývojové 
 
 S programovacím jazykem Java se používá několik různých IDE. Liší se podle nabízených vlastností a možností. Pro svou práci jsem zvolil vývojové prostředí \textit{IntelliJ IDEA}. 
 
-Pro lepší koordinaci se svým vedoucím jsem během práce použival webový nástroj \textit{GitHub}. Je to služba usnadňující spolupraci vývojářů, kteři používají verzovací nástroj Git. Využívá se pro sdílení a společnou práci na softwarových projektech. Tato služba poskytuje možnost sdílet a upravovat projekty jiných programatorů, což vede k lepším výsledkům a rychlejšímu ladění kódu. 
+Pro lepší koordinaci se svým vedoucím jsem během práce použival webový nástroj \textit{GitHub}. Je to služba usnadňující spolupraci vývojářů, kteři používají verzovací nástroj Git. Využívá se pro sdílení a společnou práci na softwarových projektech. Tato služba poskytuje možnost sdílet a upravovat projekty jiných programatorů, což vede k lepším výsledkům a rychlejšímu ladění kódu. Zdrojový kód napsaný pro tuto práci je veřejně dostupný na webových stránkách Github.
 
 Jako nástroj pro správu, řízení a automatizaci tvorby aplikace jsem použil \textit{Apache Maven}. I když je možné využit tento nástroj k psaní projektů v různých programovacích jazycích, podporován je převážně programovací jazyk Java. Maven se používá hlavně pro usnadnění práce při buildování programů a aplikací. Vývojové prostředí Intellij IDEA umožňuje pomocí nástroje Maven vytvořit programatorský projekt podle modelu \textit{Project Object Model}. Tento model určuje ze začátku kostru zdrojového kódu, závislosti na externích knihovnách a proces spouštění potřebných testů a podobně. Základ samotného nástroje Maven jsou pluginy, které běží pouze na příkazové řádce. 
 
@@ -723,58 +725,53 @@ Encog je framework pro strojové učení (z angl. \textit{Machine Learning}), co
 
 Tento framework zahrnuje pro problematiku této práce velmi užitečné techniky s regresními modely. Komplikace jeho využití byla v tom, že je vytvořen za použití neuronových sítí. což je mimo oblast analytických metod, které jsem si na začátku stanovil. Kvůli tomu jsem se rozhodl zanechat tento nápad použití frameworku a hledat jiná řešení. 
 
-\textbf{Jiná řešení}
-
-...popis použití knihoven opencsv, common-math, jfree, junit...
-
 \newpage
 \section{Implementace}
 \subsection{Datová vrstva}
 Vzorová data se kterými pracují výpočetní servery, jsem dostal od svého vedoucího jako \textit{log file} (nebo taky \textit{žurnál}). Log je většinou textový soubor s příponou \textit{.log}, který obsahuje záznam činností nějakého programu nebo procesu. Tento záznam je ve tvaru posloupnosti jednotlivých kroků přislušného běhu programu, tj. skládá se z informací o tom jak, kdy, čím nebo kým byla využívána konkretní aplikace, jaké zatížení bylo vyvoláno nebo kolik času trvalo, aby příslušná aplikace proběhla. Logy se používají pro kontrolu procesů a zjištění přesné příčiny nějaké chyby, která nastala. Z jejich záznamů je možno určit co vedlo k chybě, jaký měla tato chyba vliv a jaké měl pak běžící proces důsledky. 
 
-Daný soubor se skládá z dostatečně velkého množství řádků, v každém z nich je zaznamenávano několik parametrů. Tyto parametry obsahují vlastní hodnotu a/nebo jejich název. 
+Daný soubor se skládá z dostatečně velkého množství řádků, v každém z nich je zaznamenávano několik parametrů. Tyto parametry obvykle obsahují název a vlastní hodnotu. 
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=15cm]{pictures/log.png}
-  \caption{Log soubor (fragment). Vlastní zdroj.}
+  \caption{Log soubor (fragment). (Vlastní zdroj)}
   \label{fig:log}
 \end{figure}
 
-Pro pohodlnější práci se souborem a odstranění nepotřebných parametrů (např. čas, datum) jsem se rozhodl překonvertovat log soubor do souborového formátu \textit{CSV} 	(z angl. \textit{comma-separated values}, neboli hodnoty oddělené čárkami). Je to jeden z nejednoduších formátů pro práci s tabulkovými daty. Považuji vybraný formát za vhodný, protože má podobnou strukturu jako log soubor a je často používán pro výměnu informací mezi různými systémy. Také je dost důležité, že se sloupce CSV souboru mohou tvářit jako časové řady, které se hojně využívají v regresní analýze.   
+Pro pohodlnější práci se souborem a odstranění nepotřebných parametrů (např. čas, datum) jsem se rozhodl překonvertovat log soubor do souborového formátu \textit{CSV} 	(z angl. \textit{comma-separated values}, neboli hodnoty oddělené čárkami). Je to jeden z nejednoduších formátů pro práci s tabulkovými daty. Považuji vybraný formát za vhodný, protože má podobnou strukturu jako log soubor a je často používán pro výměnu informací mezi různými systémy. Také je dost důležité, že se sloupce CSV souboru mohou tvářit jako časové řady.   
 
 Pro konvertování log souboru do formátu CSV jsem použil \textit{shellový skript Bash}. Bash je jeden z unixových shellů, který interpretuje příkazový řádek. Shellové skripty jsou zápisem příkazů do souboru, které bychom jinak zadávali postupně na příkazovém řádku. Skript lze snadno spustit a vykonávat jím opakovanou činnost. Ty-picky se shellové skripty používají na unixových platformách, ale používají se též na Microsoft Windows.
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=15cm]{pictures/csv.png}
-  \caption{CSV soubor (fragment). Vlastní zdroj.}
+  \includegraphics[width=15cm]{pictures/dataCsv.png}
+  \caption{CSV soubor (fragment). (Vlastní zdroj)}
   \label{fig:csv}
 \end{figure}
 
 \newpage
 \subsection{Aplikační vrstva}
 
-Projekt vytvořený pomocí spravovacího nástroje Maven obvykle má následující adresářovou strukturu
+Softwarový projekt knihovny vytvořený v prostředí IntelliJ IDEA má následující nejdůležitější prvky adresářové struktury
 \vspace*{0.5cm}
 
-\begin{tabular}{|l|p{10cm}|}
+\begin{tabular}{|l|p{12cm}|}
   \hline
   {\bf Adresář} & {\bf Popis} \\
-  \hline \hline
-  Kořenový adresář        & obsahuje pom.xml ostatní adresáře \\
+  \hline 
+   {\bf /}        & kořenový adresář; obsahuje konfigurační soubory a další adresáře \\ 
   \hline
-  src/main/java     & obsahuje kompilovatelné .java soubory \\
+  /src/main/java     & obsahuje kompilovatelné .java soubory \\
   \hline
-  src/main/resources    & obsahuje další soubory, například konfigurační XML \\
-  \hline
-  src/test/java          & obsahuje třídy testů \\
-  \hline
-  src/test/resources        & obsahuje konfigurační soubory pro testy \\
-  \hline
+  /src/test/java          & obsahuje třídy JUnit testů \\
+ \hline
+  /resources    & obsahuje datové soubory a výstupy programu - obrazky s grafy\\
+ \hline
 \end{tabular}
+\vspace*{0.2cm}
 
-V mém případě je pouze obsazená adresář src/main/java. I když testování je velmi dobrou praktikou mnoha programatorů, ja jsem se testy zdrojového kódu v dané práci nezabýval. 
+\centerline {Tabulka 1.: Popis adresářové struktury. (Vlastní zdroj)}
 
 Celý program se skládá ze tří tříd: 
 
@@ -835,6 +832,10 @@ com.bp.prediction.oldClasses.GraphDrawing.java
 Tato třída byla využita pro nakreslení vývoje zkoumané časové řady a odhadnuté regresní přímky. 
 \end{enumerate}
 
+\textbf{Použité knihovny}
+
+...popis použití knihoven opencsv, common-math, jfree, junit...
+
 \newpage
 \section{Testování aplikace}
 \subsection{Testovací data}
@@ -852,92 +853,100 @@ x_7 - numArtificialFileDownloadEvents \\
 x_8 - numFileDownloadFlows \\ \\
 x_9 = y - computationTime
 $ 
+
+...vysvetleni casove povahy dat...
+
 \subsection{Zpracování a analýza dat}
 
-\normalsize\textbf{\newline Korelační matice} 
-
-Jako první metoda analýzy, kterou program spouští je korelační matice všech proměnných. Pro přehled jsem vytvořil trojuhelnikovou korelační matici
-
-$$
-\begin{bmatrix}
-x_1 & 1.000\\
-x_2 & 0,847 & 1,000\\
-x_3 & 0,721 & 0,820 & 1,000\\
-x_4 & 0,832 & 0,958 & 0,777 & 1,000 \\
-x_5 & 0,802 & 0,981 & 0,827 & 0,920 & 1,000 \\
-x_6 & 0,805 & 0,981 & 0,821 &0,925 & 0,999 & 1,000 \\
-x_7 & 0,849 & 0,991 & 0,828 & 0,944 & 0,987 & 0,988 & 1,000 \\
-x_8 & 0,811 & 0,955 & 0,807 & 0,909 & 0,954 & 0,955 & 0,958 & 1,000 \\
-y & 0,774 & 0,806 & 0,802 & 0,786 & 0,781 & 0,786 & 0,800 & 0,786 & 1,000 
-\end{bmatrix}
-$$
-
-Z analýzy korelačních koeficientu matrice je vidět, že je v těchto datech multikolinearita. Vyloučením zbytečných vysvětlujících proměnných jsem dostal korelační matici z dvěma vysvětlujícími proměnnými $x_3$ a $x_4$ a jednou vysvětlovanou proměnnou $y$.   
-
-Následně jsem vypočital koeficient determinace a přislušné regresní koeficienty pro tento změnšený model pomocí příslušných tříd: 
-
-\begin{displaymath}
-\begin{array}{ll}
-R^2 = 0.7101 \\
-b_0 = 3430.5582, b_1 = 0.5897, b_2 = 6.1441
-\end{array}
-\end{displaymath}
-
-\normalsize\textbf{\newline Metoda výběru nejlepší podmnožiny}
-
-Výsledkem metody výběru nejlepší podmnožiny se stala samá množina všech vysvětlujících proměnných, tj. ${x_1, x_2, x_3, x_4, x_5, x_6, x_7, x_8}$. Jejím koeficientem determinace je hodnota $R^2 = 0,7616$. Však my tuto metodu musíme zamítnout kvůli silné multikolinearitě.  
+...popis analyzy dat, algoritmu predikce, plovouciho okna...
 
 \subsection{Vizualizace}
 
-Pro realizaci dosažených výsledků bychom měli nejdřív sestavit regresní odhadovou funkci a pak nakreslit tuto přímku. Přímka je v dané, případě lineárním odhadem trendové funkce zkoumané časové řady. Pro regresní funkci platí
+...popis vytvorenych obrazku...
+\newline...popis tridy pro zobrazeni grafu...
+\newline...vysvetleni y osy a x osy...
+\newline ... 5 obrazku s grafy ...
 
-\begin{equation}
-\hat{y} = 3430.5582 + 0.5897x_3 + 6.1441x_4
-\end{equation}
-
-Pomocí třídy \textit{com.bp.prediction.oldClasses.GraphDrawing.java} dostáváme graf popisující vývoj časové řady a její odhadnutý trend.
-
-\begin{figure}[h]
+\begin{figure}
   \centering
-  \includegraphics[width=15cm]{pictures/regresniFunkce.png}
+  \includegraphics[width=15cm]{pictures/grafy/MLR(10).jpeg}
   \caption{Graf vývoje časové řady a trendu \newline(Součástí výstupu programu)}
   \label{fig:regrese}
 \end{figure}
 
-Statistickou významnost modelu jako celku podle koeficientu determinace, lze testovat podle testovacího kritéria 
+\begin{figure}
+  \centering
+  \includegraphics[width=15cm]{pictures/grafy/AR(5).jpeg}
+  \caption{Graf vývoje časové řady a trendu \newline(Součástí výstupu programu)}
+  \label{fig:regrese}
+\end{figure}
 
-\begin{equation}
-F = \frac{R^2}{1 - R^2}\frac{n-(k+1)}{k},
-\end{equation}
+\begin{figure}
+  \centering
+  \includegraphics[width=15cm]{pictures/grafy/SMA(10).jpeg}
+  \caption{Graf vývoje časové řady a trendu \newline(Součástí výstupu programu)}
+  \label{fig:regrese}
+\end{figure}
 
-které má Fisherovo rozdělení s $k$ a $n-(k+1)$ stupni volnosti $F[k, n-(k+1)]$. 
+\begin{figure}
+  \centering
+  \includegraphics[width=15cm]{pictures/grafy/LWMA(10).jpeg}
+  \caption{Graf vývoje časové řady a trendu \newline(Součástí výstupu programu)}
+  \label{fig:regrese}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=15cm]{pictures/grafy/EMA(10).jpeg}
+  \caption{Graf vývoje časové řady a trendu \newline(Součástí výstupu programu)}
+  \label{fig:regrese}
+\end{figure}
+
+\subsection{Významnost modelů}
+
+... obrazek s odchylkami ...
+\newline...popis urceni vyznamnosti modelu pomoci: koeficientu determinace, stredni odchylky rezidui, F test statistiky pro kazdy model; takze bude tabulka 4x2...
+
+...urceni priblizne nejlepsiho modelu...		
+\newline...zminovani o tom, ze je to konkretni pripad pro konkretni velikost okna, a nejoptimalnejsi verzi modelu je mozno urcit prochazenim kombinaci vsech moznych velikosti okna...
+
+\vspace*{0.5cm}
+
+\begin{tabular}{|l|p{8cm}|}
+  \hline
+  {\bf Kritérium} & {\bf Hodnota} \\
+  \hline 
+   {\bf Koeficient determinace}        &  \\ 
+  \hline
+   stredni odchylka rezidui &  \\
+  \hline
+  F-test statistika  &  \\
+ \hline
+\end{tabular}
+
+\vspace*{0.3cm}
+
+Tabulka 2.: Kritéria významnosti modelů. (Vlastní zdroj)
 
 \newpage
-Nulová a alternativní hypotézy:
-
-\begin{itemize}
-\item $H_0$: statistická nevýznamnost $R^2$
-\item $H_A$: statistická významnost $R^2$
-\end{itemize} 
-
-Poduk platí $F > F*$, odmítáme hypotézu $H_0$ a znamená to, že hodnota $R^2$ je statisticky významná a ne všechny regresní parametry jsou rovny nule. 
-
-Jestliže platí $F < F*$, akceptujeme hypotézu $H_A$ o statistické nevýznamnosti $R^2$. To znamená, že vysvětlující proměnné neovlivňují významně vysvětlovanou proměnnou a všechny regresní parametry jsou nulové.
-
-V tomto případě pro Fisherovo rozdělení platí $k = 2$, $n-(k+1) = 384$. Pak \space\space\space $F$ = 195,28 a $F*$ = 470,34. Odsud vyplývá, že $F < F*$ a akceptujeme hypotézu $H_0$, tj. koeficient determinace $R^2$ je statisticky nevýznamný.  
  
-
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=15cm]{pictures/grafy/ErrorsBarChart.jpeg}
+  \caption{Graf vývoje časové řady a trendu \newline(Součástí výstupu programu)}
+  \label{fig:regrese}
+\end{figure}
 
 \chapter*{Závěr}
 \addcontentsline{toc}{chapter}{Závěr} % SEM NESAHEJTE!
 
-Základním cílem této bakalářské práce bylo navrhnout počítačovou aplikaci, která by pomocí regresní a korelační analýzy mohla zjistit závislost nebo nezávislost mezi hodnotami v určitých souborech dat. Po využití analytických metod a jejich implementování v programu, byly získány výsledky odhadu regresního modelu. Z grafu ukazujícího odhadnutý trend a z výsledku testování je evidentně, že odhadnutý model není dostatečně významný. Popis trendu časové řady matematickými křivkami je častým způsobem v analýze časových řad. Použil jsem dvě metody pro řešení vícenásobné lineární regrese. 
+Základním cílem této bakalářské práce bylo navrhnout počítačovou aplikaci, pomocí které by bylo možno ekonometrickým modelem analýzovat a předpovídat budoucí hodnoty časovoé řady na základě jejich minulých hodnot. Po využití různcých ekonometrických metod a jejich implementování v programu, byly získány predikované hodnoty. Z grafů ukazujících odhadnutý trend časové řady a z výsledku testování významnosti modelů je vidět, že nejvíc významný model je ZDE BUDE MODEL S NEJLEPŠÍMI VÝSLEDKAMI. 
 
-První je metoda výběru podmnožiny s nejlepším koeficientem determinace. Ukázala tato metoda, že nejlepší podmnožina pro odhad regresního modelu je samá množina se všemi proměnnými. Z korelační matice ale vidíme, že jsou v tomto modelu silné závislosti mezi mnoha vysvětlujícími proměnnými. Proto jsem musel postoupit k druhé metodě. 
+... popis jednotlivych modelů ... 
 
-Druhá metoda je založena na analýze korelační matice. Korelační matice může popisovat závislosti mezi úplně všemi proměnnými v modelu a může takovým způsobem objevit multikolinearitu, což je zbytečná závislost mezi vysvětlujícími proměnnými. Kvůli výskytu silné multikolinearity bylo potřeba vyřadit zbytečné nezávislé proměnné. Po takovém vyloučení zbylo jen dvě vysvětlující proměnné, jejichž koeficient determinace jsem následně analyzoval. Testování významnosti koeficientu determinace ukázalo, že i tyto dvě proměnné významně neovlivňují vysvětlovanou hodnotu. 
+... zminovani o vyuzitych knihovnhach, o strukture samotne khinovny, poctu trid ... 
 
-Pro implementaci potřebných analytických metod byla navrhnuta aplikace. I když architektura vytvořeného programu není výborná, běh programu je dostatečně rychlý. Program obsahuje třídy s pouze základními metodami pro analýzu regresních modelů. Je možné přidat hodně různých metod pro analýzu a testování regresních modelu. Taky by bylo užitečné v budoucnu přidat třídu pro analýzu nelineárních regresních modelu. Jako další možné zlepšení aplikace je přidání metod regresní analýzy popisující nelineární trend. Tyto metody jsou možným řešením nalezení regresního modelu pro uvedený v této práci soubor dat. 
+... nasledujici dva odstavce upravim, jinak jejich smysl zustane podobny tj. o kvalite, moznych zlepsenich atd. Zminim zde taky box jenkinsa a jine modely pro predikovani (treba nelinearni regrese)... 
 
 Z programovacího pohledu, kvalita zdrojového kódu se taky může zlepšit. Zatím byly použity jednoduché algoritmy a využity externí knihovny. Uživatelské rozhraní by bylo vhodným pro ty kteří se dobře nevyznají v programování. I když v programu není zatím uživatelské rozhraní, pro programatora je docela jednoduché se rozebrat v konstrukci programu. 
 

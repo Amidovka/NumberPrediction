@@ -18,9 +18,11 @@ import java.io.IOException;
 public class BarChart extends ApplicationFrame {
 
     private String chartTitle;
-    private double[] SMAErrors;
-    private double[] LWMAErrors;
-    private double[] EMAErrors;
+    private double[] multiLinRegErrors;
+    private double[] autoRegErrors;
+    private double[] simpleMAErrors;
+    private double[] linWMAErrors;
+    private double[] expMAErrors;
 
     public BarChart(String chartTitle) {
         super(chartTitle);
@@ -48,10 +50,12 @@ public class BarChart extends ApplicationFrame {
     }
     private CategoryDataset createDataSet() {
         final DefaultCategoryDataset dataSet = new DefaultCategoryDataset();
-        for (int i = 0; i < SMAErrors.length; i++) {
-            dataSet.addValue(SMAErrors[i], "Simple MA Errors", ""+i);
-            dataSet.addValue(LWMAErrors[i], "Linear Weighted MA Errors", ""+i);
-            dataSet.addValue(EMAErrors[i], "Exponential MA Errors", ""+i);
+        for (int i = 0; i < multiLinRegErrors.length; i++) {
+            dataSet.addValue(multiLinRegErrors[i], "Multiple Linear Regression Errors", ""+i);
+            dataSet.addValue(autoRegErrors[i], "Autoregressive Model Errors", ""+i);
+            dataSet.addValue(simpleMAErrors[i], "Simple MA Errors", ""+i);
+            dataSet.addValue(linWMAErrors[i], "Linear Weighted MA Errors", ""+i);
+            dataSet.addValue(expMAErrors[i], "Exponential MA Errors", ""+i);
         }
 
         return dataSet;
@@ -65,7 +69,7 @@ public class BarChart extends ApplicationFrame {
     }
 
     public void saveChartAsImage() {
-        int width = 3000;
+        int width = 1000;
         int height = 500;
         try {
             File errorsBarChart = new File("resources/" + this.chartTitle + ".jpeg");
@@ -75,27 +79,23 @@ public class BarChart extends ApplicationFrame {
         }
     }
 
-    public double[] getSMAErrors() {
-        return SMAErrors;
+    public void setMultiLinRegErrors(double[] multiLinRegErrors) {
+        this.multiLinRegErrors = multiLinRegErrors;
     }
 
-    public void setSMAErrors(double[] SMAErrors) {
-        this.SMAErrors = SMAErrors;
+    public void setAutoRegErrors(double[] autoRegErrors) {
+        this.autoRegErrors = autoRegErrors;
     }
 
-    public double[] getLWMAErrors() {
-        return LWMAErrors;
+    public void setSimpleMAErrors(double[] simpleMAErrors) {
+        this.simpleMAErrors = simpleMAErrors;
     }
 
-    public void setLWMAErrors(double[] LWMAErrors) {
-        this.LWMAErrors = LWMAErrors;
+    public void setLinWMAErrors(double[] linWMAErrors) {
+        this.linWMAErrors = linWMAErrors;
     }
 
-    public double[] getEMAErrors() {
-        return EMAErrors;
-    }
-
-    public void setEMAErrors(double[] EMAErrors) {
-        this.EMAErrors = EMAErrors;
+    public void setExpMAErrors(double[] expMAErrors) {
+        this.expMAErrors = expMAErrors;
     }
 }

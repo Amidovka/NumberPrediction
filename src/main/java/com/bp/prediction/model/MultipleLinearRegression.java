@@ -94,7 +94,7 @@ public class MultipleLinearRegression implements Predictor{
      * time series and saves it as image in resources folder.
      */
     public void drawAndSaveGraph() {
-        String title = "Multiple Regression Model Visualization " + "MR(" + n + ")";
+        String title = "Multiple Linear Regression Model Visualization " + "MLR(" + n + ")";
         GraphVisualization chart = new GraphVisualization(title, yData, predictions);
         chart.draw();
         chart.saveGraphAsImage();
@@ -214,5 +214,9 @@ public class MultipleLinearRegression implements Predictor{
 
     public double[] getYData() {
         return yData;
+    }
+
+    public double[] getPredictions() {
+        return predictions;
     }
 }

@@ -20,9 +20,10 @@
 \contentsline {section}{\numberline {2.4}Testov\IeC {\'a}n\IeC {\'\i } aplikace}{28}
 \contentsline {subsection}{\numberline {2.4.1}Testovac\IeC {\'\i } data}{28}
 \contentsline {subsection}{\numberline {2.4.2}Zpracov\IeC {\'a}n\IeC {\'\i } a anal\IeC {\'y}za dat}{28}
-\contentsline {subsection}{\numberline {2.4.3}Vizualizace}{29}
-\contentsline {chapter}{Z\IeC {\'a}v\IeC {\v e}r}{31}
-\contentsline {chapter}{Literatura}{32}
-\contentsline {chapter}{P\IeC {\v r}\IeC {\'\i }lohy}{33}
-\contentsline {chapter}{\numberline {A}U\IeC {\v z}ivatelsk\IeC {\'a} p\IeC {\v r}\IeC {\'\i }ru\IeC {\v c}ka}{33}
-\contentsline {chapter}{\numberline {B}Obsah p\IeC {\v r}ilo\IeC {\v z}en\IeC {\'e}ho DVD}{34}
+\contentsline {subsection}{\numberline {2.4.3}Vizualizace}{28}
+\contentsline {subsection}{\numberline {2.4.4}V\IeC {\'y}znamnost model\IeC {\r u}}{28}
+\contentsline {chapter}{Z\IeC {\'a}v\IeC {\v e}r}{33}
+\contentsline {chapter}{Literatura}{34}
+\contentsline {chapter}{P\IeC {\v r}\IeC {\'\i }lohy}{35}
+\contentsline {chapter}{\numberline {A}U\IeC {\v z}ivatelsk\IeC {\'a} p\IeC {\v r}\IeC {\'\i }ru\IeC {\v c}ka}{35}
+\contentsline {chapter}{\numberline {B}Obsah p\IeC {\v r}ilo\IeC {\v z}en\IeC {\'e}ho DVD}{36}

@@ -6,6 +6,7 @@ import com.bp.prediction.model.LinearWeightedMA;
 import com.bp.prediction.model.SimpleMovingAverage;
 import com.bp.prediction.data.CsvDataReader;
 import com.bp.prediction.model.MultipleLinearRegression;
+import com.bp.prediction.ui.BarChart;
 
 public class Main {
 
@@ -28,7 +29,7 @@ public class Main {
         //reading, parsing data according to given X parameters
         CsvDataReader dataReader = new CsvDataReader();
         dataReader.parseData("resources/Data.csv");
-        int[] params = {3};
+        int[] params = {3, 4};
         //creating matrices with X and Y values
         dataReader.createMatrix(params);
         double[][] xData = dataReader.getXData();
@@ -42,51 +43,51 @@ public class Main {
         int predictionStart = 200;  //approximately the middle point of time-series data (387 items)
         int window = 10;            //window size
 
-        MultipleLinearRegression predictor = new MultipleLinearRegression(yData, xData, window, predictionStart);
-        predictor.calculatePredictions();
-        predictor.drawAndSaveGraph();
+        MultipleLinearRegression multipleLinearRegression = new MultipleLinearRegression(yData, xData, window, predictionStart);
+        multipleLinearRegression.calculatePredictions();
+        multipleLinearRegression.drawAndSaveGraph();
 
         AutoregressiveModel arModel = new AutoregressiveModel(yData, 5); //5 - autoregressive model parameter
         arModel.calculatePredictions(predictionStart);
-        arModel.drawAndSaveGraph();
+        //arModel.drawAndSaveGraph();
 
         SimpleMovingAverage sma = new SimpleMovingAverage(yData, window);
         sma.calculatePredictions(predictionStart);
-        sma.drawAndSaveGraph();
+        //sma.drawAndSaveGraph();
 
         LinearWeightedMA lwma = new LinearWeightedMA(yData, window);
         lwma.calculatePredictions(predictionStart);
-        lwma.drawAndSaveGraph();
+        //lwma.drawAndSaveGraph();
 
         ExponentialMA ema = new ExponentialMA(yData, window);
         ema.calculatePredictions(predictionStart);
-        ema.drawAndSaveGraph();
+        //ema.drawAndSaveGraph();
 
         /**
-         * creating errors bar chart.
+         * creating errors bar chart
          */
 
-        /*double[] yDataExamined = new double[30];
-        System.arraycopy(yData, yData.length-30, yDataExamined, 0, 30);
-        double[] simplePredictionsExamined = new double[30];
-        double[] weightedPredictionsExamined = new double[30];
-        double[] exponentialPredictionsExamined = new double[30];
-        System.arraycopy(simplePredictions, simplePredictions.length-30, simplePredictionsExamined, 0, 30);
-        System.arraycopy(weightedPredictions, weightedPredictions.length-30, weightedPredictionsExamined, 0, 30);
-        System.arraycopy(exponentialPredictions, exponentialPredictions.length-30, exponentialPredictionsExamined, 0, 30);
+        int size = 10;
+        double[] yDataExamined = new double[size];
+        System.arraycopy(yData, yData.length-size, yDataExamined, 0, size);
+        double[] multiLinRegPredictionsExamined = new double[size];
+        double[] arPredictionsExamined = new double[size];
+        double[] simplePredictionsExamined = new double[size];
+        double[] weightedPredictionsExamined = new double[size];
+        double[] exponentialPredictionsExamined = new double[size];
+        System.arraycopy(multipleLinearRegression.getPredictions(), multipleLinearRegression.getPredictions().length-size, multiLinRegPredictionsExamined, 0, size);
+        System.arraycopy(arModel.getPredictions(), arModel.getPredictions().length-size, arPredictionsExamined, 0, size);
+        System.arraycopy(sma.getPredictions(), sma.getPredictions().length-size, simplePredictionsExamined, 0, size);
+        System.arraycopy(lwma.getPredictions(), lwma.getPredictions().length-size, weightedPredictionsExamined, 0, size);
+        System.arraycopy(ema.getPredictions(), ema.getPredictions().length-size, exponentialPredictionsExamined, 0, size);
 
-        BarChart barChart = new BarChart("Moving Averages Errors Bar Chart");
-        barChart.setSMAErrors(getErrors(yDataExamined, simplePredictionsExamined));
-        barChart.setLWMAErrors(getErrors(yDataExamined, weightedPredictionsExamined));
-        barChart.setEMAErrors(getErrors(yDataExamined, exponentialPredictionsExamined));
+        BarChart barChart = new BarChart("Errors Bar Chart");
+        barChart.setMultiLinRegErrors(getErrors(yDataExamined, multiLinRegPredictionsExamined));
+        barChart.setAutoRegErrors(getErrors(yDataExamined, arPredictionsExamined));
+        barChart.setSimpleMAErrors(getErrors(yDataExamined, simplePredictionsExamined));
+        barChart.setLinWMAErrors(getErrors(yDataExamined, weightedPredictionsExamined));
+        barChart.setExpMAErrors(getErrors(yDataExamined, exponentialPredictionsExamined));
         barChart.draw();
-        barChart.saveChartAsImage();*/
-
-       /* double[] yValues = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 15, 17, 19};
-        double[] yValues1 = {6, 3, 2};
-        LinearWeightedMA lwma = new LinearWeightedMA(yValues1, 5);
-        System.out.println("lwma prediction: " + lwma.getNextPrediction());
-        ExponentialMA ema = new ExponentialMA(yValues, 3);
-        System.out.println("ema prediction: " + ema.getNextPrediction());*/
+        barChart.saveChartAsImage();
     }
 }
